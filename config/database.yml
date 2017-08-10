@@ -42,4 +42,13 @@ test:
   pool: 5
   username: amsterdamAL
   password: passwords 
+
+production:
+  adapter: postgresql
+  host: localhost
+  encoding: unicode
+  database: store_test
+  pool: 5
+  username: amsterdamAL
+  password: passwords 
   

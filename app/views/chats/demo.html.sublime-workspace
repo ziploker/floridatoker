@@ -139,6 +139,22 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/home/amsterdam/workspace/florida/app/views/lookups/new.html.erb",
+			"settings":
+			{
+				"buffer_size": 2895,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/amsterdam/workspace/florida/app/assets/javascripts/lookup.js.erb",
+			"settings":
+			{
+				"buffer_size": 12516,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -172,7 +188,12 @@
 	},
 	"expanded_folders":
 	[
-		"/home/amsterdam/workspace/florida"
+		"/home/amsterdam/workspace/florida",
+		"/home/amsterdam/workspace/florida/app",
+		"/home/amsterdam/workspace/florida/app/assets",
+		"/home/amsterdam/workspace/florida/app/assets/javascripts",
+		"/home/amsterdam/workspace/florida/app/views",
+		"/home/amsterdam/workspace/florida/app/views/lookups"
 	],
 	"file_history":
 	[
@@ -326,6 +347,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"zip",
+			"lookup_zip",
 			"find-my-Rep-tool",
 			"colex",
 			"openstates.org/api/v",
@@ -451,8 +474,6 @@
 			"font-family",
 			"lookup_f",
 			"mini_t",
-			"register",
-			"block",
 			"register"
 		],
 		"highlight": true,
@@ -471,8 +492,67 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/home/amsterdam/workspace/florida/app/views/lookups/new.html.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2895,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								901,
+								901
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 615.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/amsterdam/workspace/florida/app/assets/javascripts/lookup.js.erb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12516,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								638,
+								638
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/JavaScript (Rails).sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 147.0,
+						"translation.y": 289.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -557,7 +637,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 280.0,
+	"side_bar_width": 214.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

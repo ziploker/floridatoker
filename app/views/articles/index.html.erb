@@ -1,0 +1,52 @@
+
+
+<div id="index_wrapper">
+  <% if current_user.try(:admin?) %> 
+  	<%= link_to 'new_article_path', new_article_path %> 
+  <% end %>
+
+  <div id="index_container">
+  
+
+    <% @articles.each do |art| %>
+      <div class="index_stick">
+        
+        <div class="index_thumb"> 
+          <%= image_tag art.image.url(:thumb) %>
+        </div>
+
+        <div class="index_subject">
+          <div class="top_info_bar">
+            <%= art.created_at.strftime('%B' + ' ' + art.created_at.day.ordinalize + ' ' + '%Y') %> | by FloridaToker staff
+          </div>
+          
+          <div class='subject_line'><h1><%= link_to art.title, {:controller => 'articles', :action => 'show', :id => art.slug } %></h1>
+          </div>  
+          
+          <% if false %>
+            <div class="index_first_line">
+              <%= Nokogiri::HTML.parse(art.text).css('p').first.text %>
+
+            </div>
+          <% end %>
+          
+          <div class="bottom_info_bar">
+            
+            
+            
+            
+
+            <% if current_user.try(:admin?) %> 
+            <%= link_to 's', article_path(art) %>
+            <%= link_to 'e', edit_article_path(art) %>
+            <%= link_to 'd', article_path(art), method: :delete, data: { confirm: 'u sure??'} %><br />
+            <% end %>
+
+          </div>
+        </div>
+
+      </div>  
+    <% end %>
+
+  </div>
+</div>

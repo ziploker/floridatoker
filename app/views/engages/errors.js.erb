@@ -1,0 +1,8 @@
+<% if @sub.errors.messages.include?(:email) %>
+	$('#results').empty().fadeTo(1000, 1).append( " <% @sub.errors.full_messages.each do |m| %> <%= m %> <br><% end %>").fadeTo(3000, 0)
+	$('#engage_email').focus()
+	
+<% else %>
+	$('#results').empty().fadeTo(1000, 1).append( " <% @sub.errors.full_messages.each do |m| %> <%= m %> <br><% end %>").fadeTo(3000, 0)
+	$('#engage_zip').focus()
+<% end %>

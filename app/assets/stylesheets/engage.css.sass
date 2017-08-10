@@ -1,0 +1,617 @@
+// Place all the styles related to the engage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+//$green_light: tint(#E6F5EB, 88%)
+
+$green1: #2fd13e
+$green2: #269630
+$green3: #407132
+$offgreen: #e0f2e6
+$offwhite: #fafdfb
+
+//#fafdfb
+#path27, #path29, #path31, #path33, #path35
+  fill: #fafdfb !important
+
+#path11, #path13, #path15, #path17, #path19, #path21, #path23
+  fill: #fafdfb !important
+
+body
+  //background: url("upfeathers4.png")
+  //background: tint($green_base, 88%)
+  background: #fafdfb
+#ghost.hideellogo
+  display: none
+#tag
+  z-index: 1501
+  position: relative
+.skinny_bar
+  width: 100%
+  
+  background: $myblack
+   
+  .skinny_bar_content
+    +outer-container
+    
+    .tag_line
+      background: $myblack
+      display: inline-block
+      width: 35%
+      
+#sticky
+  height: 35px
+  //position: relative
+  
+
+/*-----------------------------------------------end of upper nav bar ------------------*/  
+
+
+       
+#sticky-anchor.perm_bar
+  width: 100%
+  positon: relative
+  background: $myblack
+  
+  .nav  
+    
+    background: $myblack
+    +outer-container
+    +clearfix
+    
+    #ghost
+      height: 35px
+      float: left
+      margin-left: 5px 
+         
+    ul
+      
+      float: right
+      
+      
+      li
+        display: inline-block
+        padding: 0px .50em 0px .75em
+        
+        a
+          font-size: .8em
+          color: #e0f2e6
+/*-----------------------------------------------end of lower nav bar ------------------*/    
+
+
+form.search-bar
+  width: 80%
+  margin: 0 auto
+  padding-bottom: 10px      
+       
+#sticky-anchor.perm_bar
+  position: fixed
+  top: 0px
+  z-index: 101
+  background: $myblack
+  height: 35px
+  .nav  
+    
+    //background: #141311
+    background: $myblack
+    +outer-container
+    +clearfix
+    a
+      display: block
+      color: rgba(249, 249, 249, .9)
+      text-decoration: none
+      transition: color .5s, background .5s, height .5s
+    #ghost
+      width: 128px     
+      float: left
+      margin-left: 5px
+      //z-index: 11002
+      
+    ul
+      float: right
+      line-height: em(35) !important
+      //max-width: 1240px
+      margin: 0
+      padding: 0
+      list-style: none
+      //font-size: 1.5em
+      font-weight: 300
+      
+      li
+        display: inline-block
+        vertical-align: top
+/*-----------------------------------------------end of lower nav bar sticky ------------------*/      
+               
+          
+
+  
+
+#main-stuff
+  padding: 20px 10px
+  margin-bottom: 70px
+
+  
+#main-stuff.pad
+  //padding-top: 30px 
+
+/*-----------------------------------------------js compensating sticky nav bar ------------------*/ 
+
+
+.mini_info
+  float: right
+  background: #E8FAEB
+  font-size: 10px
+
+
+.featured_wrapper
+  +outer-container
+  clear: both
+  
+.featured_main
+  +span-columns(9)
+  padding: 10px
+  //background: tint($green_base, 98%)
+  //box-shadow: 5px 2px 15px #888888
+.featured_content
+  +clearfix
+.featured_title
+
+.featured_time_stamp_wrapper
+  display: block
+.featured_share_buttons
+  float: left
+.featured_time_stamp
+  float: right  
+   
+.featured_pic
+  float: left
+  margin-right: 20px
+  margin-bottom: 0px
+  box-shadow: 2px 2px 15px #888888
+  height: 217px
+.readmore-js-section
+  overflow: visible 
+       
+.the_rest
+  margin-top: 25px
+  +clearfix
+
+      
+.block
+  +span-columns(2.66666 of 8)
+  +omega(3n) 
+  margin-bottom: 15px
+  border: 1px solid lighten($grays, 10%)
+
+  //box-shadow: 5px 2px 15px #888888
+.mini_image
+  //background: tint($green_base, 80%)
+  background: #E8FAEB
+         
+  img
+    width: 100%
+    margin: 0px auto
+            
+.mini_info_wrapper
+  //background: tint($green_base, 80%)
+         
+  font-size: 10px
+  //ovherflow: hidden
+  //padding: 0px 10px
+  background: #E8FAEB
+  overflow: hidden
+.mini_share_buttons
+  float: left
+            
+  background: #E8FAEB
+
+            
+.mini_text
+  //+linear-gradient(#f2f4f3, #f9fcfa)
+  +linear-gradient(#E8FAEB, $offwhite)
+  word-wrap: break-word
+  text-align: center
+  //background: tint($green_base, 80%)
+  padding: 0px 10px 5px 10px
+  font-size: 1.3em
+
+          
+  clear: both
+  height: 130px
+  overflow: hidden
+
+
+.side
+  +span-columns(3)
+  //box-shadow: 3px 1px 10px #888888
+#one, #two
+  border: 1px solid rgba(10, 68, 4, .2) 
+  //background: $myblack
+  //+linear-gradient(#e0f2e6, #d2e5d8)
+  //#2989d8 #e0f2e6 #0C3511
+  +linear-gradient(#E8FAEB, $offwhite)
+  margin: 0px 0px 40px 0px
+  box-shadow: 3px 1px 10px #888888
+
+#two
+  margin-top: 0px
+  a
+    font-size: 1em
+
+#register_mini, #chat_mini
+  padding: 7px
+  text-align: center
+  
+
+  h5, p
+    color: #0b3110
+    //padding-bottom: 5pxreg
+    
+
+  #go_mini
+    width: 100%
+    background-color: $green3
+
+  #go_mini:hover
+    background-color: $green2
+
+    
+
+      
+
+#chat_mini
+        
+  img
+       
+    width: 100%
+    height: auto
+        
+    
+      
+      
+
+    
+        
+
+
+  
+
+table
+  padding-top: 40px
+
+#engage_zip
+  
+  width: 80px
+  float: left
+  
+input.subbutton
+  float: right
+  height: 36.9px
+  
+  
+
+  
+  
+.done
+  background: pink
+  opacity: 0.5
+  display: inline-block
+  width: 340px
+  +border-top-radius(5px)
+  +border-right-radius(5px)
+  +border-bottom-radius(5px)
+  +border-left-radius(5px)
+  z-index: -1
+
+form.search-bar
+  /////////////////////////////////////////////////////////////////////////////////// 
+  $base-border-color: gainsboro !default
+  $base-border-radius: 3px !default
+  $base-line-height: 1.5em !default
+  $action-color: #477DCA !default
+  $dark-gray: #333 !default
+  //////////////////////////////////////////////////////////////////////////////////
+
+  $search-bar-border-color: $base-border-color
+  $search-bar-border: 1px solid $search-bar-border-color
+  $search-bar-background: lighten($search-bar-border-color, 10%)
+
+  position: relative
+  text-align:center
+  padding-top: 6px
+  input[type=search] 
+    +appearance(none)
+    +box-sizing(border-box)
+    +transition(border-color)
+    background-color: $offwhite
+    color: $green3
+    border-radius: $base-border-radius
+    
+    border: 1px solid $base-border-color
+    display: block
+    font-size: .6em
+    font-style: italic
+    margin: 0 auto
+    padding: ($base-spacing / 4) ($base-spacing / 4)
+    
+    position: relative
+    width: 90%
+  
+
+  button[type=submit] 
+    @include button(flat, $action-color)
+    @include position(absolute, 0em 0em 0em null)
+    border-bottom-left-radius: 0
+    border-top-left-radius: 0
+    outline: none
+    padding: 5px 10px
+    height: 20px
+    img 
+      height: 18px
+      opacity: 0.7
+    
+
+
+#flash_notice
+  background: red
+  
+
+.minimenu
+  margin-left: -20px
+  padding: 0px
+  font-size: .9em
+  
+  
+.minimenur
+  margin-left: -20px
+  padding: 0px
+  font-size: .8em
+  
+  
+#letter_city
+  width: 60%  
+  
+#letter_zip  
+  width: 40%
+  
+#lettersht
+  display: inline-block  
+  
+#letter_inst
+  margin-top: 20px  
+  
+
+
+
+#leafymenu
+  display: none
+
+  
+
+#main-stuff
+  +media($tablet)
+    padding-top: 45px 
+  
+.skinny_bar
+  +media($tablet)
+    display: none    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+#leafymenu
+//  +media($handheld)
+//    display: inline-block !important  
+//    float: right
+//    width: 27px
+//    height: 19px
+//    margin-top: 4px
+//    margin-right: 8px
+//    padding: 5px 0 0 0
+    
+#mnav
+  +clearfix
+  
+
+#mnav ul 
+
+  //+media($handheld)
+  //  display: none
+  //  position: absolute
+    //padding: 20px
+  //  background: black
+    //border: 5px solid #444
+  //  right: 0px
+  //  top: 0px
+  //  width: 50%
+    //border-radius: 4px 0 4px 4px
+  //  z-index: 420
+  //  opacity: .9
+
+#mnav ul li
+
+  //+media($handheld)
+  //  text-align: center
+  //  width: 100%
+  //  padding: 10px 0
+  //  margin: 0
+
+#mnav:hover ul
+  
+  //+media($handheld)
+    
+    //display: block 
+    
+    //position: absolute
+    //overflow: hidden
+    //padding: 20px
+    //background: #black
+    //border: 5px solid #444
+    //right: 0px
+    //top: 35px
+    //width: 50%
+    //height: auto
+    //border-radius: 4px 0 4px 4px
+    //z-index: 500000
+
+//#sticky-anchor.perm_bar.stick
+//  +media($mobile)
+//    //position: absolute
+//    height: 30px
+
+//.featured_wrapper .featured_main
+ 
+//  +media($mobile)
+//    +span-columns(4)
+//    //background: pink  
+//    .the_rest .block
+//      +media($mobile)
+//        +span-columns(4 of 4)
+//        +omega(1n)
+//        //background: red
+      
+
+
+
+@media screen and (min-width: 500px)
+  #mainsectionsmall
+    display: none
+
+
+
+
+@media screen and (max-width: 800px)
+
+  #sticky-anchor.perm_bar.stick
+    height: 30px
+
+  .featured_main
+    +media($handheld)
+      +span-columns(8)
+      width: 100% !important
+      
+  .freeze
+    position: fixed
+
+  #one, #two
+    margin-top: 20px
+  #mnav ul
+    background: $myblack
+    display: none
+    position: absolute
+    padding: 20px
+    overflow: auto
+    right: 0px
+    top: 35px
+    width: 45%
+    
+  //  z-index: 420
+  //  opacity: .9
+
+  #mnav ul li
+    //float: none   
+    text-align: center
+    width: 100%
+    padding: 10px 0
+    margin: 0
+    background: $myblack
+    border-bottom: .5px solid #0c3511
+
+  
+
+  //#269630
+
+  #mnav ul li:last-child
+    border-bottom: none
+
+  #leafymenu
+    display: block
+    //display: inline-block !important  
+    float: right
+    width: 27px
+    height: 19px
+    margin-top: 4px
+    margin-right: 8px
+    padding: 5px 0 0 0
+
+  .mnav-expanded
+    display: block !important
+
+  .side
+    +media($handheld)
+      +span-columns(8)
+      
+
+  #one 
+    //float: left
+    +media($handheld)
+      +span-columns(4)
+      
+  #two
+    //float: right
+    +media($handheld)
+      +span-columns(4)
+      
+
+
+@media screen and (max-width: 500px)
+
+  .featured_wrapper .featured_main
+    +media($mobile)
+      +span-columns(4)
+      width: 100% !important
+      box-shadow: none
+  
+  
+  #mainsectionbig
+    display: none  
+
+  #mainsectionsmall .block
+    width: 100% !important  
+
+  //.featured_wrapper .featured_main .the_rest .block
+  #secondarysection .block
+    +media($mobile)
+      +span-columns(4 of 4)
+      +omega(1n)
+      width: 100% 
+  
+
+  
+  .side
+    +media($mobile)
+      +span-columns(4)
+      width: 100% 
+
+
+
+
+
+  #one 
+    //float: left
+    +media($mobile)
+      +span-columns(4)
+      box-shadow: none
+      margin-bottom: 20px
+      
+      
+  #two
+    //float: right
+    +media($mobile)
+      +span-columns(4)
+      box-shadow: none
+      margin-top: 0px
+      
+

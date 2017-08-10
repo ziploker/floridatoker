@@ -1,0 +1,156 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#index_wrapper
+	+outer-container
+	padding: 20px 10px
+	margin-bottom: 70px
+
+	#index_container
+		+span_columns(9)
+		
+		overflow: hidden
+		
+
+
+		.index_stick
+			+clearfix
+			width: 100%
+			padding: 10px 150px 10px 10px
+			overflow: hidden
+			
+			margin-top: 2px
+			background: tint($green_base, 98%)
+			white-space: nowrap
+			+media($tablet)
+				padding: 10px 100px 10px 10px
+				
+			
+			.index_thumb
+				
+				
+				display: inline-block
+				
+				
+			.index_subject
+				
+				padding: 0 5px 0 5px
+				
+				display: inline-block
+				vertical-align: top
+				
+
+				.top_info_bar
+					white-space: normal
+					padding: 3px 0px 3px 20px
+					font-size: .6em
+
+				.subject_line
+					padding: 3px 0px 3px 20px
+					
+					white-space: normal
+					
+					font-size: .7em
+					
+					
+
+				.index_first_line
+					padding: 3px 20px 3px 10px
+					word-wrap: break-word
+					white-space: normal
+					
+				.bottom_info_bar
+					
+					
+					font-size: .6em
+					padding: 0 5px 0 5px
+					word-wrap: break-word
+					vertical-align: text-bottom
+
+#subject_line_container
+	padding-right: 15px
+	overflow: hidden
+
+
+.show_page_wrapper
+	+outer-container
+	padding-top: 20px
+	margin-bottom: 90px
+	.show_page_content
+		
+		+span-columns(9)
+		padding: 10px 10px 50px 10px
+		
+		background: tint($green_base, 98%)
+		.show_info_bar
+			
+		.show_image
+			
+			img
+				padding-right: 10px
+				
+
+			.caption
+				font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif
+				font-weight: normal
+				color: #999
+				font-style: italic
+				font-size: 11px
+				word-wrap: break-word
+				border-bottom: 1px solid
+				padding-bottom: 5px
+
+		.show_dateinfo
+			font-style: italic
+			
+		.show_words
+			padding: 20px 110px 20px 10px 
+			margin-top: 15px
+			text-indent: 50px
+			line-height: 190%
+			+media($tablet)
+				padding: 20px 10px 20px 10px
+		
+	.show_aside
+		+span-columns(3)
+		background: gray
+		margin-top: 10px
+#index_wrapper
+	+media($tablet)
+		margin-top: 25px
+
+	+media($mobile)
+		margin-top: 25px
+
+#index_wrapper #index_container
+	+media($mobile)
+		+span-columns(4)
+
+
+
+
+
+
+
+
+
+
+
+.show_page_wrapper .show_page_content
+	+media($mobile)
+		+span-columns(4)
+		padding-right: 25px
+
+	.show_title_bar
+		H1
+			font-size: 1.5em
+
+.show_page_wrapper
+	+media($mobile)
+		padding-top: 30px
+
+
+
+.private
+	margin-bottom: 50px

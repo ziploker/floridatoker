@@ -1,0 +1,3045 @@
+/* This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+/* line 9, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+/* line 19, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+/* line 33, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+/* line 54, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+/* line 67, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+/* line 77, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+[hidden],
+template {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+/* line 89, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+a {
+  background-color: transparent;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+/* line 97, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+/* line 109, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+/* line 117, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+/* line 126, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+/* line 135, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+/* line 144, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+/* line 153, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+/* line 161, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 169, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+sup {
+  top: -0.5em;
+}
+
+/* line 173, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+sub {
+  bottom: -0.25em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+/* line 184, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+/* line 192, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+/* line 203, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+/* line 211, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Contain overflow in all browsers.
+ */
+/* line 221, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+pre {
+  overflow: auto;
+}
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+/* line 229, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+/* line 252, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+/* line 266, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+/* line 277, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+/* line 290, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+/* line 302, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+/* line 311, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+/* line 322, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+input {
+  line-height: normal;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+/* line 334, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+/* line 346, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+/* line 357, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+/* line 370, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+/* line 379, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+/* line 390, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+/* line 399, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+/* line 408, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+optgroup {
+  font-weight: bold;
+}
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+/* line 419, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 424, /home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css */
+td,
+th {
+  padding: 0;
+}
+
+/* line 4, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_box-sizing.scss */
+html {
+  box-sizing: border-box;
+}
+
+/* line 9, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_box-sizing.scss */
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+/* line 1, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_buttons.scss */
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+  appearance: none;
+  background-color: #1565c0;
+  border: 0;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.75em 1.5em;
+  text-decoration: none;
+  transition: background-color 150ms ease;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+/* line 21, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_buttons.scss */
+button:hover, button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus {
+  background-color: #11519a;
+  color: #fff;
+}
+/* line 27, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_buttons.scss */
+button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+/* line 31, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_buttons.scss */
+button:disabled:hover, input[type="button"]:disabled:hover, input[type="reset"]:disabled:hover, input[type="submit"]:disabled:hover {
+  background-color: #1565c0;
+}
+
+/* line 1, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_forms.scss */
+fieldset {
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 8, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_forms.scss */
+legend {
+  font-weight: 600;
+  margin-bottom: 0.375em;
+  padding: 0;
+}
+
+/* line 14, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_forms.scss */
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.375em;
+}
+
+/* line 20, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_forms.scss */
+input,
+select {
+  display: block;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+}
+
+/* line 27, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_forms.scss */
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea,
+select[multiple] {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  margin-bottom: 0.75em;
+  padding: 0.5em;
+  transition: border-color 150ms ease;
+  width: 100%;
+}
+/* line 41, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_forms.scss */
+input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, input:not([type]):hover, textarea:hover,
+select[multiple]:hover {
+  border-color: #b1b1b1;
+}
+/* line 45, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_forms.scss */
+input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, input:not([type]):focus, textarea:focus,
+select[multiple]:focus {
+  border-color: #1565c0;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(18, 89, 169, 0.7);
+  outline: none;
+}
+/* line 51, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_forms.scss */
+input[type="color"]:disabled, input[type="date"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="email"]:disabled, input[type="month"]:disabled, input[type="number"]:disabled, input[type="password"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="text"]:disabled, input[type="time"]:disabled, input[type="url"]:disabled, input[type="week"]:disabled, input:not([type]):disabled, textarea:disabled,
+select[multiple]:disabled {
+  background-color: #f2f2f2;
+  cursor: not-allowed;
+}
+/* line 55, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_forms.scss */
+input[type="color"]:disabled:hover, input[type="date"]:disabled:hover, input[type="datetime"]:disabled:hover, input[type="datetime-local"]:disabled:hover, input[type="email"]:disabled:hover, input[type="month"]:disabled:hover, input[type="number"]:disabled:hover, input[type="password"]:disabled:hover, input[type="search"]:disabled:hover, input[type="tel"]:disabled:hover, input[type="text"]:disabled:hover, input[type="time"]:disabled:hover, input[type="url"]:disabled:hover, input[type="week"]:disabled:hover, input:not([type]):disabled:hover, textarea:disabled:hover,
+select[multiple]:disabled:hover {
+  border: 1px solid #ddd;
+}
+
+/* line 61, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_forms.scss */
+textarea {
+  resize: vertical;
+}
+
+/* line 65, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_forms.scss */
+[type="search"] {
+  appearance: none;
+}
+
+/* line 69, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_forms.scss */
+[type="checkbox"],
+[type="radio"] {
+  display: inline;
+  margin-right: 0.375em;
+}
+
+/* line 75, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_forms.scss */
+[type="file"] {
+  margin-bottom: 0.75em;
+  width: 100%;
+}
+
+/* line 80, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_forms.scss */
+select {
+  margin-bottom: 1.5em;
+  max-width: 100%;
+  width: auto;
+}
+
+/* line 1, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_lists.scss */
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 8, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_lists.scss */
+dl {
+  margin-bottom: 0.75em;
+}
+/* line 11, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_lists.scss */
+dl dt {
+  font-weight: 600;
+  margin-top: 0.75em;
+}
+/* line 16, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_lists.scss */
+dl dd {
+  margin: 0;
+}
+
+/* line 1, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_tables.scss */
+table {
+  border-collapse: collapse;
+  margin: 0.75em 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+/* line 8, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_tables.scss */
+th {
+  border-bottom: 1px solid #a6a6a6;
+  font-weight: 600;
+  padding: 0.75em 0;
+  text-align: left;
+}
+
+/* line 15, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_tables.scss */
+td {
+  border-bottom: 1px solid #ddd;
+  padding: 0.75em 0;
+}
+
+/* line 20, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_tables.scss */
+tr,
+td,
+th {
+  vertical-align: middle;
+}
+
+/* line 1, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_typography.scss */
+body {
+  color: #333;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/* line 8, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_typography.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  line-height: 1.2;
+  margin: 0 0 0.75em;
+}
+
+/* line 20, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_typography.scss */
+p {
+  margin: 0 0 0.75em;
+}
+
+/* line 24, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_typography.scss */
+a {
+  color: #1565c0;
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+/* line 29, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_typography.scss */
+a:active, a:focus, a:hover {
+  color: #104c90;
+}
+
+/* line 36, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_typography.scss */
+hr {
+  border-bottom: 1px solid #ddd;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: 1.5em 0;
+}
+
+/* line 44, /home/amsterdam/workspace/florida/app/assets/stylesheets/base/_typography.scss */
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+
+/* line 10, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+body {
+  background: #e0f3e7;
+}
+
+/* line 13, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#ghost.hideellogo {
+  display: none;
+}
+
+/* line 15, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#tag {
+  z-index: 1501;
+  position: relative;
+}
+
+/* line 18, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+.skinny_bar {
+  width: 100%;
+  background: #141311;
+}
+/* line 23, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+.skinny_bar .skinny_bar_content {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+.skinny_bar .skinny_bar_content::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 26, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+.skinny_bar .skinny_bar_content .tag_line {
+  background: #141311;
+  display: inline-block;
+  width: 35%;
+}
+
+/* line 31, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#sticky {
+  height: 35px;
+}
+
+/*-----------------------------------------------end of upper nav bar ------------------ */
+/* line 40, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#sticky-anchor.perm_bar {
+  width: 100%;
+  positon: relative;
+  background: #141311;
+}
+/* line 45, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#sticky-anchor.perm_bar .nav {
+  background: #141311;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+#sticky-anchor.perm_bar .nav::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+#sticky-anchor.perm_bar .nav::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 51, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#sticky-anchor.perm_bar .nav #ghost {
+  height: 35px;
+  float: left;
+  margin-left: 5px;
+}
+/* line 56, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#sticky-anchor.perm_bar .nav ul {
+  float: right;
+}
+/* line 61, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#sticky-anchor.perm_bar .nav ul li {
+  display: inline-block;
+  padding: 0px 0.5em 0px 0.75em;
+}
+/* line 65, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#sticky-anchor.perm_bar .nav ul li a {
+  font-size: 0.8em;
+  color: #e0f2e6;
+}
+
+/*-----------------------------------------------end of lower nav bar ------------------ */
+/* line 71, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+form.search-bar {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
+/* line 76, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#sticky-anchor.perm_bar {
+  position: fixed;
+  top: 0px;
+  z-index: 101;
+  background: #141311;
+  height: 35px;
+}
+/* line 82, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#sticky-anchor.perm_bar .nav {
+  background: #141311;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+#sticky-anchor.perm_bar .nav::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+#sticky-anchor.perm_bar .nav::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 87, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#sticky-anchor.perm_bar .nav a {
+  display: block;
+  color: rgba(249, 249, 249, 0.9);
+  text-decoration: none;
+  transition: color 0.5s, background 0.5s, height 0.5s;
+}
+/* line 92, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#sticky-anchor.perm_bar .nav #ghost {
+  width: 128px;
+  float: left;
+  margin-left: 5px;
+}
+/* line 98, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#sticky-anchor.perm_bar .nav ul {
+  float: right;
+  line-height: 35px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 300;
+}
+/* line 108, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#sticky-anchor.perm_bar .nav ul li {
+  display: inline-block;
+}
+
+/*-----------------------------------------------end of lower nav bar sticky ------------------ */
+/* line 116, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#main-stuff {
+  padding: 20px 10px;
+  margin-bottom: 70px;
+}
+
+/*-----------------------------------------------js compensating sticky nav bar ------------------ */
+/* line 127, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+.mini_info {
+  float: right;
+  background: #f2f4f3;
+}
+
+/* line 132, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+.featured_wrapper {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+.featured_wrapper::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+/* line 136, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+.featured_main {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 74.41059%;
+  padding: 10px;
+  background: #fafdfb;
+  box-shadow: 5px 2px 15px #888888;
+}
+/* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+.featured_main:last-child {
+  margin-right: 0;
+}
+
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+.featured_content::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+/* line 145, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+.featured_time_stamp_wrapper {
+  display: block;
+}
+
+/* line 147, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+.featured_share_buttons {
+  float: left;
+}
+
+/* line 149, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+.featured_time_stamp {
+  float: right;
+}
+
+/* line 152, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+.featured_pic {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 0px;
+  box-shadow: 5px 2px 15px #888888;
+  height: 217px;
+}
+
+/* line 158, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+.readmore-js-section {
+  overflow: visible;
+}
+
+/* line 161, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+.the_rest {
+  margin-top: 25px;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+.the_rest::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+/* line 166, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+.block {
+  float: left;
+  display: block;
+  margin-right: 3.57866%;
+  width: 30.94747%;
+  margin-bottom: 15px;
+  border: 1px solid #e1e1d8;
+}
+/* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+.block:last-child {
+  margin-right: 0;
+}
+/* line 78, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_omega.scss */
+.block:nth-child(3n) {
+  margin-right: 0;
+}
+/* line 83, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_omega.scss */
+.block:nth-child(3n+1) {
+  clear: left;
+}
+
+/* line 173, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+.mini_image {
+  background: #f2f4f3;
+}
+/* line 177, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+.mini_image img {
+  width: 100%;
+  margin: 0px auto;
+}
+
+/* line 181, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+.mini_info_wrapper {
+  font-size: 10px;
+  background: #f2f4f3;
+  overflow: hidden;
+}
+
+/* line 189, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+.mini_share_buttons {
+  float: left;
+  background: #f2f4f3;
+}
+
+/* line 195, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+.mini_text {
+  background-color: #f2f4f3;
+  background-image: -webkit-linear-gradient(#f2f4f3, #f9fcfa);
+  background-image: linear-gradient(#f2f4f3, #f9fcfa);
+  word-wrap: break-word;
+  text-align: center;
+  padding: 0px 10px 5px 10px;
+  font-size: 1.3em;
+  clear: both;
+  height: 130px;
+  overflow: hidden;
+}
+
+/* line 209, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+.side {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+}
+/* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+.side:last-child {
+  margin-right: 0;
+}
+
+/* line 212, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#one, #two {
+  border: 1px solid rgba(10, 68, 4, 0.2);
+  background: #141311;
+  background-color: #e0f2e6;
+  background-image: -webkit-linear-gradient(#e0f2e6, #d2e5d8);
+  background-image: linear-gradient(#e0f2e6, #d2e5d8);
+  margin: 0px 0px 40px 0px;
+  box-shadow: 3px 1px 10px #888888;
+}
+
+/* line 220, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#two {
+  margin-top: 0px;
+}
+
+/* line 223, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#register_mini, #chat_mini {
+  padding: 7px;
+}
+/* line 227, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#register_mini h5, #register_mini p, #chat_mini h5, #chat_mini p {
+  color: #0b3110;
+  padding-bottom: 5pxreg;
+}
+/* line 231, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#register_mini #go_mini, #chat_mini #go_mini {
+  width: 100%;
+}
+
+/* line 240, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#chat_mini img {
+  width: 100%;
+  height: auto;
+}
+
+/* line 255, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+table {
+  padding-top: 40px;
+}
+
+/* line 258, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#engage_zip {
+  width: 80px;
+  float: left;
+}
+
+/* line 263, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+input.subbutton {
+  float: right;
+  height: 36.9px;
+}
+
+/* line 271, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+.done {
+  background: pink;
+  opacity: 0.5;
+  display: inline-block;
+  width: 340px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  z-index: -1;
+}
+
+/* line 282, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+form.search-bar {
+  position: relative;
+  padding-top: 6px;
+}
+/* line 298, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+form.search-bar input[type=search] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: border-color;
+  -moz-transition: border-color;
+  transition: border-color;
+  background-color: white;
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  display: block;
+  font-size: 0.6em;
+  font-style: italic;
+  margin: 0 auto;
+  padding: 0.375em 0.375em;
+  position: relative;
+  width: 90%;
+}
+/* line 316, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+form.search-bar button[type=submit] {
+  background-color: #1565c0;
+  border-radius: 3px;
+  border: 0;
+  color: white;
+  display: inline-block;
+  font-size: inherit;
+  font-weight: bold;
+  padding: 7px 18px;
+  text-decoration: none;
+  background-clip: padding-box;
+  position: absolute;
+  top: 0em;
+  right: 0em;
+  bottom: 0em;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  outline: none;
+  padding: 5px 10px;
+  height: 20px;
+}
+/* line 354, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/bourbon-4.2.7/app/assets/stylesheets/_bourbon-deprecated-upcoming.scss */
+form.search-bar button[type=submit]:hover:not(:disabled) {
+  background-color: #1371dc;
+  cursor: pointer;
+}
+/* line 365, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/bourbon-4.2.7/app/assets/stylesheets/_bourbon-deprecated-upcoming.scss */
+form.search-bar button[type=submit]:active:not(:disabled), form.search-bar button[type=submit]:focus:not(:disabled) {
+  background-color: #1659a5;
+  cursor: pointer;
+}
+/* line 59, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/bourbon-4.2.7/app/assets/stylesheets/_bourbon-deprecated-upcoming.scss */
+form.search-bar button[type=submit]:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+/* line 324, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+form.search-bar button[type=submit] img {
+  height: 18px;
+  opacity: 0.7;
+}
+
+/* line 330, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#flash_notice {
+  background: red;
+}
+
+/* line 334, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+.minimenu {
+  margin-left: -20px;
+  padding: 0px;
+  font-size: 0.9em;
+}
+
+/* line 340, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+.minimenur {
+  margin-left: -20px;
+  padding: 0px;
+  font-size: 0.8em;
+}
+
+/* line 346, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#letter_city {
+  width: 60%;
+}
+
+/* line 349, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#letter_zip {
+  width: 40%;
+}
+
+/* line 352, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#lettersht {
+  display: inline-block;
+}
+
+/* line 355, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#letter_inst {
+  margin-top: 20px;
+}
+
+/* line 361, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+#leafymenu {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+  /* line 366, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+  #main-stuff {
+    padding-top: 45px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  /* line 370, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+  .skinny_bar {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  /* line 461, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+  #mainsectionsmall {
+    display: none;
+  }
+}
+@media screen and (max-width: 800px) {
+  /* line 469, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+  #sticky-anchor.perm_bar.stick {
+    height: 30px;
+  }
+}
+@media screen and (max-width: 800px) and (max-width: 768px) {
+  /* line 472, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+  .featured_main {
+    float: left;
+    display: block;
+    margin-right: 3.57866%;
+    width: 100%;
+    width: 100% !important;
+  }
+  /* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+  .featured_main:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  /* line 477, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+  .freeze {
+    position: fixed;
+  }
+
+  /* line 480, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+  #one, #two {
+    margin-top: 20px;
+  }
+
+  /* line 482, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+  #mnav ul {
+    background: #141311;
+    display: none;
+    position: absolute;
+    padding: 20px;
+    overflow: auto;
+    right: 0px;
+    top: 35px;
+    width: 45%;
+  }
+
+  /* line 495, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+  #mnav ul li {
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    margin: 0;
+    background: #141311;
+    border-bottom: 0.5px solid #0c3511;
+  }
+
+  /* line 508, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+  #mnav ul li:last-child {
+    border-bottom: none;
+  }
+
+  /* line 511, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+  #leafymenu {
+    display: block;
+    float: right;
+    width: 27px;
+    height: 19px;
+    margin-top: 4px;
+    margin-right: 8px;
+    padding: 5px 0 0 0;
+  }
+
+  /* line 521, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+  .mnav-expanded {
+    display: block !important;
+  }
+}
+@media screen and (max-width: 800px) and (max-width: 768px) {
+  /* line 524, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+  .side {
+    float: left;
+    display: block;
+    margin-right: 3.57866%;
+    width: 100%;
+  }
+  /* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+  .side:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 800px) and (max-width: 768px) {
+  /* line 529, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+  #one {
+    float: left;
+    display: block;
+    margin-right: 3.57866%;
+    width: 48.21067%;
+  }
+  /* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+  #one:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 800px) and (max-width: 768px) {
+  /* line 534, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+  #two {
+    float: left;
+    display: block;
+    margin-right: 3.57866%;
+    width: 48.21067%;
+  }
+  /* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+  #two:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 500px) and (max-width: 500px) {
+  /* line 543, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+  .featured_wrapper .featured_main {
+    float: left;
+    display: block;
+    margin-right: 7.42297%;
+    width: 100%;
+    width: 100% !important;
+    box-shadow: none;
+  }
+  /* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+  .featured_wrapper .featured_main:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  /* line 550, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+  #mainsectionbig {
+    display: none;
+  }
+
+  /* line 553, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+  #mainsectionsmall .block {
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 500px) and (max-width: 500px) {
+  /* line 557, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+  #secondarysection .block {
+    float: left;
+    display: block;
+    margin-right: 7.42297%;
+    width: 100%;
+    width: 100%;
+  }
+  /* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+  #secondarysection .block:last-child {
+    margin-right: 0;
+  }
+  /* line 78, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_omega.scss */
+  #secondarysection .block:nth-child(1n) {
+    margin-right: 0;
+  }
+  /* line 83, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_omega.scss */
+  #secondarysection .block:nth-child(1n+1) {
+    clear: left;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  /* line 563, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+  div.mini_info {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 500px) and (max-width: 500px) {
+  /* line 566, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+  .side {
+    float: left;
+    display: block;
+    margin-right: 7.42297%;
+    width: 100%;
+    width: 100%;
+  }
+  /* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+  .side:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 500px) and (max-width: 500px) {
+  /* line 575, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+  #one {
+    float: left;
+    display: block;
+    margin-right: 7.42297%;
+    width: 100%;
+    box-shadow: none;
+    margin-bottom: 20px;
+  }
+  /* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+  #one:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 500px) and (max-width: 500px) {
+  /* line 583, /home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass */
+  #two {
+    float: left;
+    display: block;
+    margin-right: 7.42297%;
+    width: 100%;
+    box-shadow: none;
+    margin-top: 0px;
+  }
+  /* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+  #two:last-child {
+    margin-right: 0;
+  }
+}
+
+/* line 5, /home/amsterdam/workspace/florida/app/assets/stylesheets/articles.sass */
+#index_wrapper {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 10px;
+  margin-bottom: 70px;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+#index_wrapper::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 10, /home/amsterdam/workspace/florida/app/assets/stylesheets/articles.sass */
+#index_wrapper #index_container {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 74.41059%;
+  overflow: hidden;
+}
+/* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+#index_wrapper #index_container:last-child {
+  margin-right: 0;
+}
+/* line 17, /home/amsterdam/workspace/florida/app/assets/stylesheets/articles.sass */
+#index_wrapper #index_container .index_stick {
+  width: 100%;
+  padding: 10px;
+  overflow: none;
+  margin-right: 10px;
+  margin-top: 2px;
+  background: #fafdfb;
+  white-space: nowrap;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+#index_wrapper #index_container .index_stick::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 27, /home/amsterdam/workspace/florida/app/assets/stylesheets/articles.sass */
+#index_wrapper #index_container .index_stick .index_thumb {
+  display: inline-block;
+}
+/* line 33, /home/amsterdam/workspace/florida/app/assets/stylesheets/articles.sass */
+#index_wrapper #index_container .index_stick .index_subject {
+  padding: 0 5px 0 5px;
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 41, /home/amsterdam/workspace/florida/app/assets/stylesheets/articles.sass */
+#index_wrapper #index_container .index_stick .index_subject .subject_line {
+  padding: 3px 0px 3px 20px;
+  white-space: normal;
+  font-size: 0.7em;
+  width: 70%;
+}
+/* line 50, /home/amsterdam/workspace/florida/app/assets/stylesheets/articles.sass */
+#index_wrapper #index_container .index_stick .index_subject .index_first_line {
+  padding: 3px 20px 3px 10px;
+  word-wrap: break-word;
+  white-space: normal;
+}
+/* line 55, /home/amsterdam/workspace/florida/app/assets/stylesheets/articles.sass */
+#index_wrapper #index_container .index_stick .index_subject .bottom_info_bar {
+  font-size: 0.6em;
+  padding: 0 5px 0 5px;
+  word-wrap: break-word;
+  vertical-align: text-bottom;
+}
+
+/* line 63, /home/amsterdam/workspace/florida/app/assets/stylesheets/articles.sass */
+#subject_line_container {
+  padding-right: 15px;
+  overflow: hidden;
+}
+
+/* line 68, /home/amsterdam/workspace/florida/app/assets/stylesheets/articles.sass */
+.show_page_wrapper {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  margin-bottom: 90px;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+.show_page_wrapper::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 72, /home/amsterdam/workspace/florida/app/assets/stylesheets/articles.sass */
+.show_page_wrapper .show_page_content {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 74.41059%;
+  padding: 10px 10px 50px 10px;
+  background: #fafdfb;
+}
+/* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+.show_page_wrapper .show_page_content:last-child {
+  margin-right: 0;
+}
+/* line 82, /home/amsterdam/workspace/florida/app/assets/stylesheets/articles.sass */
+.show_page_wrapper .show_page_content .show_image img {
+  padding-right: 10px;
+}
+/* line 86, /home/amsterdam/workspace/florida/app/assets/stylesheets/articles.sass */
+.show_page_wrapper .show_page_content .show_image .caption {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  color: #999;
+  font-style: italic;
+  font-size: 11px;
+  word-wrap: break-word;
+  border-bottom: 1px solid;
+  padding-bottom: 5px;
+}
+/* line 96, /home/amsterdam/workspace/florida/app/assets/stylesheets/articles.sass */
+.show_page_wrapper .show_page_content .show_dateinfo {
+  font-style: italic;
+}
+/* line 99, /home/amsterdam/workspace/florida/app/assets/stylesheets/articles.sass */
+.show_page_wrapper .show_page_content .show_words {
+  margin-top: 15px;
+}
+/* line 102, /home/amsterdam/workspace/florida/app/assets/stylesheets/articles.sass */
+.show_page_wrapper .show_aside {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+  background: gray;
+  margin-top: 10px;
+}
+/* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+.show_page_wrapper .show_aside:last-child {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 1000px) {
+  /* line 106, /home/amsterdam/workspace/florida/app/assets/stylesheets/articles.sass */
+  #index_wrapper {
+    margin-top: 25px;
+  }
+}
+@media screen and (max-width: 500px) {
+  /* line 106, /home/amsterdam/workspace/florida/app/assets/stylesheets/articles.sass */
+  #index_wrapper {
+    margin-top: 25px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  /* line 113, /home/amsterdam/workspace/florida/app/assets/stylesheets/articles.sass */
+  #index_wrapper #index_container {
+    float: left;
+    display: block;
+    margin-right: 7.42297%;
+    width: 100%;
+  }
+  /* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+  #index_wrapper #index_container:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  /* line 127, /home/amsterdam/workspace/florida/app/assets/stylesheets/articles.sass */
+  .show_page_wrapper .show_page_content {
+    float: left;
+    display: block;
+    margin-right: 7.42297%;
+    width: 100%;
+    padding-right: 25px;
+  }
+  /* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+  .show_page_wrapper .show_page_content:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  /* line 132, /home/amsterdam/workspace/florida/app/assets/stylesheets/articles.sass */
+  .show_page_wrapper {
+    padding-top: 30px;
+  }
+}
+
+/* line 5, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#arrow h1 {
+  font-size: 1.5em;
+}
+
+/* line 9, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#letter_info ul {
+  list-style: square;
+}
+/* line 11, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#letter_info ul li {
+  display: list-item;
+  margin-left: 40px;
+}
+
+/* line 16, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+h5 {
+  margin-left: 0px;
+}
+
+/* line 19, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+.lookup_wrapper {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px 10px;
+  overflow: auto;
+  padding-botom: 70px;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+.lookup_wrapper::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+/* line 28, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+pre {
+  display: block;
+  font-family: monospace;
+  white-space: pre-line;
+  margin: 0;
+}
+
+/* line 34, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#lookup_form {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+  background-color: #ececec;
+  background-image: -webkit-linear-gradient(#ececec, #f9fcfa);
+  background-image: linear-gradient(#ececec, #f9fcfa);
+  border: 1px solid #e1e1d8;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  box-shadow: 5px 5px 15px #888888;
+}
+/* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+#lookup_form:last-child {
+  margin-right: 0;
+}
+
+/* line 47, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#lookup_review {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  background: #fafdfb;
+  height: 300px;
+  border: 1px solid #e1e1d8;
+  box-shadow: 5px 5px 15px #888888;
+}
+
+/* line 56, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#lookup_results {
+  float: left;
+}
+
+/* line 60, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#lookup_results2 {
+  float: right;
+}
+
+/* line 64, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#lookup_aside {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+}
+/* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+#lookup_aside:last-child {
+  margin-right: 0;
+}
+
+/* line 68, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#headshot, #headshot2 {
+  width: 150px;
+  height: 200px;
+  box-shadow: 5px 2px 15px #888888;
+}
+
+/* line 72, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#lookup_wrap {
+  padding: 0px 5px 0 10px;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+#lookup_wrap::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+/* line 75, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#lookup_stepone {
+  width: 100%;
+  background: #141311;
+  color: white;
+  font-weight: 400;
+  padding: 5px;
+  margin-bottom: 8px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+/* line 89, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#lookup_steptwo {
+  width: 100%;
+  background: #141311;
+  color: white;
+  font-weight: 400;
+  padding: 5px;
+  margin-bottom: 8px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+/* line 99, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#lookup_button, #review_button {
+  width: 100% !important;
+  height: 40px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+/* line 109, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+.buttontwo {
+  width: 100%;
+}
+
+/* line 111, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#results_wrap {
+  margin: 0 auto;
+  box-shadow: 5px 5px 15px #888888;
+  background: #fafdfb;
+  border: 1px solid #e1e1d8;
+  overflow: hidden;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+#results_wrap::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+#results_wrap:last-child {
+  margin-right: 0;
+}
+
+/* line 127, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#arrow {
+  overflow: hidden;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+#arrow::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+#arrow:last-child {
+  margin-right: 0;
+}
+
+/* line 146, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#results_name, #results_name2 {
+  font-size: 0.8em;
+  font-weight: 700;
+}
+
+/* line 150, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#results_email, #results_email2 {
+  font-size: 0.8em;
+}
+
+/* line 156, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#results_party, #results_party2 {
+  font-size: 0.7em;
+}
+
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+#smoosh::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+/* line 163, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#lookup_city {
+  width: 54%;
+  float: left;
+}
+
+/* line 167, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#lookup_zip {
+  width: 46%;
+  float: right;
+}
+
+/* line 172, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#letter_page_wrapper {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+#letter_page_wrapper::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+/* line 177, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#letter1_wrapper {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  padding: 20px;
+}
+/* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+#letter1_wrapper:last-child {
+  margin-right: 0;
+}
+
+/* line 188, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#letter1 form label {
+  margin: 0 auto;
+  padding-top: 10px;
+  font-size: 0.7em;
+}
+/* line 197, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#letter1 form input {
+  margin: 0 auto;
+  width: 100%;
+  padding: 4px;
+}
+
+/* line 202, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#record_body {
+  height: 250px;
+}
+
+/* line 206, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#letter_info_wrapper {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+  padding: 20px;
+}
+/* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+#letter_info_wrapper:last-child {
+  margin-right: 0;
+}
+
+/* line 211, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#letter_info {
+  padding-top: 10px;
+}
+
+/* line 215, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#letter_intro {
+  padding-top: 20px;
+  padding-bottom: 8px;
+}
+
+/* line 219, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#letter_body {
+  height: 300px;
+}
+
+/* line 223, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#letter_form input {
+  width: 100%;
+}
+
+/* line 226, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#record_city, #record_zipcode {
+  width: 49%;
+  display: inline;
+}
+
+/* line 235, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+ul {
+  list-style-type: disc;
+  display: inline-block;
+}
+
+@media screen and (max-width: 1000px) {
+  /* line 249, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+  #lookup_form {
+    float: left;
+    display: block;
+    margin-right: 3.57866%;
+    width: 48.21067%;
+    margin-top: 20px;
+    box-shadow: none;
+    border: none;
+  }
+  /* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+  #lookup_form:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  /* line 257, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+  #arrow, #results_wrap {
+    float: left;
+    display: block;
+    margin-right: 3.57866%;
+    width: 35.26333%;
+    margin-top: 15px;
+    box-shadow: none;
+    border: none;
+  }
+  /* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+  #arrow:last-child, #results_wrap:last-child {
+    margin-right: 0;
+  }
+}
+/* line 267, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+#arrow h1, #results_wrap h1 {
+  text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+  /* line 273, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+  #lookup_form {
+    float: left;
+    display: block;
+    margin-right: 7.42297%;
+    width: 100%;
+    margin-top: 20px;
+    box-shadow: none;
+    border: none;
+  }
+  /* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+  #lookup_form:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  /* line 281, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+  #results_wrap, #arrow {
+    float: left;
+    display: block;
+    margin-right: 7.42297%;
+    width: 100%;
+    margin-top: 15px;
+    box-shadow: none;
+    border: none;
+  }
+  /* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+  #results_wrap:last-child, #arrow:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  /* line 291, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+  #letter1_wrapper, #letter_info_wrapper {
+    float: left;
+    display: block;
+    margin-right: 7.42297%;
+    width: 100%;
+  }
+  /* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+  #letter1_wrapper:last-child, #letter_info_wrapper:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  /* line 295, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+  #lookup_results, #lookup_results2 {
+    float: left;
+    display: block;
+    margin-right: 7.42297%;
+    width: 100%;
+  }
+  /* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+  #lookup_results:last-child, #lookup_results2:last-child {
+    margin-right: 0;
+  }
+}
+
+/* line 301, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+ol {
+  list-style-type: circle;
+  list-style-position: outside;
+  margin-left: 1em;
+}
+
+@media screen and (max-width: 1000px) {
+  /* line 308, /home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass */
+  #lookup_results2 {
+    float: left;
+  }
+}
+
+/* line 5, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+#leveloneform, .leveltwoform {
+  overflow: hidden;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+#leveloneform::after, .leveltwoform::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+/* line 9, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.show_comments {
+  padding-top: 10px;
+  width: 85%;
+}
+
+@media screen and (max-width: 500px) {
+  /* line 12, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+  .show_comments {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* line 15, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+  .show_comments {
+    width: 100%;
+  }
+}
+
+/* line 19, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.add_comment {
+  overflow: hidden;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+.add_comment::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 22, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.add_comment .mainpicture {
+  float: left;
+}
+/* line 24, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.add_comment .mainpicture img {
+  width: 66px;
+}
+/* line 27, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.add_comment .mainbody {
+  float: left;
+  width: calc(100% - 88px);
+}
+
+/* line 31, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.textarea1, .textarea {
+  float: left;
+  background-color: #fff;
+  height: 88px;
+}
+
+/* line 45, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+#new_comment label {
+  float: left;
+}
+
+/* line 48, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+#new_comment p {
+  float: left;
+}
+
+/* line 51, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.nickname, .destnick, .sourcenick {
+  width: 100px !important;
+  float: right;
+  clear: left;
+  height: 40px;
+  margin-right: 2px;
+}
+
+/* line 59, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.replypicture img {
+  width: 88px;
+  float: left;
+  padding-right: 5px;
+}
+
+/* line 75, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.avatarpic {
+  float: left;
+  width: 88px;
+  padding-right: 5px;
+}
+
+/* line 83, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.replyavatarpic {
+  float: left;
+  width: 66px;
+  height: 66px;
+  padding-right: 5px;
+}
+
+/* line 90, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.commentsection {
+  float: left;
+  width: calc(100% - 88px);
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+.commentsection::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 99, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.commentsection .topinfobar {
+  width: 100%;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+.commentsection .topinfobar::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 107, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.commentsection .topinfobar h2 {
+  font-size: 1.2em;
+  color: green;
+  margin: 0;
+  float: left;
+}
+/* line 117, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.commentsection .topinfobar h4 {
+  margin: 0;
+  line-height: 23px;
+  font-size: 0.7em;
+  float: left;
+  padding-top: 3px;
+}
+/* line 126, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.commentsection .bottominfobar {
+  float: right;
+  padding-right: 20px;
+}
+
+/* line 135, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.replycommentsection {
+  float: left;
+  width: calc(100% - 30px);
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+/* line 143, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.replycommentsection h3 {
+  display: inline-block;
+}
+
+/* line 147, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.clearer {
+  clear: both;
+}
+
+/* line 150, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.display_comments {
+  overflow: hidden;
+}
+
+/* line 153, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.replybox {
+  display: none;
+  clear: both;
+}
+
+/* line 157, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.comment:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+/* line 164, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.commentbox {
+  overflow: hidden;
+  padding-top: 38px;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+.commentbox::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+/* line 169, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.reply_commentbox {
+  overflow: hidden;
+  margin-left: 30px;
+}
+
+/* line 173, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.replybox {
+  margin-left: 30px;
+}
+
+/* line 176, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.reply_reply_commentbox {
+  overflow: hidden;
+  margin-left: 60px;
+}
+
+/* line 180, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+#nickname0, #nickname1, #nickname2, .nickname, .destnick {
+  width: 110px;
+  float: right;
+  padding-bottom: 12px;
+}
+
+/* line 185, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+#submit0, .submit1, .destsubmit, .sourcesubmit {
+  width: 100px;
+  float: right;
+}
+
+/* line 189, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.testscroll {
+  visibility: hidden;
+}
+
+/* line 191, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.commenterrors {
+  float: right;
+}
+/* line 193, /home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass */
+.commenterrors h2 {
+  line-height: 40px;
+  padding-right: 30px;
+}
+
+/* line 1, /home/amsterdam/workspace/florida/app/assets/stylesheets/footer.css.sass */
+#footer {
+  background-color: black;
+  height: 70px;
+  text-align: center;
+  line-height: 70px;
+  width: 100%;
+  position: relative;
+  margin-top: -70px;
+  clear: both;
+}
+@media screen and (max-width: 1000px) {
+  /* line 1, /home/amsterdam/workspace/florida/app/assets/stylesheets/footer.css.sass */
+  #footer {
+    display: none;
+  }
+}
+
+/* line 1, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+#streams_wrapper {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 10px;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+#streams_wrapper::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 9, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+#streams_wrapper #streams_container {
+  width: 100%;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 74.41059%;
+}
+/* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+#streams_wrapper #streams_container:last-child {
+  margin-right: 0;
+}
+/* line 15, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+#streams_wrapper #streams_container #streams_bin {
+  box-shadow: 5px 2px 15px #888888;
+  width: 100%;
+  height: 100%;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+#streams_wrapper #streams_container #streams_bin::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 21, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+#streams_wrapper #streams_container #streams_bin #ovid1, #streams_wrapper #streams_container #streams_bin #ovid2, #streams_wrapper #streams_container #streams_bin #ovid3, #streams_wrapper #streams_container #streams_bin #ovid4, #streams_wrapper #streams_container #streams_bin #ovid5 {
+  display: block;
+  position: relative;
+  width: 20%;
+  padding-top: 20%;
+  float: left;
+}
+/* line 28, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+#streams_wrapper #streams_container #streams_bin #ovid1 #ivid1, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid2, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid3, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid4, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid5, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid1, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid2, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid3, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid4, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid5, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid1, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid2, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid3, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid4, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid5, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid1, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid2, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid3, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid4, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid5, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid1, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid2, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid3, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid4, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid5 {
+  background: rgba(220, 252, 223, 0.9);
+  background-image: url(/assets/man-ee062cd34a80ceae2eec4a214b115b397ab3786164a5ce559d53946abeac0954.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+/* line 38, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+#streams_wrapper #streams_container #streams_bin #ovid1 #ivid1:hover .connectdown, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid2:hover .connectdown, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid3:hover .connectdown, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid4:hover .connectdown, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid5:hover .connectdown, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid1:hover .connectdown, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid2:hover .connectdown, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid3:hover .connectdown, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid4:hover .connectdown, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid5:hover .connectdown, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid1:hover .connectdown, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid2:hover .connectdown, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid3:hover .connectdown, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid4:hover .connectdown, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid5:hover .connectdown, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid1:hover .connectdown, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid2:hover .connectdown, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid3:hover .connectdown, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid4:hover .connectdown, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid5:hover .connectdown, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid1:hover .connectdown, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid2:hover .connectdown, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid3:hover .connectdown, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid4:hover .connectdown, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid5:hover .connectdown {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+/* line 40, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+#streams_wrapper #streams_container #streams_bin #ovid1 #ivid1:hover .overlay, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid2:hover .overlay, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid3:hover .overlay, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid4:hover .overlay, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid5:hover .overlay, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid1:hover .overlay, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid2:hover .overlay, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid3:hover .overlay, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid4:hover .overlay, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid5:hover .overlay, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid1:hover .overlay, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid2:hover .overlay, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid3:hover .overlay, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid4:hover .overlay, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid5:hover .overlay, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid1:hover .overlay, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid2:hover .overlay, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid3:hover .overlay, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid4:hover .overlay, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid5:hover .overlay, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid1:hover .overlay, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid2:hover .overlay, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid3:hover .overlay, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid4:hover .overlay, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid5:hover .overlay {
+  position: absolute;
+  top: 80%;
+  right: 0px;
+  left: 0px;
+  background: rgba(26, 31, 29, 0.8);
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+}
+/* line 50, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+#streams_wrapper #streams_container #streams_bin #ovid1 #ivid1 .connectup, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid2 .connectup, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid3 .connectup, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid4 .connectup, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid5 .connectup, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid1 .connectup, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid2 .connectup, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid3 .connectup, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid4 .connectup, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid5 .connectup, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid1 .connectup, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid2 .connectup, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid3 .connectup, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid4 .connectup, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid5 .connectup, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid1 .connectup, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid2 .connectup, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid3 .connectup, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid4 .connectup, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid5 .connectup, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid1 .connectup, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid2 .connectup, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid3 .connectup, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid4 .connectup, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid5 .connectup {
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 128, 0, 0.4);
+  cursor: pointer;
+  text-align: center;
+  line-height: 250px;
+  color: black;
+  weight: 700;
+}
+/* line 62, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+#streams_wrapper #streams_container #streams_bin #ovid1 #ivid1 .connectup strong, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid2 .connectup strong, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid3 .connectup strong, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid4 .connectup strong, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid5 .connectup strong, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid1 .connectup strong, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid2 .connectup strong, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid3 .connectup strong, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid4 .connectup strong, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid5 .connectup strong, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid1 .connectup strong, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid2 .connectup strong, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid3 .connectup strong, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid4 .connectup strong, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid5 .connectup strong, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid1 .connectup strong, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid2 .connectup strong, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid3 .connectup strong, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid4 .connectup strong, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid5 .connectup strong, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid1 .connectup strong, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid2 .connectup strong, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid3 .connectup strong, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid4 .connectup strong, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid5 .connectup strong {
+  display: block;
+}
+/* line 66, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+#streams_wrapper #streams_container #streams_bin #ovid1 #ivid1 .connectdown, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid2 .connectdown, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid3 .connectdown, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid4 .connectdown, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid5 .connectdown, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid1 .connectdown, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid2 .connectdown, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid3 .connectdown, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid4 .connectdown, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid5 .connectdown, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid1 .connectdown, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid2 .connectdown, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid3 .connectdown, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid4 .connectdown, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid5 .connectdown, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid1 .connectdown, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid2 .connectdown, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid3 .connectdown, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid4 .connectdown, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid5 .connectdown, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid1 .connectdown, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid2 .connectdown, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid3 .connectdown, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid4 .connectdown, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid5 .connectdown {
+  margin: 0 auto;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 128, 0, 0.4);
+  cursor: pointer;
+  text-align: center;
+  line-height: 250px;
+  color: black;
+  weight: 700;
+}
+/* line 78, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+#streams_wrapper #streams_container #streams_bin #ovid1 #ivid1 .connectdown strong, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid2 .connectdown strong, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid3 .connectdown strong, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid4 .connectdown strong, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid5 .connectdown strong, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid1 .connectdown strong, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid2 .connectdown strong, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid3 .connectdown strong, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid4 .connectdown strong, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid5 .connectdown strong, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid1 .connectdown strong, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid2 .connectdown strong, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid3 .connectdown strong, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid4 .connectdown strong, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid5 .connectdown strong, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid1 .connectdown strong, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid2 .connectdown strong, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid3 .connectdown strong, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid4 .connectdown strong, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid5 .connectdown strong, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid1 .connectdown strong, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid2 .connectdown strong, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid3 .connectdown strong, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid4 .connectdown strong, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid5 .connectdown strong {
+  display: block;
+}
+/* line 81, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+#streams_wrapper #streams_container #streams_bin #ovid1 #ivid1 .connectNONE, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid2 .connectNONE, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid3 .connectNONE, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid4 .connectNONE, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid5 .connectNONE, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid1 .connectNONE, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid2 .connectNONE, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid3 .connectNONE, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid4 .connectNONE, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid5 .connectNONE, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid1 .connectNONE, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid2 .connectNONE, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid3 .connectNONE, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid4 .connectNONE, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid5 .connectNONE, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid1 .connectNONE, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid2 .connectNONE, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid3 .connectNONE, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid4 .connectNONE, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid5 .connectNONE, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid1 .connectNONE, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid2 .connectNONE, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid3 .connectNONE, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid4 .connectNONE, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid5 .connectNONE {
+  font-size: 0;
+}
+/* line 84, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+#streams_wrapper #streams_container #streams_bin #ovid1 #ivid1 .overlay, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid2 .overlay, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid3 .overlay, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid4 .overlay, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid5 .overlay, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid1 .overlay, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid2 .overlay, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid3 .overlay, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid4 .overlay, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid5 .overlay, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid1 .overlay, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid2 .overlay, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid3 .overlay, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid4 .overlay, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid5 .overlay, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid1 .overlay, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid2 .overlay, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid3 .overlay, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid4 .overlay, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid5 .overlay, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid1 .overlay, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid2 .overlay, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid3 .overlay, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid4 .overlay, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid5 .overlay {
+  position: absolute;
+  top: 100%;
+  right: 0px;
+  left: 0px;
+  height: 100%;
+  background: rgba(26, 31, 29, 0.8);
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  line-height: 30px;
+  z-index: 10;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-in;
+  -moz-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+}
+/* line 97, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+#streams_wrapper #streams_container #streams_bin #ovid1 #ivid1 .overlayno, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid2 .overlayno, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid3 .overlayno, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid4 .overlayno, #streams_wrapper #streams_container #streams_bin #ovid1 #ivid5 .overlayno, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid1 .overlayno, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid2 .overlayno, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid3 .overlayno, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid4 .overlayno, #streams_wrapper #streams_container #streams_bin #ovid2 #ivid5 .overlayno, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid1 .overlayno, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid2 .overlayno, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid3 .overlayno, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid4 .overlayno, #streams_wrapper #streams_container #streams_bin #ovid3 #ivid5 .overlayno, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid1 .overlayno, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid2 .overlayno, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid3 .overlayno, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid4 .overlayno, #streams_wrapper #streams_container #streams_bin #ovid4 #ivid5 .overlayno, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid1 .overlayno, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid2 .overlayno, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid3 .overlayno, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid4 .overlayno, #streams_wrapper #streams_container #streams_bin #ovid5 #ivid5 .overlayno {
+  font-size: 0;
+}
+/* line 100, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+#streams_wrapper #chat_window {
+  box-shadow: 5px 2px 15px #888888;
+  width: 100%;
+  height: 250px;
+  margin-top: 15px;
+  position: relative;
+  background: #fafdfb;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+#streams_wrapper #chat_window::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 111, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+#streams_wrapper #chat_window #text_area {
+  overflow: hidden;
+  resize: none;
+  width: 80%;
+  float: left;
+  height: 100%;
+  background: #fafdfb;
+  border-top: 1px solid #d1d1c5;
+  border-bottom: 1px solid #d1d1c5;
+  border-left: 1px solid #d1d1c5;
+}
+/* line 124, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+#streams_wrapper #chat_window #text_area ul li {
+  padding-left: 5px;
+}
+/* line 126, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+#streams_wrapper #chat_window #user_area {
+  overflow: hidden;
+  resize: none;
+  width: 20%;
+  float: left;
+  height: 100%;
+  font-size: 0.6em;
+  border: 1px solid #d1d1c5;
+  background: #fafdfb;
+}
+/* line 136, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+#streams_wrapper #chat_window #user_area ul li {
+  padding-left: 5px;
+}
+/* line 138, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+#streams_wrapper #msg {
+  width: 100%;
+  box-shadow: 5px 3px 15px #888888;
+  margin: 5px 0 0 0;
+  padding: 0;
+  height: 48px;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+#streams_wrapper #msg::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 146, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+#streams_wrapper #msg #message {
+  float: left;
+  width: 80%;
+  height: 48px;
+}
+/* line 153, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+#streams_wrapper #msg button {
+  float: left;
+  width: 20%;
+  height: 48px;
+  color: white;
+}
+/* line 162, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+#streams_wrapper #chats_aside {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+  background: gray;
+  border: 1px solid #e1e1d8;
+  overflow: hidden;
+  word-wrap: break-word;
+  height: 420px;
+  background: #fafdfb;
+}
+/* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+#streams_wrapper #chats_aside:last-child {
+  margin-right: 0;
+}
+
+/* line 175, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+.join_text {
+  font-size: 0.9em;
+}
+
+/* line 178, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+.infomsg {
+  color: red;
+  font-size: 0.8em;
+}
+
+@media screen and (max-width: 500px) {
+  /* line 185, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+  #streams_wrapper #streams_container {
+    float: left;
+    display: block;
+    margin-right: 7.42297%;
+    width: 100%;
+  }
+  /* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+  #streams_wrapper #streams_container:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  /* line 191, /home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb */
+  #streams_wrapper {
+    padding-top: 45px;
+  }
+}
+
+/* line 1, /home/amsterdam/workspace/florida/app/assets/stylesheets/feedbacks.sass */
+h1 {
+  font-size: 2em;
+}
+
+/* line 6, /home/amsterdam/workspace/florida/app/assets/stylesheets/feedbacks.sass */
+#feedback_page_wrapper {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 10px;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+#feedback_page_wrapper::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 11, /home/amsterdam/workspace/florida/app/assets/stylesheets/feedbacks.sass */
+#feedback_page_wrapper #feedback_form {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 65.88078%;
+  clear: both;
+}
+/* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+#feedback_page_wrapper #feedback_form:last-child {
+  margin-right: 0;
+}
+/* line 15, /home/amsterdam/workspace/florida/app/assets/stylesheets/feedbacks.sass */
+#feedback_page_wrapper #feedback_form #form_container {
+  width: 100%;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+#feedback_page_wrapper #feedback_form #form_container #feedback_form::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+/* line 21, /home/amsterdam/workspace/florida/app/assets/stylesheets/feedbacks.sass */
+#feedback_page_wrapper #feedback_form #form_container input#feedback_name {
+  width: 50%;
+  float: left;
+}
+/* line 25, /home/amsterdam/workspace/florida/app/assets/stylesheets/feedbacks.sass */
+#feedback_page_wrapper #feedback_form #form_container input#feedback_email {
+  width: 50%;
+  foat: right;
+}
+/* line 29, /home/amsterdam/workspace/florida/app/assets/stylesheets/feedbacks.sass */
+#feedback_page_wrapper #feedback_form #form_container textarea#feedback_body {
+  width: 100%;
+  height: 200px;
+}
+/* line 33, /home/amsterdam/workspace/florida/app/assets/stylesheets/feedbacks.sass */
+#feedback_page_wrapper #feedback_form #form_container .feedbackbutton {
+  width: 20%;
+  float: right;
+}
+/* line 38, /home/amsterdam/workspace/florida/app/assets/stylesheets/feedbacks.sass */
+#feedback_page_wrapper #feedback_form #form_container .cancelbutton {
+  width: 20%;
+  float: right;
+}
+/* line 43, /home/amsterdam/workspace/florida/app/assets/stylesheets/feedbacks.sass */
+#feedback_page_wrapper #feedback_aside {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+}
+/* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+#feedback_page_wrapper #feedback_aside:last-child {
+  margin-right: 0;
+}
+/* line 46, /home/amsterdam/workspace/florida/app/assets/stylesheets/feedbacks.sass */
+#feedback_page_wrapper #feedback_aside #feedback_aside_contect {
+  margin-top: 20px;
+  background-color: green;
+  height: 500px;
+}
+
+/* line 51, /home/amsterdam/workspace/florida/app/assets/stylesheets/feedbacks.sass */
+#feedback_errors {
+  float: left;
+}
+
+@media screen and (max-width: 1000px) {
+  /* line 56, /home/amsterdam/workspace/florida/app/assets/stylesheets/feedbacks.sass */
+  #feedback_page_wrapper {
+    padding-top: 45px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  /* line 61, /home/amsterdam/workspace/florida/app/assets/stylesheets/feedbacks.sass */
+  #feedback_page_wrapper #feedback_form {
+    float: left;
+    display: block;
+    margin-right: 7.42297%;
+    width: 100%;
+  }
+  /* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+  #feedback_page_wrapper #feedback_form:last-child {
+    margin-right: 0;
+  }
+}
+
+/* line 1, /home/amsterdam/workspace/florida/app/assets/stylesheets/progress.scss */
+.progress-bar {
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  box-shadow: inset 0 0 3px 0 rgba(115, 115, 115, 0.15);
+  border-radius: 3px;
+  height: 30px;
+  margin: 0 auto;
+  padding: 2px;
+  width: 100%;
+}
+/* line 24, /home/amsterdam/workspace/florida/app/assets/stylesheets/progress.scss */
+.progress-bar > span.meter {
+  -webkit-animation: progress 0.7s linear infinite;
+  -moz-animation: progress 0.7s linear infinite;
+  animation: progress 0.7s linear infinite;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #1565c0;
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%);
+  background-size: 40px 40px;
+  background-repeat: repeat-x;
+  border: 1px solid #0d417b;
+  border-radius: 2px;
+  display: block;
+  height: 100%;
+  width: 60%;
+}
+
+@-webkit-keyframes progress {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 40px 0px;
+  }
+}
+@-moz-keyframes progress {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 40px 0px;
+  }
+}
+@-ms-keyframes progress {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 40px 0px;
+  }
+}
+@-o-keyframes progress {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 40px 0px;
+  }
+}
+@keyframes progress {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 40px 0px;
+  }
+}
+/* line 1, /home/amsterdam/workspace/florida/app/assets/stylesheets/devise.sass */
+.devise_main {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+.devise_main::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+div.login_wrapper::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+/* line 10, /home/amsterdam/workspace/florida/app/assets/stylesheets/devise.sass */
+.devise_main_wrapper {
+  border: 1px solid rgba(10, 68, 4, 0.2);
+  background-color: #ececec;
+  background-image: linear-gradient(#ececec, #f9fcfa);
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  padding: 20px;
+}
+/* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+.devise_main_wrapper:last-child {
+  margin-right: 0;
+}
+
+/* line 19, /home/amsterdam/workspace/florida/app/assets/stylesheets/devise.sass */
+div.input.email.required,
+div.input.password.required,
+div.input.string.optional,
+div.avatar_wrapper,
+div.subscriber_wrapper,
+div.terms_wrapper,
+div.input.password.optional.user_password.field_with_hint,
+div.input.password.optional.user_password_confirmation,
+div.input.password.required.user_current_password.field_with_hint,
+div.avatar_wrapper_current,
+div.input.email.optional.user_email,
+div.input.password.optional.user_password {
+  overflow: none;
+  white-space: nowrap;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+div.input.email.required::after,
+div.input.password.required::after,
+div.input.string.optional::after,
+div.avatar_wrapper::after,
+div.subscriber_wrapper::after,
+div.terms_wrapper::after,
+div.input.password.optional.user_password.field_with_hint::after,
+div.input.password.optional.user_password_confirmation::after,
+div.input.password.required.user_current_password.field_with_hint::after,
+div.avatar_wrapper_current::after,
+div.input.email.optional.user_email::after,
+div.input.password.optional.user_password::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+/* line 37, /home/amsterdam/workspace/florida/app/assets/stylesheets/devise.sass */
+label.email.required,
+label.password.required,
+label.string.optional,
+label.file.optional,
+label.password.optional,
+label.email.optional,
+label.password.optional {
+  float: left;
+}
+
+/* line 48, /home/amsterdam/workspace/florida/app/assets/stylesheets/devise.sass */
+input#user_email.string.email.required,
+input#user_password.password.required,
+input#user_password_confirmation.password.required,
+input#user_nickname.string.optional,
+input#user_avatar,
+input#user_password.password.optional,
+input#user_password_confirmation.password.optional,
+input#user_current_password.password.required,
+input#user_email.string.email.optional,
+input#user_password.password.optional {
+  float: left;
+  width: 240px;
+  clear: both;
+}
+
+/* line 66, /home/amsterdam/workspace/florida/app/assets/stylesheets/devise.sass */
+label {
+  display: block;
+  clear: both;
+}
+
+/* line 72, /home/amsterdam/workspace/florida/app/assets/stylesheets/devise.sass */
+.devise_headline {
+  white-space: nowrap;
+}
+/* line 20, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/mixins/_clearfix.scss */
+.devise_headline::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+/* line 77, /home/amsterdam/workspace/florida/app/assets/stylesheets/devise.sass */
+#headline {
+  float: left;
+}
+
+/* line 80, /home/amsterdam/workspace/florida/app/assets/stylesheets/devise.sass */
+#padlock {
+  float: left;
+  width: 25px;
+}
+
+/* line 85, /home/amsterdam/workspace/florida/app/assets/stylesheets/devise.sass */
+div.subscriber_wrapper,
+div.terms_wrapper,
+div.input.boolean.optional.user_remember_me {
+  font-size: 0.8em;
+}
+
+/* line 91, /home/amsterdam/workspace/florida/app/assets/stylesheets/devise.sass */
+.devise_signup {
+  white-space: nowrap;
+}
+
+/* line 93, /home/amsterdam/workspace/florida/app/assets/stylesheets/devise.sass */
+.devise_links {
+  float: left;
+}
+
+/* line 96, /home/amsterdam/workspace/florida/app/assets/stylesheets/devise.sass */
+input.btn {
+  float: left;
+  margin-right: 10px;
+  width: 150px;
+}
+
+/* line 102, /home/amsterdam/workspace/florida/app/assets/stylesheets/devise.sass */
+a {
+  font-size: 0.8em;
+}
+
+/* line 109, /home/amsterdam/workspace/florida/app/assets/stylesheets/devise.sass */
+.login_form {
+  overflow: hidden;
+  white-space: normal;
+  padding-right: 40%;
+}
+
+/* line 115, /home/amsterdam/workspace/florida/app/assets/stylesheets/devise.sass */
+#whyregister {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 48.82117%;
+  background: red;
+}
+/* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+#whyregister:last-child {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 800px) and (max-width: 1000px) {
+  /* line 124, /home/amsterdam/workspace/florida/app/assets/stylesheets/devise.sass */
+  .devise_main_wrapper {
+    float: left;
+    display: block;
+    margin-right: 3.57866%;
+    width: 61.158%;
+  }
+  /* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+  .devise_main_wrapper:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 800px) and (max-width: 1000px) {
+  /* line 128, /home/amsterdam/workspace/florida/app/assets/stylesheets/devise.sass */
+  #whyregister {
+    float: left;
+    display: block;
+    margin-right: 3.57866%;
+    width: 35.26333%;
+  }
+  /* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+  #whyregister:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 500px) and (max-width: 500px) {
+  /* line 137, /home/amsterdam/workspace/florida/app/assets/stylesheets/devise.sass */
+  .devise_main_wrapper {
+    float: left;
+    display: block;
+    margin-right: 7.42297%;
+    width: 100%;
+  }
+  /* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+  .devise_main_wrapper:last-child {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 500px) and (max-width: 500px) {
+  /* line 141, /home/amsterdam/workspace/florida/app/assets/stylesheets/devise.sass */
+  #whyregister {
+    float: left;
+    display: block;
+    margin-right: 7.42297%;
+    width: 100%;
+  }
+  /* line 89, /home/amsterdam/.rvm/gems/ruby-2.2.1@florida/gems/neat-1.8.0/app/assets/stylesheets/grid/_span-columns.scss */
+  #whyregister:last-child {
+    margin-right: 0;
+  }
+}
+
+/* line 146, /home/amsterdam/workspace/florida/app/assets/stylesheets/devise.sass */
+.hint {
+  display: block;
+  width: 20x;
+}
+
+/* line 41, /home/amsterdam/workspace/florida/app/assets/stylesheets/application.css.sass */
+html, body {
+  height: 100%;
+}
+
+/* line 44, /home/amsterdam/workspace/florida/app/assets/stylesheets/application.css.sass */
+#mainwrapper {
+  min-height: 100%;
+}
+
+/* line 47, /home/amsterdam/workspace/florida/app/assets/stylesheets/application.css.sass */
+h1 h2 h3 {
+  text-shadow: 2px 2px 5px #888888;
+}
+
+/*opera and IE fix for sticky footer */

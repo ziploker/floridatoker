@@ -1,0 +1,9 @@
+$('#feedback_errors').empty().fadeTo(1000, 1).append( " <% @feedback.errors.full_messages.each do |m| %> <%= m %> <br><% end %>").fadeTo(3000, 0);
+<% if @feedback.errors.messages.include?(:email) %>
+	//$('#feedback_email').empty().fadeTo(1000, 1).val(" <% @feedback.errors.full_messages %>")
+	//$('#feedback_email').focus()
+	//$('body').append( " <% @feedback.errors.messages %> " );
+<% else %>
+	//$('body').empty().fadeTo(1000, 1).append( " <% @feedback.errors.full_messages.each do |m| %> <%= m %> <br><% end %>").fadeTo(3000, 0)
+	//$('#engage_zip').focus()
+<% end %>

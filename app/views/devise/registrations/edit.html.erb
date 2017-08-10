@@ -1,0 +1,72 @@
+<div class="devise_main">
+  <div class='devise_main_wrapper'>
+    <div class="devise_headline">
+      <div id="headline">
+        <h1>Change my account</h1>
+      </div>
+
+      <div id="padlock"> 
+        <%= render :partial => 'shared/padlock' %>
+      </div>
+    </div>
+
+    
+
+    <div class='login_wrapper'>
+      
+      <div class='login_form'>
+        
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= f.error_notification %>
+
+        <%= f.input :email, required: true, autofocus: true %>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>
+            Currently waiting confirmation for: <%= resource.unconfirmed_email %>
+          </p>
+        <% end %>
+
+        <%= f.input :password, label: "New Password", autocomplete: "off", required: false %>
+        <%= f.input :password_confirmation, required: false %>
+        <%= f.input :current_password, label: "Old Password", required: true %>
+
+
+        <%= f.input :nickname, required: false %>
+        
+        <div class="avatar_wrapper_current">
+          
+          <%= f.label "current avatar"  %>
+          <% if current_user.avatar.url != nil %>
+            <%= image_tag(current_user.avatar.url(:thumb)) %>
+          <% else %>
+            <%= image_tag("man100px.png") %>
+          <% end %>
+           
+        </div>
+
+        <div class="avatar_wrapper">
+          <%= f.label :avatar  %>
+            
+          <%= f.file_field :avatar %>
+           
+        </div>      
+        
+        <div class="subscriber_wrapper">
+          <%= f.input :subscriber, inline_label: 'Yes, subscriber to newsletter.' %>
+        </div>    
+        
+        <div class="terms_wrapper">
+          <%= f.input :terms, inline_label: 'Yes, i agree to the terms and conditions.' %>
+        </div>
+           
+        <div class="devise_signup">
+          <%= f.button :submit, "Update" %>
+        </div>
+        
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,38 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Herbsmoker</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Exo:200,400,700,900' rel='stylesheet' type='text/css'>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= metamagic %>
+ 	
+
+</head>
+<body>
+	<!--[if !IE7]>
+		<style type="text/css">
+			#mainwrapper {display:table;height:100%}
+		</style>
+	<![endif]-->
+
+	<div id='mainwrapper'> 
+
+		<%= render :partial => "shared/nav2" %>
+
+
+		<%= yield %>
+
+
+	</div>
+
+	<%= render :partial => "shared/footer" %>
+
+</body>
+
+</html>

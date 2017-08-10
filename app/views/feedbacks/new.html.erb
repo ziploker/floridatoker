@@ -1,0 +1,35 @@
+<div id="feedback_page_wrapper">
+	<div id="feedback_form">
+		<div id="form_container">
+			<h1><strong>...send us a message</strong></h1>
+				<%= form_for :feedback, :html => {:id => "feedbackform"}, url: {action: "create"}, remote: true do |f| %>
+				  	<div id="feedbacknameandemail">
+					  	<%= f.text_field :name, :placeholder => "name"
+
+
+
+
+					  	 %>
+						<%= f.text_field :email, :placeholder => "email" %>
+					</div>
+					<%= f.text_area :body, :placeholder => "message" %>
+					<%= f.submit 'send!', :class => 'feedbackbutton' %>
+
+					<%= f.submit 'cancel', :class => 'cancelbutton' %>
+				<% end %>
+		</div>
+		
+	
+	<div id="feedback_errors">
+	</div>
+	</div>
+	
+	<div id="feedback_aside">
+		<div id="feedback_aside_contect">
+			<h2>feedbackaside</h2>
+		</div>
+	</div>
+	
+	
+
+</div>

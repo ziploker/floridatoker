@@ -1,0 +1,84 @@
+
+<div id="letter_page_wrapper">	
+	
+	<div id="letter1_wrapper">
+		<div id="letter1">
+			<%= form_for @letter, url: letters_path do |f| %>
+		  		
+		  		<%= f.label :subject %>
+		  		<%= f.text_field :subject, :value => @subject %>
+		  		
+		  		
+		  		<div id="letter_bubble">
+			  		<div id="letter_intro"> Dear [Your Reps name here],</div>
+			  		<%= f.text_area :body, :value => @body %>
+			  		Sincerely,</br>
+					<div id="letter_closing">
+					[Your name here]</br>
+					[Your address here]</br>
+					[city][state][zip]</br>
+					</div>
+				</div>
+
+		  		
+		  		
+		</div>
+	</div>
+	
+	<div id="letter_info_wrapper">
+		<div id="letter_info">
+	 		
+	 		<h5>Recipients</h5>
+	 		
+	 		<ul>
+	 			<li><%= @name %></li>
+	 			<li><%= @name2 %></li>
+	 		</ul>
+	 		
+	 		<div id="letter_inst">
+		 		<p>
+		 			Make changes to the sample letter.
+		 		 
+		 			
+		 	 
+		 			
+		 		</p>
+	 		</div>
+	 		
+	 		
+		</div>
+		<div id="letter_form">
+		
+		
+		<!--
+		<input type="text" placeholder="Sign your name here." id="letter_name" />
+		<input type="text" placeholder="Address" id="letter_address" />
+		<div id="lettersht">
+			<input type="text" placeholder="City" id="letter_city" />
+			<input type="text" placeholder="Zip" id="letter_zip" />
+		</div>
+		<input type="submit" value="Send" id="letter_button" />
+		-->
+		<%= f.hidden_field :name1, :value => @name %>
+		<%= f.hidden_field :name2, :value => @name2 %>
+		<%= f.hidden_field :email1, :value => @email %>
+		<%= f.hidden_field :email2, :value => @email2 %>
+		
+		<%= f.text_field :name, :placeholder => "your full name" %>
+		<%= f.text_field :address, :placeholder => "address (optional)" %>
+		<%= f.text_field :city, :placeholder => "city (optional)" %>
+		<%= f.text_field :zip, :placeholder => "zip (optional" %>
+		<%= f.submit "send message"%> 
+		<% end %>
+		
+		
+		
+		
+	</div>
+	
+		
+		
+		
+	</div>
+
+</div>

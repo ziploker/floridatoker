@@ -1,0 +1,565 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"te",
+				"text_field"
+			],
+			[
+				"commenter",
+				"commenterrors"
+			],
+			[
+				"las",
+				"lastId"
+			],
+			[
+				"P",
+				"parentId"
+			],
+			[
+				"Top",
+				"TopView"
+			],
+			[
+				"B",
+				"BotView"
+			],
+			[
+				"last",
+				"lastClicked"
+			],
+			[
+				"source",
+				"sourcesubmit"
+			],
+			[
+				"full",
+				"fullnickaddy"
+			],
+			[
+				"random",
+				"randomguestnumer"
+			],
+			[
+				"to",
+				"to_s"
+			],
+			[
+				"text",
+				"text_area"
+			],
+			[
+				"if",
+				"if	if … end"
+			],
+			[
+				"lev",
+				"level3commentid"
+			],
+			[
+				"leve",
+				"level2commentid"
+			],
+			[
+				"le",
+				"level1commentid"
+			],
+			[
+				"parent",
+				"parent_id"
+			],
+			[
+				"root",
+				"root2_id"
+			],
+			[
+				"roo",
+				"root_id"
+			],
+			[
+				"pa",
+				"parent_id"
+			],
+			[
+				"curr",
+				"currentid"
+			],
+			[
+				"looku",
+				"lookup_zip"
+			],
+			[
+				"get",
+				"getGuts"
+			],
+			[
+				"getLo",
+				"getLogic"
+			],
+			[
+				"fa",
+				"fadeIn"
+			],
+			[
+				"api",
+				"api_secret"
+			],
+			[
+				"is",
+				"isOnView"
+			],
+			[
+				"look",
+				"lookup_zip"
+			],
+			[
+				"imga",
+				"image_tag"
+			],
+			[
+				"results_w",
+				"results_wrap"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"us",
+				"userNameToRemove"
+			],
+			[
+				"u",
+				"userNameToRemove"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": true,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/amsterdam/workspace/florida"
+	],
+	"file_history":
+	[
+		"/home/amsterdam/workspace/florida/config/application.rb",
+		"/home/amsterdam/workspace/florida/app/assets/javascripts/lookup.js.erb",
+		"/home/amsterdam/workspace/florida/config.ru",
+		"/home/amsterdam/workspace/florida/app/views/shared/_nav2.html.erb",
+		"/home/amsterdam/workspace/florida/app/views/shared/_footer.html.erb",
+		"/home/amsterdam/workspace/florida/config/application.yml",
+		"/home/amsterdam/workspace/florida/app/controllers/lookups_controller.rb",
+		"/home/amsterdam/workspace/florida/app/controllers/application_controller.rb",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/lookups.sass",
+		"/home/amsterdam/workspace/florida/app/assets/javascripts/comments.js",
+		"/home/amsterdam/workspace/florida/app/views/chats/demo.html.erb",
+		"/home/amsterdam/workspace/florida/Gemfile",
+		"/home/amsterdam/workspace/florida/config/routes.rb",
+		"/home/amsterdam/workspace/florida/app/views/lookups/new.html.erb",
+		"/home/amsterdam/workspace/florida/app/views/engages/_featured.html.erb",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/application.css.sass",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/engage.css.sass",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/devise.sass",
+		"/home/amsterdam/workspace/florida/app/views/shared/_logo3.html.erb",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/base/_typography.scss",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/base/_variables.scss",
+		"/home/amsterdam/workspace/florida/app/assets/javascripts/logoAnimation.js",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/comments.sass",
+		"/home/amsterdam/workspace/florida/app/views/articles/show.html.erb",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/articles.sass",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/progress.scss",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/feedbacks.sass",
+		"/home/amsterdam/workspace/florida/app/assets/javascripts/article.js",
+		"/home/amsterdam/workspace/florida/app/assets/javascripts/logo.js",
+		"/home/amsterdam/workspace/florida/app/views/shared/_logo2.html.erb",
+		"/home/amsterdam/workspace/florida/app/views/articles/index.html.erb",
+		"/home/amsterdam/workspace/florida/app/views/articles/edit.html.erb",
+		"/home/amsterdam/workspace/florida/app/views/articles/new.html.erb",
+		"/home/amsterdam/workspace/florida/app/controllers/articles_controller.rb",
+		"/home/amsterdam/workspace/florida/db/migrate/20160820232055_add_description_to_article.rb",
+		"/home/amsterdam/workspace/florida/config/environments/production.rb",
+		"/home/amsterdam/workspace/florida/config/initializers/shareable.rb",
+		"/home/amsterdam/workspace/florida/app/views/devise/registrations/new.html.erb",
+		"/home/amsterdam/workspace/florida/app/views/devise/passwords/edit.html.erb",
+		"/home/amsterdam/workspace/florida/app/views/devise/passwords/new.html.erb",
+		"/home/amsterdam/workspace/florida/app/views/devise/registrations/edit.html.erb",
+		"/home/amsterdam/workspace/florida/app/views/devise/sessions/new.html.erb",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/sitemaps.scss",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/_visual-grid.scss",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/_neatsettings.scss",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/neat/settings/_grid.scss",
+		"/home/amsterdam/workspace/florida/config/initializers/social_share_button.rb",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/footer.css.sass",
+		"/home/amsterdam/workspace/florida/app/views/layouts/application.html.erb",
+		"/home/amsterdam/workspace/florida/app/controllers/comments_controller.rb",
+		"/home/amsterdam/workspace/florida/app/assets/javascripts/comment_validation.js",
+		"/home/amsterdam/workspace/florida/app/views/comments/okk.js",
+		"/home/amsterdam/workspace/florida/app/views/comments/ok.js",
+		"/home/amsterdam/workspace/florida/app/views/articles/ok.js.html",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/chats.sass.erb",
+		"/home/amsterdam/workspace/florida/app/assets/javascripts/ttempp.js",
+		"/home/amsterdam/workspace/florida/app/views/articles/temmp.rhtml",
+		"/home/amsterdam/workspace/florida/db/schema.rb",
+		"/home/amsterdam/workspace/florida/app/models/comment.rb",
+		"/home/amsterdam/workspace/florida/db/migrate/20160716153035_add_ancestry_to_comments.rb",
+		"/home/amsterdam/workspace/florida/app/views/articles/temp code.rhtml",
+		"/home/amsterdam/workspace/florida/db/migrate/20160708071858_add_hidden_url.rb",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/letters.sass",
+		"/home/amsterdam/workspace/florida/app/models/feedback.rb",
+		"/home/amsterdam/workspace/florida/app/views/feedbacks/errors.js.erb",
+		"/home/amsterdam/workspace/florida/app/views/feedbacks/new.html.erb",
+		"/home/amsterdam/workspace/florida/app/views/feedbacks/success.js.erb",
+		"/home/amsterdam/workspace/florida/app/mailers/user_mailer.rb",
+		"/home/amsterdam/workspace/florida/app/views/devise/unlocks/new.html.erb",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/neat/_neat-helpers.scss",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/neat/settings/_visual-grid.scss",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/neat/_grid-settings.scss",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/neat/settings/_grid-settings.scss",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/_grid-settings.scss",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/engage.sass",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/neat/settings/_disable-warnings.scss",
+		"/home/amsterdam/workspace/florida/app/views/engages/new.html.erb",
+		"/home/amsterdam/Documents/slingbox.sh",
+		"/home/amsterdam/Documents/slingbox.htm",
+		"/home/amsterdam/Desktop/Link to autoexec.sh",
+		"/home/amsterdam/Desktop/slingbox.htm",
+		"/home/amsterdam/Desktop/_logo2.html.erb.svg",
+		"/home/amsterdam/Desktop/_logo3.html.erb",
+		"/home/amsterdam/workspace/florida/tmp/pids/server.pid",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/neat/_neat.scss",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/neat/functions/_new-breakpoint.scss",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/grid-settings.scss",
+		"/home/amsterdam/workspace/florida/app/controllers/chats_controller.rb",
+		"/home/amsterdam/workspace/florida/app/controllers/letters_controller.rb",
+		"/home/amsterdam/workspace/florida/config/sitemap.rb",
+		"/home/amsterdam/workspace/florida/app/controllers/sitemaps_controller.rb",
+		"/home/amsterdam/workspace/florida/.gitignore",
+		"/home/amsterdam/workspace/florida/.fog",
+		"/home/amsterdam/workspace/florida/config/database.yml",
+		"/home/amsterdam/workspace/florida/app/views/shared/_sign_left.html.erb",
+		"/home/amsterdam/workspace/florida/neat/settings/_grid-settings.scss",
+		"/home/amsterdam/workspace/florida/neat/_neat-helpers.scss",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/neat/grid/_visual-grid.scss",
+		"/home/amsterdam/Desktop/mini leafer.svg",
+		"/home/amsterdam/workspace/florida/app/views/shared/_minileaficon",
+		"/home/amsterdam/workspace/florida/app/views/shared/_leafymenu",
+		"/home/amsterdam/Desktop/menuleaf.svg",
+		"/home/amsterdam/workspace/florida/app/views/shared/_nav_menu_leaf3.html.erb",
+		"/home/amsterdam/Desktop/nav_icon3.svg",
+		"/home/amsterdam/workspace/florida/app/controllers/pages_controller.rb",
+		"/home/amsterdam/Desktop/nav_icon2.svg",
+		"/home/amsterdam/workspace/florida/app/views/shared/_nav_leaf_menu.html.erb",
+		"/home/amsterdam/Desktop/nav_icon.svg",
+		"/home/amsterdam/workspace/florida/app/views/shared/_nav_menu.html.erb",
+		"/home/amsterdam/workspace/florida/app/views/pages/robots.text.erb",
+		"/home/amsterdam/workspace/florida/app/views/pages/robots.txt.erb",
+		"/home/amsterdam/workspace/florida/app/models/article.rb",
+		"/home/amsterdam/workspace/florida/public/robots.txt",
+		"/home/amsterdam/workspace/florida/Gemfile.lock",
+		"/home/amsterdam/workspace/florida/db/migrate/20160214073612_add_slug_to_articles.rb",
+		"/home/amsterdam/workspace/florida/tmp/sitemaps/sitemap.xml.gz",
+		"/home/amsterdam/workspace/florida/config/sitemap.old",
+		"/home/amsterdam/workspace/florida/config/public/sitemap.xml.gz",
+		"/home/amsterdam/workspace/florida/config/public/sitemaps/sds",
+		"/home/amsterdam/workspace/florida/lib/tasks/sitemap.rake",
+		"/home/amsterdam/workspace/florida/config/sitemap.rake",
+		"/home/amsterdam/workspace/florida/app/assets/javascripts/application.js",
+		"/home/amsterdam/workspace/florida/app/assets/stylesheets/normalize.css",
+		"/home/amsterdam/workspace/florida/app/views/letters/review.html.erb",
+		"/home/amsterdam/workspace/florida/app/assets/javascripts/lookup.js",
+		"/home/amsterdam/workspace/florida/app/controllers/engages_controller.rb",
+		"/home/amsterdam/workspace/florida/app/assets/javascripts/mini_register.js",
+		"/home/amsterdam/workspace/florida/app/controllers/users/sessions_controller.rb"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 105.0,
+		"where_history":
+		[
+			"/home/amsterdam/workspace/florida",
+			"/home/amsterdam/workspace/florida/app/assets/javascripts",
+			"/home/amsterdam/workspace/florida",
+			"/home/amsterdam/workspace/florida/app/assets/javascripts",
+			"/home/amsterdam/workspace/florida"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"find-my-Rep-tool",
+			"colex",
+			"openstates.org/api/v",
+			"0b6a2cec0fa54bd0ae0816a53afb82cf",
+			"sunlight_foundation_api_key",
+			"cancel",
+			"arrow",
+			"why",
+			"15",
+			"nor",
+			"word wr",
+			"arrow",
+			"lookup_results2",
+			"lookup_reults2",
+			"results_wrap",
+			"arro",
+			"mini",
+			"google",
+			"line-he",
+			"nickname",
+			"141311",
+			"progress-bar",
+			"address",
+			"ebff",
+			"mini_in",
+			"5BAD44",
+			"one",
+			"search-bar-background",
+			"e6e6e6",
+			"#0c3511",
+			"141311",
+			"skinn",
+			"sticky",
+			"%\n",
+			"featured",
+			"body",
+			"background-image",
+			"_featured",
+			"featured",
+			"mini",
+			"resultz",
+			"button_to",
+			"5px",
+			"a#",
+			"comment_commenter",
+			"this",
+			"text_area",
+			"textarea",
+			"new_comment",
+			"nickname0",
+			"data",
+			"nickname3",
+			".build",
+			"avatar_wrapper_current",
+			"featured",
+			"@article.image.url",
+			"reach_out_email",
+			"clear",
+			"both",
+			".lookup_wra",
+			"span",
+			"50",
+			"fedback_form",
+			"main-stuff",
+			"lookup_form",
+			"flag",
+			"login_form",
+			"  ",
+			"+transition-duration(0.5s)",
+			"@include linear-gradient(#ececec, #f9fcfa)",
+			".mini_text",
+			"linear-gradient",
+			"$helvetica",
+			"tablet",
+			"ellogo",
+			"#main-stuff",
+			"mobile",
+			"$mobile",
+			"pink",
+			"$mobile",
+			"pink",
+			"9",
+			"95",
+			"950",
+			"95",
+			"media",
+			"#sticky-anchor",
+			"AWS_SECRET_ACCESS_KEY",
+			"AWS_ACCESS_KEY_ID",
+			"AKIAIYPXAH35Z3QTRRIA",
+			"SECRET_KEY_BASE",
+			"pk_live_9lcthxpSIHbGwmdO941O1XVU",
+			"sk_live_EeHnL644i6zo4Iyq4v1KdV9H",
+			"ENV['email",
+			"email",
+			"2_MX40NTI2NjczMn5-MTQzNTI5NzAxMTQ5N355MGZzTW5TaGgraXpiMjNydTJVOCtOa0Z-UH4",
+			"141dc7cc7d8eddac8c0a4be35b910ea080936de6",
+			"45266732",
+			"gsTI5yrH/D2miF2DElCgJwdAl7teMApFrekM3z7j",
+			"AKIAIYPXAH35Z3QTRRIA",
+			"tokerbucket",
+			"s3.amazonaws",
+			"tokerbucket",
+			"cP!c@rd6969",
+			"ziploker",
+			"0b6a2cec0fa54bd0ae0816a53afb82cf",
+			"AIzaSyBf5WygDVM-Ib4sKti8pIvLIBYO1luw-J0",
+			"data-google",
+			"AIzaSyBf5WygDVM-Ib4sKti8pIvLIBYO1luw-J0",
+			"50px",
+			"DATABASE_URL",
+			"fog",
+			"AKIAIYPXAH35Z3QTRRIA",
+			"S3_BUCKET_NAME",
+			"AKIAIYPXAH35Z3QTRRIA",
+			"23.23",
+			"side",
+			"true",
+			"leafymenu",
+			"article.id",
+			"friendly",
+			"bucket",
+			"font-family",
+			"lookup_f",
+			"mini_t",
+			"register",
+			"block",
+			"register"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 37.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 124.0
+	},
+	"pinned_build_system": "",
+	"project": "demo.html.sublime-project",
+	"replace":
+	{
+		"height": 56.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 280.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

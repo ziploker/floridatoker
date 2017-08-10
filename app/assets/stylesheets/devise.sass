@@ -1,0 +1,149 @@
+.devise_main
+	+outer-container
+	
+
+
+
+div.login_wrapper
+	+clearfix
+	
+.devise_main_wrapper
+	//border: 1px solid #e1e1d8
+	border: 1px solid rgba(10, 68, 4, 0.2)
+	background-color: #ececec
+	background-image: linear-gradient(#ececec, #f9fcfa)
+	//background-image: linear-gradient(#e0f2e6, #d2e5d8)
+	+span-columns(6)
+	padding: 20px
+
+div.input.email.required, 
+div.input.password.required,
+div.input.string.optional,
+div.avatar_wrapper,
+div.subscriber_wrapper,
+div.terms_wrapper,
+div.input.password.optional.user_password.field_with_hint,
+div.input.password.optional.user_password_confirmation,
+div.input.password.required.user_current_password.field_with_hint,
+div.avatar_wrapper_current,
+div.input.email.optional.user_email,
+div.input.password.optional.user_password
+	+clearfix
+	
+	overflow: none
+	
+	white-space: nowrap
+	
+label.email.required, 
+label.password.required,
+label.string.optional,
+label.file.optional,
+label.password.optional,
+label.email.optional,
+label.password.optional
+
+	float: left
+	
+
+input#user_email.string.email.required,
+input#user_password.password.required,
+input#user_password_confirmation.password.required,
+input#user_nickname.string.optional,
+input#user_avatar,
+input#user_password.password.optional,
+input#user_password_confirmation.password.optional,
+input#user_current_password.password.required,
+input#user_email.string.email.optional,
+input#user_password.password.optional
+
+	float: left
+	width: 240px
+	clear: both
+	
+input#user_avatar
+	
+
+label
+	display: block
+	clear: both
+
+
+
+.devise_headline
+	+clearfix
+	white-space: nowrap
+	
+
+#headline
+	float: left
+	
+#padlock
+	
+	float: left
+	width: 25px
+
+div.subscriber_wrapper,
+div.terms_wrapper,
+div.input.boolean.optional.user_remember_me
+	font-size: .8em
+
+
+.devise_signup
+	white-space: nowrap
+.devise_links
+	float: left	
+
+input.btn
+	
+	float: left
+	margin-right: 10px
+	width: 150px
+
+a
+	font-size: .8em
+
+	
+
+	
+
+.login_form
+	overflow: hidden
+	white-space: normal
+	word-wrap:break-word
+	padding-right: 40%
+	
+#whyregister
+	+span-columns(6)
+	background: red
+	
+
+
+
+@media screen and (max-width: 800px)
+
+	.devise_main_wrapper
+		+media($tablet)
+			+span-columns(5)
+
+	#whyregister
+		+media($tablet)
+			+span-columns(3)
+
+
+
+
+@media screen and (max-width: 500px)
+
+	.devise_main_wrapper
+		+media($mobile)
+			+span-columns(4)
+
+	#whyregister
+		+media($mobile)
+			+span-columns(4)
+	
+
+.hint
+	display: block
+	width: 20x
+	

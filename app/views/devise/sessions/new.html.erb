@@ -1,0 +1,73 @@
+<div class="devise_main">
+
+  <div class="devise_main_wrapper">
+
+    <div class="devise_headline">
+      <div id="headline">
+        <h1>Log In</h1>
+      </div>
+
+      <div id="padlock"> 
+        <%= render :partial => 'shared/padlock' %>
+      </div>
+    </div>
+
+    
+
+    <div class='login_wrapper'>
+      
+        <div class='login_form'>
+        
+
+
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+       
+
+         
+
+          <%= f.input :email, required: false, autofocus: true %>
+          <%= f.input :password, required: false %>
+          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        
+          
+           
+        
+
+
+
+        <div class="devise_signup">
+          <%= f.button :submit, "Log in" %>
+          <%= render "devise/shared/links" %>
+        </div>
+        <% end %>
+        <div class="devise_links">
+          
+        </div>
+
+
+        
+
+
+        
+      </div>
+    </div>
+  </div>
+    
+  
+  
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

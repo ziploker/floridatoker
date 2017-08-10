@@ -1,0 +1,18 @@
+<%= @list.count %>
+
+<% @list.each do |article| %>
+    <tr>
+        <td><%= article.title %></td>
+        <td><%= article.text %></td>
+        <td><%= image_tag article.image.url(:thumb) %></td>
+      
+        <% if user_signed_in? %>
+	       <td>
+                <%= link_to 'new', new_article_path(article) %> 
+                <%= link_to 'show', article_path(article) %>
+                <%= link_to 'Edit', edit_article_path(article) %>
+                <%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'u sure??'} %>
+                <%= article.comments.count %>
+	    </tr>
+    <% end %>
+  <% end %>

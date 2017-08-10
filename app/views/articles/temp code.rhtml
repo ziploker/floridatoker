@@ -1,0 +1,73 @@
+
+								</div>
+								<div class="clearer"></div>
+							</div>
+
+
+
+
+							<div class="replybox">
+
+								<div class = "add_comment">
+			
+						
+									<%= form_for ([@article, @article.comments.build]) do |f|%>
+										
+										
+											
+										<% if user_signed_in? %>
+						      				<%= image_tag(current_user.avatar.url(:thumb)) %>
+						      				<%= f.hidden_field :picurl, :value => current_user.avatar.url(:thumb) %>
+						  				<% else %>
+						    			
+						      				<%= image_tag("man100px.png") %>
+						      				<%= f.hidden_field :picurl, :value => "man100px.png" %>
+						      			<% end %>
+
+
+
+										<%= f.text_area :body, placeholder: "Write comment here" %>
+
+
+										<%= f.submit "Post"%>
+										<% if !user_signed_in? %>
+																	
+											<%= f.text_field :commenter, placeholder: "Nickname" %>
+										<% else %>
+
+											<%= f.hidden_field :commenter, :value => current_user.nickname %>
+										<% end %>
+										
+										
+										
+									
+									<% end %>
+								</div>
+								
+
+
+
+
+
+
+								</div>
+								
+								<div class="clearer"></div>
+							
+							</div>
+
+
+
+
+
+
+
+							
+						
+			<div class="clear"></div>
+			</div>
+			
+		</div>
+	
+	
+	</div>

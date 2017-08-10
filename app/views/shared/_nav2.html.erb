@@ -1,0 +1,87 @@
+	
+
+<div id="stickit"></div>
+	<div id="sticky-anchor" class="perm_bar">
+		<div id="sticky" class="nav" >	
+			
+			<div id="ghost" class="hideellogo"><%= render :partial => 'shared/logo2' %></div>
+
+			<div id="mnav">
+				
+				<div id="leafymenu"><a href="#" id="menu-icon">
+					<%= render :partial => 'shared/minileaficon' %>
+				</a></div>
+				
+				<div id="navbox">
+					<ul>
+						<li>
+							
+							<%= link_to 'news', root_path %>
+							
+						</li>
+						<li>
+							
+							<%= link_to 'tools', {:controller=>"/lookups", :action=>"new"} %>
+							
+						</li>
+						<li>
+							<%= link_to 'archive', articles_path %>
+						</li>
+						<li>
+							
+							<%= link_to 'community', {:controller => "/chats", :action => "demo"} %>
+							
+						</li>
+						<li>
+							<%= link_to 'feedback', {:controller => "/feedbacks", :action => "new"} %>
+						</li>
+					
+						<li>
+							
+							<form class="search-bar" role="search" >
+		 						<input type="search" name='keyword' placeholder="Enter Search" autocomplete="on"/>
+								
+													
+								
+							</form>
+							
+							
+							
+							
+							
+							
+						
+						</li>
+						
+						<% if user_signed_in? %>
+		  					<li class='minimenu'>
+		  						<%= link_to('Logout |', destroy_user_session_path, :method => :delete) %>        
+		  					</li>
+						<% else %>
+		  					<li class='minimenu'>
+		  						<%= link_to('Login |', new_user_session_path)  %>  
+		  					</li>
+						<% end %>
+						<% if user_signed_in? %>
+		  					<li class='minimenur'>
+		  						<%= link_to('Edit', edit_user_registration_path) %>
+		  					</li>
+						<% else %>
+		  					<li class='minimenur'>
+		  				<%= link_to('Register', new_user_registration_path)  %>
+		  					</li>
+						<% end %>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<div class="skinny_bar">
+	<div class="skinny_bar_content">
+		<%= link_to(root_path) do %>
+		<span id="tag" class="tag_line"><%= render :partial => 'shared/logo3' %></span>
+		<% end %>
+	</div>	
+</div>

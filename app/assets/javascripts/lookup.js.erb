@@ -13,6 +13,7 @@ $(document).ready(function(){
 		//var zip = $('#lookup_zip').val();
 		var lat;
 		var lng;
+		var acc;
 		var leg_id0;
 		var leg_id1;
 
@@ -66,8 +67,8 @@ $(document).ready(function(){
 			
 			
 			//STEP ONE;;;;   get lat and lng info based on user input
-			$.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address=" + addy + city + "&components=administrative_area:FL|country:US&key=" + google, function(json){
-	    	              
+			$.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address=" + addy + "," + city + "&components=administrative_area:FL|country:US&key=" + google, function(json){
+            
 				
 				if (json.results.length > 1){
 					$('#lookup_errors').empty().append("too many results, be more spicific.");
@@ -76,7 +77,10 @@ $(document).ready(function(){
 				 	//$('#lookup_errors').empty().append("Lat: " + json.results[0].geometry.location.lat + "<br>" + "Lng:" + json.results[0].geometry.location.lng + "<br>" + sunlight + "<br>" + google);
 			 		lat = json.results[0].geometry.location.lat;
 			 		lng = json.results[0].geometry.location.lng;
+			 		acc = json.results[0].geometry.accuracy;
 			 		$('.progress-bar .meter').css('width', '22%');
+			 		$('#mainwrapper').append(lat + " " + lng + " " + addy + " " + city + " " + acc);
+
 
 			 	}
 			 	

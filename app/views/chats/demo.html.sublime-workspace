@@ -148,6 +148,56 @@
 			}
 		},
 		{
+			"contents": "Searching 1212 files for \"SECRET_KEY_BASE\"\n\n/home/amsterdam/workspace/florida/config/secrets.yml:\n   12  \n   13  development:\n   14:   secret_key_base: 82739d497f9acc7d9484e8a2fdde02bb268195caf632a9d8371e075d35543b1a9c52ba00b6475b31d1c9d2e263a724159145da5b7f24742aeb66f2146298334f\n   15  \n   16  test:\n   17:   secret_key_base: a6b146cba9af5078d7c67cead40563891135ed2dcc2f07b6cb3746f530d0c08166967d2653e21ecd4615380a37629b19c75de5d38150dee3d77162218676c1ed\n   18  \n   19  # Do not keep production secrets in the repository,\n   20  # instead read values from the environment.\n   21  production:\n   22:   secret_key_base: <%= ENV[\"SECRET_KEY_BASE\"] %>\n   23  \n\n4 matches in 1 file\n\n\nSearching 1212 files for \"SECRET_KEY_BASE\"\n\n/home/amsterdam/workspace/florida/config/secrets.yml:\n   12  \n   13  development:\n   14:   secret_key_base: 82739d497f9acc7d9484e8a2fdde02bb268195caf632a9d8371e075d35543b1a9c52ba00b6475b31d1c9d2e263a724159145da5b7f24742aeb66f2146298334f\n   15  \n   16  test:\n   17:   secret_key_base: a6b146cba9af5078d7c67cead40563891135ed2dcc2f07b6cb3746f530d0c08166967d2653e21ecd4615380a37629b19c75de5d38150dee3d77162218676c1ed\n   18  \n   19  # Do not keep production secrets in the repository,\n   20  # instead read values from the environment.\n   21  production:\n   22:   secret_key_base: <%= ENV[\"SECRET_KEY_BASE\"] %>\n   23  \n\n4 matches in 1 file\n\n\nSearching 1212 files for \"ENV\"\n\n/home/amsterdam/workspace/florida/.fog:\n    1  default:\n    2:   aws_access_key_id: ENV['AWS_ACCESS_KEY_ID']\n    3:   aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']\n\n/home/amsterdam/workspace/florida/app/assets/javascripts/lookup.js.erb:\n   17  		var leg_id1;\n   18  \n   19: 		var google = \"<% ENV['google_api_key'] %>\";\n   20: 		var sunlight = \"<%= ENV['sunlight_foundation_api_key'] %>\";\n   21  		\n   22  		if(addy == \"\" || city == \"\"){\n\n/home/amsterdam/workspace/florida/app/controllers/chats_controller.rb:\n    6      \n    7      \n    8:     api_key = ENV['api_key']\n    9:     api_secret = ENV['api_secret']\n   10:     @session_id = ENV['session_id']\n   11      \n   12      opentok = OpenTok::OpenTok.new api_key, api_secret\n\n/home/amsterdam/workspace/florida/app/controllers/letters_controller.rb:\n   17    def review\n   18      @letter = Letter.new()\n   19:     @email = ENV['email']\n   20:     @email2 = ENV['email2']\n   21:     @raffomail = ENV['email3']\n   22      @district = params[:district_1]\n   23      #@email = params[:email_to_controller]\n\n/home/amsterdam/workspace/florida/app/controllers/sitemaps_controller.rb:\n    3  def show\n    4      # Redirect to CloudFront and S3\n    5:     redirect_to \"http://s3.amazonaws.com/#{ENV['S3_BUCKET_NAME']}/sitemaps/sitemap.xml.gz\"\n    6    end\n    7  \n\n/home/amsterdam/workspace/florida/app/views/chats/demo.html.erb:\n   21        } else {\n   22          console.log(\"The client does support WebRTC.\");\n   23:         session = OT.initSession(\"<% ENV['api_key'] %>\", \"<%= @session_id %>\");\n   24  		\n   25  		//Initial session connection\n\n/home/amsterdam/workspace/florida/app/views/pages/robots.text.erb:\n    1: <% if Rails.env.production? %>\n    2    User-Agent: *\n    3    Allow: /\n\n/home/amsterdam/workspace/florida/app/views/shared/_elephant.html.erb:\n   79  tXYZF+kxfXh3GdcV3hMdYDKpFazlogOIiIhQUsEas8T04TuAK8q8fgc908x2iA4xkdQKlkawREQk\n   80  BaUWrDHuvsDdj3D3ZwA7AycC6eyX1CwHRgeYSGr7YN0KrBudQ0REBFjJ3R+s+iZmtgVZWdgXDTQM\n   81: 43FgU3efHR2kF41giYiI9FbJKNaS3P1ad/8PYH2y3eNvreO+LTAVeF90iH5SG8FaQPZ0gIiISLQX\n   82  u/vZdd/UzKYBuwOvBXYDVqg7Q4PcD6zn7g9FB1lSMiNYZjYVlSsREUlHLSNYS3L3Re5+bP704erA\n   83  K4EfAvdE5EncTOAD0SF6SaZgoelBERFJS0jBGi/fU+v37v42YE1gJ+BbwJzYZEk5zMxeHh1iSSpY\n\n/home/amsterdam/workspace/florida/bin/bundle:\n    1: #!/usr/bin/env ruby.exe\n    2: ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../Gemfile', __FILE__)\n    3  load Gem.bin_path('bundler', 'bundle')\n    4  \n\n/home/amsterdam/workspace/florida/bin/rails:\n    1: #!/usr/bin/env ruby.exe\n    2  APP_PATH = File.expand_path('../../config/application', __FILE__)\n    3  require_relative '../config/boot'\n\n/home/amsterdam/workspace/florida/bin/rake:\n    1: #!/usr/bin/env ruby.exe\n    2  require_relative '../config/boot'\n    3  require 'rake'\n\n/home/amsterdam/workspace/florida/bin/setup:\n    1: #!/usr/bin/env ruby.exe\n    2  require 'pathname'\n    3  \n\n/home/amsterdam/workspace/florida/config.ru:\n   23  \n   24  \n   25: require ::File.expand_path('../config/environment', __FILE__)\n   26  run Rails.application\n   27  \n\n/home/amsterdam/workspace/florida/config/application.rb:\n    9  module Herbsmoker\n   10    class Application < Rails::Application\n   11:     # Settings in config/environments/* take precedence over those specified here.\n   12      # Application configuration should go into files in config/initializers\n   13      # -- all .rb files in that directory are automatically loaded.\n\n/home/amsterdam/workspace/florida/config/boot.rb:\n    1: ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../Gemfile', __FILE__)\n    2  \n    3  require 'bundler/setup' # Set up gems listed in the Gemfile.\n\n/home/amsterdam/workspace/florida/config/environments/development.rb:\n    2    # Settings specified here will take precedence over those in config/application.rb.\n    3  \n    4:   # In the development environment your application's code is reloaded on\n    5    # every request. This slows down response time but is perfect for development\n    6    # since you don't have to restart the web server when you make code changes.\n    7    config.action_mailer.delivery_method = :smtp\n    8    config.action_mailer.smtp_settings = {\n    9:   address:              ENV['smtp_server'],\n   10:   port:                 ENV['smtp_port'],\n   11    domain:               'floridaToker.com',\n   12:   user_name:            ENV['sendgrid_username'],\n   13:   password:             ENV['sendgrid_password'],\n   14    authentication:       'plain',\n   15    enable_starttls_auto: true  }\n   ..\n   25    :storage => :s3,\n   26    :s3_credentials => {\n   27:     :bucket => ENV['S3_BUCKET_NAME'],\n   28:     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],\n   29:     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']\n   30    }\n   31  }\n\n/home/amsterdam/workspace/florida/config/environments/production.rb:\n    6    :storage => :s3,\n    7    :s3_credentials => {\n    8:     :bucket => ENV['S3_BUCKET_NAME'],\n    9:     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],\n   10:     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']\n   11    }\n   12  }\n   ..\n   35    # Disable serving static files from the `/public` folder by default since\n   36    # Apache or NGINX already handles this.\n   37:   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?\n   38  \n   39    # Compress JavaScripts and CSS.\n\n/home/amsterdam/workspace/florida/config/environments/test.rb:\n    2    # Settings specified here will take precedence over those in config/application.rb.\n    3  \n    4:   # The test environment is used exclusively to run your application's\n    5    # test suite. You never need to work with it otherwise. Remember that\n    6    # your test database is \"scratch space\" for the test suite and is wiped\n    .\n   24    config.action_dispatch.show_exceptions = false\n   25  \n   26:   # Disable request forgery protection in test environment.\n   27    config.action_controller.allow_forgery_protection = false\n   28  \n\n/home/amsterdam/workspace/florida/config/initializers/devise.rb:\n   93    # Limiting the stretches to just one in testing will increase the performance of\n   94    # your test suite dramatically. However, it is STRONGLY RECOMMENDED to not use\n   95:   # a value less than 10 in other environments. Note that, for bcrypt (the default\n   96    # encryptor), the cost increases exponentially with the number of stretches (e.g.\n   97    # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).\n   98:   config.stretches = Rails.env.test? ? 1 : 10\n   99  \n  100    # Setup a pepper to generate the encrypted password.\n\n/home/amsterdam/workspace/florida/config/initializers/shareable.rb:\n   13    ##facebook\n   14    ###############\n   15:   #config.app_id='<%= ENV[\"FACEBOOK_KEY\"] %>' # required if using facebook button!\n   16    #config.send= 'false'\n   17    #config.layout='' # 'standard', 'button_count', 'button' or 'box_count'. '' defaults to 'standard'.\n\n/home/amsterdam/workspace/florida/config/initializers/simple_form.rb:\n  150  \n  151    # Cache SimpleForm inputs discovery\n  152:   # config.cache_discovery = !Rails.env.development?\n  153  \n  154    # Default class for inputs\n\n/home/amsterdam/workspace/florida/config/puma.rb:\n    1: workers Integer(ENV['WEB_CONCURRENCY'] || 2)\n    2: threads_count = Integer(ENV['MAX_THREADS'] || 5)\n    3  threads threads_count, threads_count\n    4  \n    .\n    6  \n    7  rackup      DefaultRackup\n    8: port        ENV['PORT']     || 3000\n    9: environment ENV['RACK_ENV'] || 'development'\n   10  \n   11  on_worker_boot do\n\n/home/amsterdam/workspace/florida/config/secrets.yml:\n   18  \n   19  # Do not keep production secrets in the repository,\n   20: # instead read values from the environment.\n   21  production:\n   22:   secret_key_base: <%= ENV[\"SECRET_KEY_BASE\"] %>\n   23  \n\n/home/amsterdam/workspace/florida/config/sitemap.rb:\n    2  SitemapGenerator::Sitemap.default_host = \"http://agile-stream-2304.herokuapp.com\"\n    3  #SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new\n    4: #SitemapGenerator::Sitemap.sitemaps_host = ENV['SITEMAP_HOST']\n    5  SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new(\n    6    \n    7    fog_provider: 'AWS', \n    8:   fog_directory: '#{ENV['S3_BUCKET_NAME']}')\n    9  \n   10: SitemapGenerator::Sitemap.sitemaps_host = \"http://#{ENV['S3_BUCKET_NAME']}.s3.amazonaws.com\"\n   11  SitemapGenerator::Sitemap.public_path = 'tmp/'\n   12  SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'\n\n/home/amsterdam/workspace/florida/lib/ca-bundle.crt:\n   77  BgkqhkiG9w0BAQUFAAOCAQEAmYFThxxol4aR7OBKuEQLq4GsJ0/WwbgcQ3izDJr86iw8bmEbTUsp\n   78  9Z8FHSbBuOmDAGJFtqkIk7mpM0sYmsL4h4hO291xNBrBVNpGP+DTKqttVCL1OmLNIG+6KYnX3ZHu\n   79: 01yiPqFbQfXf5WRDLenVOavSot+3i9DAgBkcRcAtjOj4LaR0VknFBbVPFd5uRHg5h6h+u/N5GJG7\n   80  9G+dwfCMNYxdAfvDbbnvRG15RjF+Cv6pgsH/76tuIMRQyV+dTZsXjAzlAcmgQWpzU/qlULRuJQ/7\n   81  TBj0/VLZjmmx6BEP3ojY+x1J96relc8geMJgEtslQIxq/H5COEBkEveegeGTLg==\n   ..\n  587  a6FJpEcwRTELMAkGA1UEBhMCQk0xGTAXBgNVBAoTEFF1b1ZhZGlzIExpbWl0ZWQxGzAZBgNVBAMT\n  588  ElF1b1ZhZGlzIFJvb3QgQ0EgMoICBQkwDQYJKoZIhvcNAQEFBQADggIBAD4KFk2fBluornFdLwUv\n  589: Z+YTRYPENvbzwCYMDbVHZF34tHLJRqUDGCdViXh9duqWNIAXINzng/iN/Ae42l9NLmeyhP3ZRPx3\n  590  UIHmfLTJDQtyU/h2BwdBR5YM++CCJpNVjP4iH2BlfF/nJrP3MpCYUNQ3cVX2kiF495V5+vgtJodm\n  591  VjB3pjd4M1IQWK4/YY7yarHvGH5KWWPKjaJW1acvvFYfzznB4vsKqBUsfU16Y8Zsl0Q80m/DShcK\n  ...\n  682  HAYDVQQKExVTdGFhdCBkZXIgTmVkZXJsYW5kZW4xJjAkBgNVBAMTHVN0YWF0IGRlciBOZWRlcmxh\n  683  bmRlbiBSb290IENBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmNK1URF6gaYUmHFt\n  684: vsznExvWJw56s2oYHLZhWtVhCb/ekBPHZ+7d89rFDBKeNVU+LCeIQGv33N0iYfXCxw719tV2U02P\n  685  jLwYdjeFnejKScfST5gTCaI+Ioicf9byEGW07l8Y1Rfj+MX94p2i71MOhXeiD+EwR+4A5zN9RGca\n  686  C1Hoi6CeUJhoNFIfLm0B8mBF8jHrqTFoKbt6QZ7GGX+UtFE5A3+y3qcym7RHjm+0Sq7lr7HcsBth\n  ...\n  936  cnRpZmljYXRpb24gQXV0aG9yaXR5IFBvbGljeSBhdmFpbGFibGUgYXQgaHR0cDovL2NlcnQuc3Rh\n  937  cnRjb20ub3JnL3BvbGljeS5wZGYwEQYJYIZIAYb4QgEBBAQDAgAHMDgGCWCGSAGG+EIBDQQrFilT\n  938: dGFydENvbSBGcmVlIFNTTCBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTANBgkqhkiG9w0BAQUFAAOC\n  939  AgEAFmyZ9GYMNPXQhV59CuzaEE44HF7fpiUFS5Eyweg78T3dRAlbB0mKKctmArexmvclmAk8jhvh\n  940  3TaHK0u7aNM5Zj2gJsfyOZEdUauCe37Vzlrk4gNXcGmXCPleWKYK34wGmkUWFjgKXlf2Ysd6AgXm\n  ...\n 1331  EwJVUzEgMB4GA1UEChMXU2VjdXJlVHJ1c3QgQ29ycG9yYXRpb24xFzAVBgNVBAMTDlNlY3VyZVRy\n 1332  dXN0IENBMB4XDTA2MTEwNzE5MzExOFoXDTI5MTIzMTE5NDA1NVowSDELMAkGA1UEBhMCVVMxIDAe\n 1333: BgNVBAoTF1NlY3VyZVRydXN0IENvcnBvcmF0aW9uMRcwFQYDVQQDEw5TZWN1cmVUcnVzdCBDQTCC\n 1334  ASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKukgeWVzfX2FI7CT8rU4niVWJxB4Q2ZQCQX\n 1335  OZEzZum+4YOvYlyJ0fwkW2Gz4BERQRwdbvC4u/jep4G6pkjGnx29vo6pQT64lO0pGtSO0gMdA+9t\n ....\n 1491  dGlvbiBFViBSb290Q0ExMB4XDTA3MDYwNjAyMTIzMloXDTM3MDYwNjAyMTIzMlowYDELMAkGA1UE\n 1492  BhMCSlAxJTAjBgNVBAoTHFNFQ09NIFRydXN0IFN5c3RlbXMgQ08uLExURC4xKjAoBgNVBAsTIVNl\n 1493: Y3VyaXR5IENvbW11bmljYXRpb24gRVYgUm9vdENBMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCC\n 1494  AQoCggEBALx/7FebJOD+nLpCeamIivqA4PUHKUPqjgo0No0c+qe1OXj/l3X3L+SqawSERMqm4miO\n 1495  /VVQYg+kcQ7OBzgtQoVQrTyWb4vVog7P3kmJPdZkLjjlHmy1V4qe70gOzXppFodEtZDkBp2uoQSX\n ....\n 1712  EwJUVzEjMCEGA1UECgwaQ2h1bmdod2EgVGVsZWNvbSBDby4sIEx0ZC4xKjAoBgNVBAsMIWVQS0kg\n 1713  Um9vdCBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTAeFw0wNDEyMjAwMjMxMjdaFw0zNDEyMjAwMjMx\n 1714: MjdaMF4xCzAJBgNVBAYTAlRXMSMwIQYDVQQKDBpDaHVuZ2h3YSBUZWxlY29tIENvLiwgTHRkLjEq\n 1715  MCgGA1UECwwhZVBLSSBSb290IENlcnRpZmljYXRpb24gQXV0aG9yaXR5MIICIjANBgkqhkiG9w0B\n 1716  AQEFAAOCAg8AMIICCgKCAgEA4SUP7o3biDN1Z82tH306Tm2d0y8U82N0ywEhajfqhFAHSyZbCUNs\n ....\n 2326  MEEGA1UEBxM6TWFkcmlkIChzZWUgY3VycmVudCBhZGRyZXNzIGF0IHd3dy5jYW1lcmZpcm1hLmNv\n 2327  bS9hZGRyZXNzKTESMBAGA1UEBRMJQTgyNzQzMjg3MRswGQYDVQQKExJBQyBDYW1lcmZpcm1hIFMu\n 2328: QS4xKTAnBgNVBAMTIENoYW1iZXJzIG9mIENvbW1lcmNlIFJvb3QgLSAyMDA4MB4XDTA4MDgwMTEy\n 2329  Mjk1MFoXDTM4MDczMTEyMjk1MFowga4xCzAJBgNVBAYTAkVVMUMwQQYDVQQHEzpNYWRyaWQgKHNl\n 2330  ZSBjdXJyZW50IGFkZHJlc3MgYXQgd3d3LmNhbWVyZmlybWEuY29tL2FkZHJlc3MpMRIwEAYDVQQF\n ....\n 2687  dGlvbiBSb290Q0EyMB4XDTA5MDUyOTA1MDAzOVoXDTI5MDUyOTA1MDAzOVowXTELMAkGA1UEBhMC\n 2688  SlAxJTAjBgNVBAoTHFNFQ09NIFRydXN0IFN5c3RlbXMgQ08uLExURC4xJzAlBgNVBAsTHlNlY3Vy\n 2689: aXR5IENvbW11bmljYXRpb24gUm9vdENBMjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB\n 2690  ANAVOVKxUrO6xVmCxF1SrjpDZYBLx/KWvNs2l9amZIyoXvDjChz335c9S672XewhtUGrzbl+dp++\n 2691  +T42NKA7wfYxEUV0kz1XgMX5iZnK5atq1LXaQZAQwdbWQonCv/Q4EpVMVAX3NuRFg3sUZdbcDE3R\n ....\n 2829  Qa7yMIIBWgYDVR0gBIIBUTCCAU0wggFJBgsrBgEEAYG1NwEBATCCATgwLgYIKwYBBQUHAgEWImh0\n 2830  dHA6Ly93d3cuc3RhcnRzc2wuY29tL3BvbGljeS5wZGYwNAYIKwYBBQUHAgEWKGh0dHA6Ly93d3cu\n 2831: c3RhcnRzc2wuY29tL2ludGVybWVkaWF0ZS5wZGYwgc8GCCsGAQUFBwICMIHCMCcWIFN0YXJ0IENv\n 2832  bW1lcmNpYWwgKFN0YXJ0Q29tKSBMdGQuMAMCAQEagZZMaW1pdGVkIExpYWJpbGl0eSwgcmVhZCB0\n 2833: aGUgc2VjdGlvbiAqTGVnYWwgTGltaXRhdGlvbnMqIG9mIHRoZSBTdGFydENvbSBDZXJ0aWZpY2F0\n 2834  aW9uIEF1dGhvcml0eSBQb2xpY3kgYXZhaWxhYmxlIGF0IGh0dHA6Ly93d3cuc3RhcnRzc2wuY29t\n 2835: L3BvbGljeS5wZGYwEQYJYIZIAYb4QgEBBAQDAgAHMDgGCWCGSAGG+EIBDQQrFilTdGFydENvbSBG\n 2836  cmVlIFNTTCBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTANBgkqhkiG9w0BAQsFAAOCAgEAjo/n3JR5\n 2837  fPGFf59Jb2vKXfuM/gTFwWLRfUKKvFO3lANmMD+x5wqnUCBVJX92ehQN6wQOQOY+2IirByeDqXWm\n ....\n 3548  d3cuZGlnaWNlcnQuY29tMSQwIgYDVQQDExtEaWdpQ2VydCBBc3N1cmVkIElEIFJvb3QgRzMwdjAQ\n 3549  BgcqhkjOPQIBBgUrgQQAIgNiAAQZ57ysRGXtzbg/WPuNsVepRC0FFfLvC/8QdJ+1YlJfZn4f5dwb\n 3550: RXkLzMZTCp2NXQLZqVneAlr2lSoOjThKiknGvMYDOAdfVdp+CW7if17QRSAPWXYQ1qAk8C3eNvJs\n 3551  KTmjQjBAMA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0PAQH/BAQDAgGGMB0GA1UdDgQWBBTL0L2p4ZgF\n 3552  UaFNN6KDec6NHSrkhDAKBggqhkjOPQQDAwNnADBkAjAlpIFFAmsSS3V0T8gj43DydXLefInwz5Fy\n ....\n 3696  dJkrN6N9I3AAcbxT38T6KhKPS38QVr2fcHK3YX/JSw8Xpz3jsARh7v8Rl8f0hj4K+j5c+ZPmNHrZ\n 3697  FGvnnLOFoIJ6dq9xkNfs/Q36nGz637CC9BR++b7Epi9Pf5l/tfxnQ3K9DADWietrLNPtj5gcFKt+\n 3698: 5eNu/Nio5JIk2kNrYrhV/erBvGy2i/MOjZrkm2xpmfh4SDBF1a3hDTxFYPwyllEnvGfDyi62a+pG\n 3699  x8cgoLEfZd5ICLqkTqnyg0Y3hOvozIFIQ2dOciqbXL1MGyiKXCJ7tKuY2e7gUYPDCUZObT6Z+pUX\n 3700  2nwzV0E8jVHtC7ZcryxjGt9XyD+86V3Em69FmeKjWiS0uqlWPc9vqv9JWL7wqP/0uK3pN/u6uPQL\n\n/home/amsterdam/workspace/florida/lib/tasks/sitemap.rake:\n    2  namespace :sitemap do\n    3    desc 'Upload the sitemap files to S3'\n    4:   task upload_to_s3: :environment do\n    5      s3 = AWS::S3.new(\n    6:       access_key_id: ENV['AWS_ACCESS_KEY_ID'],\n    7:       secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']\n    8      )\n    9:     bucket = s3.buckets[ENV['AWS_BUCKET']]\n   10      Dir.entries(File.join(Rails.root, \"public\", \"sitemaps\")).each do |file_name|\n   11        next if ['.', '..'].include? file_name\n\n/home/amsterdam/workspace/florida/log/development.log:\n    <binary>\n\n/home/amsterdam/workspace/florida/public/assets/application-0184bcd7d7475c0dd52e9497aff8615afd45dceca7f7f23846706a32baa35a3b.js:\n   17  \n   18  	if ( typeof module === \"object\" && typeof module.exports === \"object\" ) {\n   19: 		// For CommonJS and CommonJS-like environments where a proper `window`\n   20  		// is present, execute the factory and get jQuery.\n   21: 		// For environments that do not have a `window` with a `document`\n   22  		// (such as Node.js), expose a factory as module.exports.\n   23  		// This accentuates the need for the creation of a real `window`.\n   ..\n 4263  		if ( !body || !body.style ) {\n 4264  \n 4265: 			// Test fired too early or in an unsupported environment, exit.\n 4266  			return;\n 4267  		}\n ....\n 6523  		div = document.createElement( \"div\" );\n 6524  \n 6525: 	// Finish early in limited (non-browser) environments\n 6526  	if ( !div.style ) {\n 6527  		return;\n\n/home/amsterdam/workspace/florida/public/assets/application-0fcdd4c56e61eedbcb6c332a8730db690a22b780d5b639d5e4dc18829d5e3512.js:\n   17  \n   18  	if ( typeof module === \"object\" && typeof module.exports === \"object\" ) {\n   19: 		// For CommonJS and CommonJS-like environments where a proper `window`\n   20  		// is present, execute the factory and get jQuery.\n   21: 		// For environments that do not have a `window` with a `document`\n   22  		// (such as Node.js), expose a factory as module.exports.\n   23  		// This accentuates the need for the creation of a real `window`.\n   ..\n 4263  		if ( !body || !body.style ) {\n 4264  \n 4265: 			// Test fired too early or in an unsupported environment, exit.\n 4266  			return;\n 4267  		}\n ....\n 6523  		div = document.createElement( \"div\" );\n 6524  \n 6525: 	// Finish early in limited (non-browser) environments\n 6526  	if ( !div.style ) {\n 6527  		return;\n\n/home/amsterdam/workspace/florida/public/assets/application-12114f55e8d788c0633281ba37a9df7ba8ebb0b3e19e4100b8da9ef81b4cef8e.js:\n   17  \n   18  	if ( typeof module === \"object\" && typeof module.exports === \"object\" ) {\n   19: 		// For CommonJS and CommonJS-like environments where a proper `window`\n   20  		// is present, execute the factory and get jQuery.\n   21: 		// For environments that do not have a `window` with a `document`\n   22  		// (such as Node.js), expose a factory as module.exports.\n   23  		// This accentuates the need for the creation of a real `window`.\n   ..\n 4263  		if ( !body || !body.style ) {\n 4264  \n 4265: 			// Test fired too early or in an unsupported environment, exit.\n 4266  			return;\n 4267  		}\n ....\n 6523  		div = document.createElement( \"div\" );\n 6524  \n 6525: 	// Finish early in limited (non-browser) environments\n 6526  	if ( !div.style ) {\n 6527  		return;\n\n/home/amsterdam/workspace/florida/public/assets/application-12333a4e49505b174c1bce22d72daeba5fc4b554f7b80daacb8c3d80e93b5add.js:\n   17  \n   18  	if ( typeof module === \"object\" && typeof module.exports === \"object\" ) {\n   19: 		// For CommonJS and CommonJS-like environments where a proper `window`\n   20  		// is present, execute the factory and get jQuery.\n   21: 		// For environments that do not have a `window` with a `document`\n   22  		// (such as Node.js), expose a factory as module.exports.\n   23  		// This accentuates the need for the creation of a real `window`.\n   ..\n 4263  		if ( !body || !body.style ) {\n 4264  \n 4265: 			// Test fired too early or in an unsupported environment, exit.\n 4266  			return;\n 4267  		}\n ....\n 6523  		div = document.createElement( \"div\" );\n 6524  \n 6525: 	// Finish early in limited (non-browser) environments\n 6526  	if ( !div.style ) {\n 6527  		return;\n\n/home/amsterdam/workspace/florida/public/assets/application-23caedd6b0f922caa38f088c4e57b9b8ec05846638058528a58020019e35ad34.js:\n   17  \n   18  	if ( typeof module === \"object\" && typeof module.exports === \"object\" ) {\n   19: 		// For CommonJS and CommonJS-like environments where a proper `window`\n   20  		// is present, execute the factory and get jQuery.\n   21: 		// For environments that do not have a `window` with a `document`\n   22  		// (such as Node.js), expose a factory as module.exports.\n   23  		// This accentuates the need for the creation of a real `window`.\n   ..\n 4263  		if ( !body || !body.style ) {\n 4264  \n 4265: 			// Test fired too early or in an unsupported environment, exit.\n 4266  			return;\n 4267  		}\n ....\n 6523  		div = document.createElement( \"div\" );\n 6524  \n 6525: 	// Finish early in limited (non-browser) environments\n 6526  	if ( !div.style ) {\n 6527  		return;\n\n/home/amsterdam/workspace/florida/public/assets/application-28875ad8e5d7ed9ccbd0d5a7ef1109643413c4c0f23f80476f9de14f47494ce9.js:\n   17  \n   18  	if ( typeof module === \"object\" && typeof module.exports === \"object\" ) {\n   19: 		// For CommonJS and CommonJS-like environments where a proper `window`\n   20  		// is present, execute the factory and get jQuery.\n   21: 		// For environments that do not have a `window` with a `document`\n   22  		// (such as Node.js), expose a factory as module.exports.\n   23  		// This accentuates the need for the creation of a real `window`.\n   ..\n 4263  		if ( !body || !body.style ) {\n 4264  \n 4265: 			// Test fired too early or in an unsupported environment, exit.\n 4266  			return;\n 4267  		}\n ....\n 6523  		div = document.createElement( \"div\" );\n 6524  \n 6525: 	// Finish early in limited (non-browser) environments\n 6526  	if ( !div.style ) {\n 6527  		return;\n\n/home/amsterdam/workspace/florida/public/assets/application-3293337ce5a4473867566087f9a1cda4c5f69d9d376d651a3bb6dc4132df7490.js:\n   17  \n   18  	if ( typeof module === \"object\" && typeof module.exports === \"object\" ) {\n   19: 		// For CommonJS and CommonJS-like environments where a proper `window`\n   20  		// is present, execute the factory and get jQuery.\n   21: 		// For environments that do not have a `window` with a `document`\n   22  		// (such as Node.js), expose a factory as module.exports.\n   23  		// This accentuates the need for the creation of a real `window`.\n   ..\n 4263  		if ( !body || !body.style ) {\n 4264  \n 4265: 			// Test fired too early or in an unsupported environment, exit.\n 4266  			return;\n 4267  		}\n ....\n 6523  		div = document.createElement( \"div\" );\n 6524  \n 6525: 	// Finish early in limited (non-browser) environments\n 6526  	if ( !div.style ) {\n 6527  		return;\n\n/home/amsterdam/workspace/florida/public/assets/application-4c62227c5848fcd816e4fcaffd0d99836e8f34937012245c5cb01326d76ef002.js:\n   17  \n   18  	if ( typeof module === \"object\" && typeof module.exports === \"object\" ) {\n   19: 		// For CommonJS and CommonJS-like environments where a proper `window`\n   20  		// is present, execute the factory and get jQuery.\n   21: 		// For environments that do not have a `window` with a `document`\n   22  		// (such as Node.js), expose a factory as module.exports.\n   23  		// This accentuates the need for the creation of a real `window`.\n   ..\n 4263  		if ( !body || !body.style ) {\n 4264  \n 4265: 			// Test fired too early or in an unsupported environment, exit.\n 4266  			return;\n 4267  		}\n ....\n 6523  		div = document.createElement( \"div\" );\n 6524  \n 6525: 	// Finish early in limited (non-browser) environments\n 6526  	if ( !div.style ) {\n 6527  		return;\n\n/home/amsterdam/workspace/florida/public/assets/application-50141a383a5a036bf43d119f0693647ef2cd8926442ab98aeb532f1c38245f78.js:\n   17  \n   18  	if ( typeof module === \"object\" && typeof module.exports === \"object\" ) {\n   19: 		// For CommonJS and CommonJS-like environments where a proper `window`\n   20  		// is present, execute the factory and get jQuery.\n   21: 		// For environments that do not have a `window` with a `document`\n   22  		// (such as Node.js), expose a factory as module.exports.\n   23  		// This accentuates the need for the creation of a real `window`.\n   ..\n 4263  		if ( !body || !body.style ) {\n 4264  \n 4265: 			// Test fired too early or in an unsupported environment, exit.\n 4266  			return;\n 4267  		}\n ....\n 6523  		div = document.createElement( \"div\" );\n 6524  \n 6525: 	// Finish early in limited (non-browser) environments\n 6526  	if ( !div.style ) {\n 6527  		return;\n\n/home/amsterdam/workspace/florida/public/assets/application-5c7308cf5efa9aba1c8abc3a68ed6eea879da962f749be45a714e0e5e3fca9e7.js:\n   17  \n   18  	if ( typeof module === \"object\" && typeof module.exports === \"object\" ) {\n   19: 		// For CommonJS and CommonJS-like environments where a proper `window`\n   20  		// is present, execute the factory and get jQuery.\n   21: 		// For environments that do not have a `window` with a `document`\n   22  		// (such as Node.js), expose a factory as module.exports.\n   23  		// This accentuates the need for the creation of a real `window`.\n   ..\n 4263  		if ( !body || !body.style ) {\n 4264  \n 4265: 			// Test fired too early or in an unsupported environment, exit.\n 4266  			return;\n 4267  		}\n ....\n 6523  		div = document.createElement( \"div\" );\n 6524  \n 6525: 	// Finish early in limited (non-browser) environments\n 6526  	if ( !div.style ) {\n 6527  		return;\n\n/home/amsterdam/workspace/florida/public/assets/application-5d1e91e024f97a1d57ab463379655b9aaf472560c5d10e3e6c59cc60f3ea8ce7.js:\n   17  \n   18  	if ( typeof module === \"object\" && typeof module.exports === \"object\" ) {\n   19: 		// For CommonJS and CommonJS-like environments where a proper `window`\n   20  		// is present, execute the factory and get jQuery.\n   21: 		// For environments that do not have a `window` with a `document`\n   22  		// (such as Node.js), expose a factory as module.exports.\n   23  		// This accentuates the need for the creation of a real `window`.\n   ..\n 4263  		if ( !body || !body.style ) {\n 4264  \n 4265: 			// Test fired too early or in an unsupported environment, exit.\n 4266  			return;\n 4267  		}\n ....\n 6523  		div = document.createElement( \"div\" );\n 6524  \n 6525: 	// Finish early in limited (non-browser) environments\n 6526  	if ( !div.style ) {\n 6527  		return;\n\n/home/amsterdam/workspace/florida/public/assets/application-6f8745f91f1cef5ef250fd4fe3857a62173ea511aab2d9e20933a5f43402635f.js:\n   17  \n   18  	if ( typeof module === \"object\" && typeof module.exports === \"object\" ) {\n   19: 		// For CommonJS and CommonJS-like environments where a proper `window`\n   20  		// is present, execute the factory and get jQuery.\n   21: 		// For environments that do not have a `window` with a `document`\n   22  		// (such as Node.js), expose a factory as module.exports.\n   23  		// This accentuates the need for the creation of a real `window`.\n   ..\n 4263  		if ( !body || !body.style ) {\n 4264  \n 4265: 			// Test fired too early or in an unsupported environment, exit.\n 4266  			return;\n 4267  		}\n ....\n 6523  		div = document.createElement( \"div\" );\n 6524  \n 6525: 	// Finish early in limited (non-browser) environments\n 6526  	if ( !div.style ) {\n 6527  		return;\n\n/home/amsterdam/workspace/florida/public/assets/application-780b65270602de19caa84d794b7dc0f728fb304381ad0f0d746beb4d49b594f0.js:\n   17  \n   18  	if ( typeof module === \"object\" && typeof module.exports === \"object\" ) {\n   19: 		// For CommonJS and CommonJS-like environments where a proper `window`\n   20  		// is present, execute the factory and get jQuery.\n   21: 		// For environments that do not have a `window` with a `document`\n   22  		// (such as Node.js), expose a factory as module.exports.\n   23  		// This accentuates the need for the creation of a real `window`.\n   ..\n 4263  		if ( !body || !body.style ) {\n 4264  \n 4265: 			// Test fired too early or in an unsupported environment, exit.\n 4266  			return;\n 4267  		}\n ....\n 6523  		div = document.createElement( \"div\" );\n 6524  \n 6525: 	// Finish early in limited (non-browser) environments\n 6526  	if ( !div.style ) {\n 6527  		return;\n\n/home/amsterdam/workspace/florida/public/assets/application-d39b0be39e9250fe11e870a4f74af7056b3a6a8be0597f61f7ac06f79ae1e671.js:\n   17  \n   18  	if ( typeof module === \"object\" && typeof module.exports === \"object\" ) {\n   19: 		// For CommonJS and CommonJS-like environments where a proper `window`\n   20  		// is present, execute the factory and get jQuery.\n   21: 		// For environments that do not have a `window` with a `document`\n   22  		// (such as Node.js), expose a factory as module.exports.\n   23  		// This accentuates the need for the creation of a real `window`.\n   ..\n 4263  		if ( !body || !body.style ) {\n 4264  \n 4265: 			// Test fired too early or in an unsupported environment, exit.\n 4266  			return;\n 4267  		}\n ....\n 6523  		div = document.createElement( \"div\" );\n 6524  \n 6525: 	// Finish early in limited (non-browser) environments\n 6526  	if ( !div.style ) {\n 6527  		return;\n\n/home/amsterdam/workspace/florida/public/system/articles/images/000/000/001/original/dark-grey_00407949.jpg:\n    <binary>\n\n/home/amsterdam/workspace/florida/public/system/articles/images/000/000/006/original/dark-grey_00407949.jpg:\n    <binary>\n\n/home/amsterdam/workspace/florida/public/system/articles/images/000/000/015/original/dark-grey_00407949.jpg:\n    <binary>\n\n/home/amsterdam/workspace/florida/public/system/articles/images/000/000/016/original/dark-grey_00407949.jpg:\n    <binary>\n\n/home/amsterdam/workspace/florida/public/system/articles/images/000/000/017/original/dark-grey_00407949.jpg:\n    <binary>\n\n/home/amsterdam/workspace/florida/public/system/articles/images/000/000/018/original/dark-grey_00407949.jpg:\n    <binary>\n\n/home/amsterdam/workspace/florida/public/system/articles/images/000/000/022/original/dark-grey_00407949.jpg:\n    <binary>\n\n/home/amsterdam/workspace/florida/public/system/articles/images/000/000/024/original/dark-grey_00407949.jpg:\n    <binary>\n\n/home/amsterdam/workspace/florida/test/test_helper.rb:\n    1: ENV['RAILS_ENV'] ||= 'test'\n    2: require File.expand_path('../../config/environment', __FILE__)\n    3  require 'rails/test_help'\n    4  \n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/0C/0C-B2Y764Onww_Yz8EyRWfeMevOhLBaFCdfPZ1_4-7o.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/0n/0nZCc52TbEpTf6lp82_3W_ftQzBsGc6tDHIRg3KQtRI.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/1z/1zWiXnym9-e7OG1xKt4AlGqA5JiF0ovQHjRzWIcB_-Q.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/2-/2-KiS7gkowWAiPdm70b16GOTumZRta17yttmvvBcr88.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/2K/2KVYeE0tns7SXC3HTKFJr7U1hpKXLbKtXGD1mvsOLfI.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/4B/4BWX45_47fTNblqMBHXofOEwaSESNoCrlYegnPUl3Sg.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/5j/5jEE8fW4gKrBV4bb_Oc8dBvE58kE1Y-3RFkRIP4zpKc.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/8O/8Or1IeRFAusTppEZa9ustYWHMsspnHNN5-YnjUvRJts.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/9D/9DwZOpODNcdg_NODJ2mi_vVblvvBCCKwl4ry6zEW2zc.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/9X/9X8r98b-qPiRWTL6zIc5HzZwR_O3n6JOsbwqCyBi_0M.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/9Z/9Z2EGpbNOKbhLmO9xnlZHZKhGNo6lgqZlZwZ_L9bc44.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/9_/9_0iJ_BmKG8lNJnugWWg_oWsYpOM2VTHpi5xycViAkU.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/Au/Au_gy5Jy105WQnopMVHunOFQP4YkUfWc5oChy4up5so.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/Aw/Awo-ijHG4Q55slkspPGuhNsj6s7x5igNEivvIVNxKv8.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/B1/B1008SLkcOtjWSQJAIcWPE_SJhaRV7d7JjX64vjSzTA.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/Br/BrgRmbUWdnrA-lxzGCiv_wupM9O7A-xwPitHo1PMxPA.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/CJ/CJ7QB6_Vkuml9ZgloRoe_7IBUSBRx6fXwcSIafEq9b4.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/D8/D85Q05YwEU9D7_YK8qDMbsfVe482CbfpOzbJQZM-UfA.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/EL/EL3d4GV5THGyqQmydAQJ2d0hEf_RcOkNpju6oPlXdhs.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/Fa/Fa7wM_LaqZxyareZHlMdhc3XqKNjM4jx_8_4P_c-tCI.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/Gr/Gr8K_gJD3rLpMuM5X38wP2VF_suAxwsVeS05G22l4SU.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/H8/H8lK2StJYYNa9cXMTNR7W6etHnf3M-UNaOYddxgBkrA.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/IK/IK0vpbPnwCPu9VdOp62776yqjLt6chqb__oUDdzxx5Y.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/IT/IT9ks3Hmba41Bfbrem0F4ESqa0OikUQ9F-e_8rjBows.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/Ih/IhmWjKR2Sy5vV3DVe97eL78DKG2xAsDSs1S0bnhtl1k.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/K6/K6HB5_eExinJ-D4rytJ2Nv_qUz6I4-caVLkldo2gwfI.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/K8/K86eNJnCq0esRCA9C2uaNEbvBN_eGwBxiiOucGoesYY.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/KH/KH-DXXuUO4uFBgt_uppo0QV6ejyjWZCijF1kGm1ACME.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/L5/L5rRTRF1eM8ROScU_BO8_V4e8ylFTRNmk4tTx8gEQjo.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/O7/O7CTn8DykVxZArg2g7TFiiW-lQP7YCkFa8LK3jWvtDA.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/Qo/QovgQbruhrFCH5mefwqMtWLHAbTBmWxEeDcYHsS1WU0.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/RN/RNcoAyFV5EwBd93HOUrXgz660yk1N-8eAmmrVCyWF2I.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/RR/RRcvYr-u5kQnFQuUR8bM6yQ80vqbhG-sMYBqMnCjQzM.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/RY/RYlXpfreRiIK9cofQ2yETpZwBYfZeGC_nL7PGCg1zfM.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/Sz/SzVfiEtLvR4E_Kp82kivlGRZpS4D184-12XoKurUjvw.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/XF/XFCqEQQBR2QT8NilErJbUygDUkyyYjNsznEt6Gj-Ioo.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/Xg/XgoGrMVqB-b-9MwG-C4uppyOQJ7hCVqlb4IAs90CSfE.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/Xy/XywckPWDJUgkP5J6GoKdjvAS9VZl1bNt9QKMPDRMM1o.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/Yw/YwFvqE3xl43V8D1U9FIx-PUf6YDd2PubrY-h1ZT2tyE.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/Yx/YxxRiCgVYMG917aczPGrgeJ7ECfVXD-ah2jNGLBBpRU.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/_p/_p7YjUNpkDxnP7wKxpFxGNndSTvYnYWxqEyL7ae8kEg.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/a4/a4XpTAm6Tq8Jz-hT9qndbOqMiUj6TVKbAYXkerou-Gs.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/aG/aGsYj85i5XJmiBrBHXCAqleEXh18_4NAY9fxwIC5ZUA.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/c9/c9n2rg2Rw3C4QAgXB7_JmVDv-8r2xUg72atDsseMgaE.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/cX/cXtTykyBWksI6pnowrrqrEF2l56P1DQR83N0rj4cyBo.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/g3/g3VoE5KcoDWmCUKf_gsJ41ioEp60BqnxdmcgZghU344.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/g3/g3_ith4wmY4AGKnH9QTWDRgUHAWJSfLzIC9cBLsYS-c.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/hM/hMGkpKhd-mS7Xp6_yTVFJjP87hqcly1z_RLmw2ZZnF0.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/j-/j-DaYSB_PgHlljWAcHhjnx1XHy8fb3J1cIIa-K9EQeQ.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/j6/j6UN3mlo8kZu5oYx-43Z9xAnaMlB0QaCJEz_osbzBww.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/k4/k4I4auCQ8UQC4SZTfuwgo4ABS64tXjcQCsI67sNDkVo.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/kn/kn5o8yIb9U4FHIYafnidma7c0mN49MoILgx72WKQrBw.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/mJ/mJCwtx5vOS69FAistJQQg8dBuIwsJtTWHGaCS78bzhY.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/mu/mua8o7brRl6Uk5LzOM2c8WfCRKVlqqxj1y2LK37dogY.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/o5/o58SOxooGw1C7iK3yfxKgJf0jpcYnOR0u5sHrqApBsQ.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/oT/oTpiOH-cdE1P-L_raWpdVHlF2UBwCh2G-VqiXW8brck.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/oW/oWjGG00YfIwfxxgvtlJdbHoXH5O8uOC0JBo7ONfEPHE.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/rK/rKjpM0BodDOhMZhlsEmrI1Xu9rqbHLlpDEgO8TKHpDg.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/sM/sMkGzvs1g3Rz76JEZQamN9-E1ElpJsjnwCYWlh3vM1M.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/sP/sPqDwP2KjJEqN5UbdgbjDvsI45rhL3L80qHR1JXDuF8.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/t5/t5BIQBKPFueDaTLRL018ommGmTWz1Q0YeVl13x7eOK8.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/uA/uA0GGZmZb74HOCgEgs7h8eJtinIs7n0Kajjh7LKAoFU.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/vd/vd9_7rwcdbmj_12bkjbvfOPNNgHqnJnTSp77lCkkArI.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/y7/y7TGuSjhTm2MQDtQSxsBgP-B0VxXhHA_zCwI7phKzGQ.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/yL/yLpW_7_mv--d0YbIr5xg2toqjT15wQBe0qKxuJz9mw0.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/ye/ye4V_2mUU559DqcDoEvDTUT_0V5As1QmTkocS611G-o.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/z2/z2JzKw74exmUYJYZWr4nl8PB9UZ5xiYbRE0myzyJ_S4.cache:\n    <binary>\n\n/home/amsterdam/workspace/florida/tmp/cache/assets/sprockets/v3.0/zB/zBtu9wg6cTJAA_o-TEU78wHpcPIFOsm773VxJP1kcLI.cache:\n    <binary>\n\n353 matches across 118 files\n\n\nSearching 1212 files for \"email3\"\n\n/home/amsterdam/workspace/florida/app/controllers/letters_controller.rb:\n   19      @email = ENV['email']\n   20      @email2 = ENV['email2']\n   21:     @raffomail = ENV['email3']\n   22      @district = params[:district_1]\n   23      #@email = params[:email_to_controller]\n\n/home/amsterdam/workspace/florida/config/application.yml:\n   26  email: amsterdamAL@gmail.com\n   27  email2: ziploker@hotmail.com\n   28: email3: raffomail@yahoo.com\n\n2 matches across 2 files\n\n\nSearching 1212 files for \"secret_key_base\"\n\n/home/amsterdam/workspace/florida/config/secrets.yml:\n   12  \n   13  development:\n   14:   secret_key_base: 82739d497f9acc7d9484e8a2fdde02bb268195caf632a9d8371e075d35543b1a9c52ba00b6475b31d1c9d2e263a724159145da5b7f24742aeb66f2146298334f\n   15  \n   16  test:\n   17:   secret_key_base: a6b146cba9af5078d7c67cead40563891135ed2dcc2f07b6cb3746f530d0c08166967d2653e21ecd4615380a37629b19c75de5d38150dee3d77162218676c1ed\n   18  \n   19  # Do not keep production secrets in the repository,\n   20  # instead read values from the environment.\n   21  production:\n   22:   secret_key_base: <%= ENV[\"SECRET_KEY_BASE\"] %>\n   23  \n\n4 matches in 1 file\n",
+			"settings":
+			{
+				"buffer_size": 40089,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "/home/amsterdam/workspace/florida/.gitignore",
+			"settings":
+			{
+				"buffer_size": 704,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/amsterdam/workspace/florida/db/schema.rb",
+			"settings":
+			{
+				"buffer_size": 4778,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/amsterdam/workspace/florida/mydb.dump",
+			"settings":
+			{
+				"buffer_size": 70590,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/amsterdam/workspace/florida/config/database.yml",
+			"settings":
+			{
+				"buffer_size": 1036,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/amsterdam/workspace/florida/config/environments/production.rb",
+			"settings":
+			{
+				"buffer_size": 3607,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "/home/amsterdam/workspace/florida/app/assets/javascripts/lookup.js.erb",
 			"settings":
 			{
@@ -191,9 +241,8 @@
 		"/home/amsterdam/workspace/florida",
 		"/home/amsterdam/workspace/florida/app",
 		"/home/amsterdam/workspace/florida/app/assets",
-		"/home/amsterdam/workspace/florida/app/assets/javascripts",
 		"/home/amsterdam/workspace/florida/app/views",
-		"/home/amsterdam/workspace/florida/app/views/lookups"
+		"/home/amsterdam/workspace/florida/config"
 	],
 	"file_history":
 	[
@@ -347,6 +396,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"secret_key_base",
+			"email3",
+			"ENV",
+			"SECRET_KEY_BASE",
 			"zip",
 			"lookup_zip",
 			"find-my-Rep-tool",
@@ -470,11 +523,7 @@
 			"leafymenu",
 			"article.id",
 			"friendly",
-			"bucket",
-			"font-family",
-			"lookup_f",
-			"mini_t",
-			"register"
+			"bucket"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -492,7 +541,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 7,
 			"sheets":
 			[
 				{
@@ -521,11 +570,767 @@
 						"translation.y": 615.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 40089,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										135,
+										150
+									],
+									[
+										311,
+										326
+									],
+									[
+										603,
+										618
+									],
+									[
+										629,
+										644
+									],
+									[
+										816,
+										831
+									],
+									[
+										992,
+										1007
+									],
+									[
+										1284,
+										1299
+									],
+									[
+										1310,
+										1325
+									],
+									[
+										1478,
+										1481
+									],
+									[
+										1535,
+										1538
+									],
+									[
+										1693,
+										1696
+									],
+									[
+										1749,
+										1752
+									],
+									[
+										1955,
+										1958
+									],
+									[
+										1994,
+										1997
+									],
+									[
+										2037,
+										2040
+									],
+									[
+										2277,
+										2280
+									],
+									[
+										2311,
+										2314
+									],
+									[
+										2349,
+										2352
+									],
+									[
+										2640,
+										2643
+									],
+									[
+										2904,
+										2907
+									],
+									[
+										3082,
+										3085
+									],
+									[
+										3430,
+										3433
+									],
+									[
+										3699,
+										3702
+									],
+									[
+										3719,
+										3722
+									],
+									[
+										3907,
+										3910
+									],
+									[
+										4097,
+										4100
+									],
+									[
+										4237,
+										4240
+									],
+									[
+										4391,
+										4394
+									],
+									[
+										4615,
+										4618
+									],
+									[
+										4888,
+										4891
+									],
+									[
+										5236,
+										5239
+									],
+									[
+										5593,
+										5596
+									],
+									[
+										5644,
+										5647
+									],
+									[
+										5744,
+										5747
+									],
+									[
+										5801,
+										5804
+									],
+									[
+										5990,
+										5993
+									],
+									[
+										6042,
+										6045
+									],
+									[
+										6101,
+										6104
+									],
+									[
+										6298,
+										6301
+									],
+									[
+										6350,
+										6353
+									],
+									[
+										6409,
+										6412
+									],
+									[
+										6633,
+										6636
+									],
+									[
+										6908,
+										6911
+									],
+									[
+										7250,
+										7253
+									],
+									[
+										7623,
+										7626
+									],
+									[
+										7888,
+										7891
+									],
+									[
+										8120,
+										8123
+									],
+									[
+										8488,
+										8491
+									],
+									[
+										8623,
+										8626
+									],
+									[
+										8683,
+										8686
+									],
+									[
+										8826,
+										8829
+									],
+									[
+										8857,
+										8860
+									],
+									[
+										8869,
+										8872
+									],
+									[
+										8879,
+										8882
+									],
+									[
+										9095,
+										9098
+									],
+									[
+										9157,
+										9160
+									],
+									[
+										9460,
+										9463
+									],
+									[
+										9624,
+										9627
+									],
+									[
+										9716,
+										9719
+									],
+									[
+										10118,
+										10121
+									],
+									[
+										10522,
+										10525
+									],
+									[
+										10984,
+										10987
+									],
+									[
+										11372,
+										11375
+									],
+									[
+										11818,
+										11821
+									],
+									[
+										12228,
+										12231
+									],
+									[
+										12706,
+										12709
+									],
+									[
+										13104,
+										13107
+									],
+									[
+										13502,
+										13505
+									],
+									[
+										13996,
+										13999
+									],
+									[
+										14148,
+										14151
+									],
+									[
+										14328,
+										14331
+									],
+									[
+										14756,
+										14759
+									],
+									[
+										15173,
+										15176
+									],
+									[
+										15520,
+										15523
+									],
+									[
+										15592,
+										15595
+									],
+									[
+										15650,
+										15653
+									],
+									[
+										15723,
+										15726
+									],
+									[
+										16214,
+										16217
+									],
+									[
+										16327,
+										16330
+									],
+									[
+										16636,
+										16639
+									],
+									[
+										16795,
+										16798
+									],
+									[
+										17116,
+										17119
+									],
+									[
+										17229,
+										17232
+									],
+									[
+										17538,
+										17541
+									],
+									[
+										17697,
+										17700
+									],
+									[
+										18018,
+										18021
+									],
+									[
+										18131,
+										18134
+									],
+									[
+										18440,
+										18443
+									],
+									[
+										18599,
+										18602
+									],
+									[
+										18920,
+										18923
+									],
+									[
+										19033,
+										19036
+									],
+									[
+										19342,
+										19345
+									],
+									[
+										19501,
+										19504
+									],
+									[
+										19822,
+										19825
+									],
+									[
+										19935,
+										19938
+									],
+									[
+										20244,
+										20247
+									],
+									[
+										20403,
+										20406
+									],
+									[
+										20724,
+										20727
+									],
+									[
+										20837,
+										20840
+									],
+									[
+										21146,
+										21149
+									],
+									[
+										21305,
+										21308
+									],
+									[
+										21626,
+										21629
+									],
+									[
+										21739,
+										21742
+									],
+									[
+										22048,
+										22051
+									],
+									[
+										22207,
+										22210
+									],
+									[
+										22528,
+										22531
+									],
+									[
+										22641,
+										22644
+									],
+									[
+										22950,
+										22953
+									],
+									[
+										23109,
+										23112
+									],
+									[
+										23430,
+										23433
+									],
+									[
+										23543,
+										23546
+									],
+									[
+										23852,
+										23855
+									],
+									[
+										24011,
+										24014
+									],
+									[
+										24332,
+										24335
+									],
+									[
+										24445,
+										24448
+									],
+									[
+										24754,
+										24757
+									],
+									[
+										24913,
+										24916
+									],
+									[
+										25234,
+										25237
+									],
+									[
+										25347,
+										25350
+									],
+									[
+										25656,
+										25659
+									],
+									[
+										25815,
+										25818
+									],
+									[
+										26136,
+										26139
+									],
+									[
+										26249,
+										26252
+									],
+									[
+										26558,
+										26561
+									],
+									[
+										26717,
+										26720
+									],
+									[
+										27038,
+										27041
+									],
+									[
+										27151,
+										27154
+									],
+									[
+										27460,
+										27463
+									],
+									[
+										27619,
+										27622
+									],
+									[
+										27940,
+										27943
+									],
+									[
+										28053,
+										28056
+									],
+									[
+										28362,
+										28365
+									],
+									[
+										28521,
+										28524
+									],
+									[
+										29626,
+										29629
+									],
+									[
+										29637,
+										29640
+									],
+									[
+										29700,
+										29703
+									],
+									[
+										39114,
+										39120
+									],
+									[
+										39354,
+										39360
+									],
+									[
+										39545,
+										39560
+									],
+									[
+										39721,
+										39736
+									],
+									[
+										40013,
+										40028
+									],
+									[
+										40039,
+										40054
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								39410,
+								39410
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 5,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ 	].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 23474.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/amsterdam/workspace/florida/.gitignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 704,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								656,
+								656
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 638.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/amsterdam/workspace/florida/db/schema.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4778,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2706.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/amsterdam/workspace/florida/mydb.dump",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 70590,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/home/amsterdam/workspace/florida/config/database.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1036,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								670,
+								670
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 858.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/home/amsterdam/workspace/florida/config/environments/production.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3607,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								371,
+								371
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 66.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
 					"file": "/home/amsterdam/workspace/florida/app/assets/javascripts/lookup.js.erb",
 					"semi_transient": false,
 					"settings":
@@ -537,8 +1342,8 @@
 						"selection":
 						[
 							[
-								638,
-								638
+								1758,
+								1660
 							]
 						],
 						"settings":
@@ -546,11 +1351,11 @@
 							"syntax": "Packages/Rails/JavaScript (Rails).sublime-syntax",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 147.0,
-						"translation.y": 289.0,
+						"translation.x": 44.0,
+						"translation.y": 1232.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]

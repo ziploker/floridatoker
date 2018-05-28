@@ -21,7 +21,9 @@ gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 
-gem "pg" 
+#gem "pg" 
+#gem 'pg', '~> 0.20'
+gem 'pg', '~> 0.18.4'
 gem 'rails_12factor', group: :production
 
 # Use SCSS for stylesheets
@@ -58,9 +60,9 @@ gem 'fog-aws'
 gem 'sitemap_generator'
 gem 'friendly_id', '~> 5.1'
 gem 'rack-cors', :require => 'rack/cors'
-group :production do 
-  	 gem 'rails_12factor'
-end
+#group :production do 
+#  	 gem 'rails_12factor'
+#end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

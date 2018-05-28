@@ -29,7 +29,7 @@ development:
   encoding: unicode
   database: postgres
   pool: 5
-  username: amsterdamAL
+  username: ziploker
   password: passwords
   
   
@@ -40,7 +40,7 @@ test:
   encoding: unicode
   database: store_test
   pool: 5
-  username: amsterdamAL
+  username: ziploker
   password: passwords 
 
 production:

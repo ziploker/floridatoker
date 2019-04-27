@@ -1,0 +1,65 @@
+h1
+  font-size: 2em
+
+
+
+#feedback_page_wrapper
+  +outer-container
+  padding: 20px 10px
+	
+
+  #feedback_form
+    +span-columns(8)
+    clear: both
+    
+    #form_container
+      width: 100%
+      
+      #feedback_form
+        +clearfix
+        
+      input#feedback_name
+        width: 50%
+        float: left
+        
+      input#feedback_email
+        width: 50%
+        foat: right  
+      
+      textarea#feedback_body
+        width: 100%
+        height: 200px
+
+      .feedbackbutton
+  
+        width: 100px
+        float: right
+        margin-left: 3px
+        
+      .cancelbutton
+  
+        width: 100px
+        float: right
+		
+  #feedback_aside
+    +span-columns(4)
+    
+    #feedback_aside_contect
+      margin-top: 20px
+      background-color: green
+      height: 500px
+
+#feedback_errors
+  float: left
+  
+
+
+#feedback_page_wrapper
+  +media($tablet)
+    padding-top: 45px
+
+#feedback_page_wrapper
+  #feedback_form
+    +media($mobile)
+      +span-columns(4)
+

@@ -10,10 +10,10 @@
 $medium-screen: 600px;
 $large-screen: 900px;
 
-$tablet: 600px;
-$handheld: 300px;
-$mobile: 300px;
 
+$handheld: 7680px;
 
+$mobile: new-breakpoint(max-width 500px);
+$tablet: new-breakpoint(max-width 1000px);
 $medium-screen-up: new-breakpoint(min-width $medium-screen 4);
 $large-screen-up: new-breakpoint(min-width $large-screen 8);

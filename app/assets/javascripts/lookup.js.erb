@@ -87,7 +87,75 @@ $(document).ready(function(){
 
 
 			 	}
-			 	
+
+			 	//var OS_KEY = ‘xxxxxxxxx’; // Actual API key filled in
+				//var API_url = ‘https://openstates.org/graphql 1’;
+				var myQuery = "\
+					{\
+					  people(latitude: " +lat+", longitude: " +lng+", first: 100) {\
+					    edges {\
+					      node {\
+					        name\
+					        image\
+					        contactDetails {\
+						      note\
+						      type\
+						      value\
+						    }\
+					        chamber: currentMemberships(classification:[\"upper\", \"lower\"]) {\
+					          post {\
+					            label\
+					          }\
+					          organization {\
+					            name\
+					            classification\
+					            parent {\
+					              name\
+					            }\
+					          }\
+					        }\
+					      }\
+					    }\
+					  }\
+					}\
+					";
+
+				//var myHeaders = new Headers();
+				//myHeaders.append("Accept", "application/json");
+				//myHeaders.append("Content-Type", "application/json");
+				//myHeaders.append("X-API-KEY", sunlight);
+
+				//fetch(API_url, {
+				//method: ‘POST’,
+				//mode: ‘cors’,
+				//headers: myHeaders,
+				//body: JSON.stringify({query: myQuery}),
+				//})
+
+				console.log(myQuery);
+
+			 	fetch('https://openstates.org/graphql', {
+				  method: 'POST',
+				  mode: 'cors',
+				  headers: { 'Content-Type': 'application/json', 'X-API-KEY': sunlight, 'Content-Type': 'application/json' },
+				  body: JSON.stringify({ query: myQuery}),
+				})
+				  /*.then(res => res.json())
+				  .then(res => console.log(res.data))*/
+		 		  .then(function(response){
+		 		  	return response.json();
+		 		  })
+		 		  .then(function(myJson){
+  					  console.log("test: " + JSON.stringify(myJson.data.people.edges[0].node.image));
+  					  		 		  $("#headshot").attr("src", myJson.data.people.edges[0].node.image);
+
+
+
+		 		  });
+
+
+
+			 	/*
 			 	//STEP TWO:::::   use lat and lng to lookup reps.
 			 	$.getJSON("https://openstates.org/api/v1/legislators/geo/?lat=" + lat + "&long=" + lng + "&apikey=" + sunlight, function(results) {
 					
@@ -169,6 +237,8 @@ $(document).ready(function(){
 
 					$("#headshot2").attr("src", goodUrl2);	
 					$('.progress-bar .meter').css('width', '100%');
+					$('#progressbar').fadeOut(1000);
+					$('#lookup_errors').delay(1000).fadeOut(2000);	
 					
 					if (results[1].roles[0].chamber == "lower"){
 						$("#results_name2").empty().append( "Representative " + results[1].full_name);
@@ -280,6 +350,7 @@ $(document).ready(function(){
 						
 					
 				});
+				*/
 
 			}); 
 

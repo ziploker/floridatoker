@@ -15,7 +15,7 @@ gem 'figaro'
 gem 'opentok', "~> 2.2"
 gem 'ancestry'
 gem 'shareable'
-gem 'nokogiri'
+gem 'nokogiri', '~> 1.6.8.rc2'
 gem 'httparty'
 gem 'pry'
 gem 'byebug'

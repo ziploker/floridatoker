@@ -96,7 +96,14 @@ $(document).ready(function(){
 					    edges {\
 					      node {\
 					        name\
+					        givenName\
+					        familyName\
 					        image\
+					        party: currentMemberships(classification:\"party\") {\
+					        	organization {\
+					          		name\
+            					}\
+					        }\
 					        contactDetails {\
 						      note\
 						      type\
@@ -134,6 +141,29 @@ $(document).ready(function(){
 
 				console.log(myQuery);
 
+
+			  	$.ajax({
+			  		type: "get",
+			  		url: "/getinfo/email",
+			  		data: {"var1":"testpacket"},
+
+
+			  		success: function(data){
+			  			
+			  			alert(data.email)
+
+
+			  		},
+			  		error: function(){
+			  			alert("error happened")
+			  		}
+
+			  	});
+
+
+
+			  	
+
 			 	fetch('https://openstates.org/graphql', {
 				  method: 'POST',
 				  mode: 'cors',
@@ -147,211 +177,127 @@ $(document).ready(function(){
 		 		  })
 		 		  .then(function(myJson){
   					  console.log("test: " + JSON.stringify(myJson.data.people.edges[0].node.image));
-  					  		 		  $("#headshot").attr("src", myJson.data.people.edges[0].node.image);
+  					  		 		  
+
+
+		 		  
 
 
 
-		 		  });
-
-
-
-			 	/*
-			 	//STEP TWO:::::   use lat and lng to lookup reps.
-			 	$.getJSON("https://openstates.org/api/v1/legislators/geo/?lat=" + lat + "&long=" + lng + "&apikey=" + sunlight, function(results) {
-					
-			 		var badUrlCheck = results[0].photo_url;
-
-			 		var goodUrl = badUrlCheck.replace("flhouse","myfloridahouse");
-
-					$("#headshot").attr("src", goodUrl);
-					$('.progress-bar .meter').css('width', '41%');	
-					
-					if (results[0].roles[0].chamber == "lower"){
-						$("#results_name").empty().append( "Representative " + results[0].full_name);
-						$("#name_to_controller").val( "Representative " + results[0].full_name);
-						$("#results_party").empty().append( results[0].party + " Party");
-						$("#results_chamber").empty().append("State House, District " + results[0].roles[0].district);
-						$('#district_1').val("State House, District " + results[0].roles[0].district);
+				 	
+				 	//STEP TWO:::::   use lat and lng to lookup reps.
+				 	//$.getJSON("https://openstates.org/api/v1/legislators/geo/?lat=" + lat + "&long=" + lng + "&apikey=" + sunlight, function(results) {
 						
-						//email fix
-						if (results[0].email != undefined){
-							$("#results_email").empty().append( results[0].email);
-							$("#email_to_controller").val(results[0].email);
-						}else if (results[0].offices[0].email != undefined){
-							$("#results_email").empty().append( results[0].offices[0].email);
-							$("#email_to_controller").val(results[0].offices[0].email);
-						}else if ( results[0].first_name == "Bobby B."){
-							$("#results_email").empty().append( "bobby.dubose@myfloridahouse.gov");
-							$("#email_to_controller").val("bobby.dubose@myfloridahouse.gov");
-						}else if ( results[0].last_name == "Sprowls"){
-							$("#results_email").empty().append( "Chris.Sprowls@myfloridahouse.gov");
-							$("#email_to_controller").val("Chris.Sprowls@myfloridahouse.gov");
-						}else if ( results[0].full_name == "Evan Jenne"){
-							$("#results_email").empty().append( "Evan.Jenne@myfloridahouse.gov");
-							$("#email_to_controller").val("Evan.Jenne@myfloridahouse.gov");
-						}else if ( results[0].full_name == "Avila, Bryan"){
-							$("#results_email").empty().append( "bryan.avila@myfloridahouse.gov");
-							$("#email_to_controller").val("bryan.avila@myfloridahouse.gov");
-						}else if ( results[0].full_name == "Raschein, Holly"){
-							$("#results_email").empty().append( "holly.raschein@myfloridahouse.gov");
-							$("#email_to_controller").val("holly.raschein@myfloridahouse.gov");
+				 		//var badUrlCheck = results[0].photo_url;
+
+				 		//var goodUrl = badUrlCheck.replace("flhouse","myfloridahouse");
+
+						//$("#headshot").attr("src", goodUrl);
+						$("#headshot").attr("src", myJson.data.people.edges[0].node.image);
+
+						var badUrlCheck = myJson.data.people.edges[1].node.image;
+
+				 		var goodUrl = badUrlCheck.replace("flhouse","myfloridahouse");
+						$("#headshot2").attr("src",goodUrl);
+
+						$('.progress-bar .meter').css('width', '41%');	
+						
+						
+						if (myJson.data.people.edges[0].node.chamber[0].organization.classification == "upper"){
+
+							var title1 = "Senator";
+							var title2 = "Representative";
+						
 						}else{
-							$("#results_email").empty().append( "Email: *** missing ***");
-						}
+
+							var title1 = "Representative";
+							var title2 = "Senator";
+						};
+							
+						$("#results_name").empty().append( title1 +" "+ myJson.data.people.edges[0].node.name);
+						$("#name_to_controller").val( title1+ " "  + myJson.data.people.edges[0].node.name);
+						$("#results_party").empty().append( myJson.data.people.edges[0].node.party[0].organization.name + " Party");
+						$("#results_chamber").empty().append( myJson.data.people.edges[0].node.chamber[0].organization.name);
+						$("#results_district").empty().append( "District " + myJson.data.people.edges[0].node.chamber[0].post.label);
+
+						$('#district_1').val(myJson.data.people.edges[0].node.chamber[0].post.label);
 						
+					
+						$("#results_name2").empty().append( title2+" " + myJson.data.people.edges[1].node.name);
+						$("#name2_to_controller").val( title2 + " " + myJson.data.people.edges[1].node.name);
+						$("#results_party2").empty().append( myJson.data.people.edges[1].node.party[0].organization.name + " Party");
 						
-						$("#results_term").empty().append("Term: " + results[0].roles[0].term);
+						$("#results_chamber2").empty().append(myJson.data.people.edges[1].node.chamber[0].organization.name);
+		 		  		$("#results_district2").empty().append("District "+ + myJson.data.people.edges[1].node.chamber[0].post.label)
+		 		  		$('#district_2').val(myJson.data.people.edges[1].node.chamber[0].post.labelt);
+
+
+		 		  		
+
 						$('.progress-bar .meter').css('width', '58%');
-					
-					
-					
-					}else if (results[0].roles[0].chamber == "upper"){
+
+						$("#results_email").empty().append( myJson.data.people.edges[0].node.contactDetails[4].value);
+						$("#email_to_controller").val(myJson.data.people.edges[0].node.contactDetails[4].value);
+
+
+						//first.last@myfloridahouse.gov
 						
-						$("#results_name").empty().append( "Senator " + results[0].full_name);
-						$("#name_to_controller").val( "Senator " + results[0].full_name);
-						$("#results_party").empty().append( results[0].party + " Party");
-						$("#results_chamber").empty().append("State Senate, District " + results[0].roles[0].district);
-						$('.progress-bar .meter').css('width', '67%');
-						//email fix
-						if (results[0].email != undefined){
-							$("#results_email").empty().append( results[0].email);
-							$("#email_to_controller").val(results[0].email);
-						}else if (results[0].offices[0].email != undefined){
-							$("#results_email").empty().append( results[0].offices[0].email);
-							$("#email_to_controller").val(results[0].offices[0].email);
+						var spaceCount = myJson.data.people.edges[1].node.name.split(" ").length - 1;
+						//console.log("answer is " + spaceCount);
+
+						if (myJson.data.people.edges[1].node.givenName != "" && hasWhiteSpace(myJson.data.people.edges[1].node.givenName) == -1 && hasWhiteSpace(myJson.data.people.edges[1].node.familyName) == -1){
+
+							var houseEmail = myJson.data.people.edges[1].node.givenName+ "."+myJson.data.people.edges[1].node.familyName+"@myfloridahouse.gov";
+
+						}else if (  spaceCount == 1   ){
+							console.log("answer is in ");
+
+							var fullName = myJson.data.people.edges[1].node.name;
+							var firstN = fullName.substr(0,fullName.indexOf(' ')); 
+							var lastN = fullName.substr(fullName.indexOf(' ')+1); 
+
+
+							var houseEmail = firstN.toLowerCase()+"."+lastN.toLowerCase()+"@myfloridahouse.gov";
+							
+
 							
 						}else{
+
+							var houseEmail = "** missing emaiL **"
+
+						};
 							
-							$("#results_email").empty().append( "EMAIL: not available");
-						}
-						$("#results_term").empty().append("Term: " + results[0].roles[0].term);
+
+						$("#results_email2").empty().append( houseEmail);
+						$("#email2_to_controller").val(houseEmail);
+							
+						
 						$('.progress-bar .meter').css('width', '58%');
-					
-					
-					}					
-					
-					
-					var badUrlCheck2 = results[1].photo_url;
-
-			 		var goodUrl2 = badUrlCheck2.replace("flhouse","myfloridahouse");
-
-					$("#headshot2").attr("src", goodUrl2);	
-					$('.progress-bar .meter').css('width', '100%');
-					$('#progressbar').fadeOut(1000);
-					$('#lookup_errors').delay(1000).fadeOut(2000);	
-					
-					if (results[1].roles[0].chamber == "lower"){
-						$("#results_name2").empty().append( "Representative " + results[1].full_name);
-						$("#name2_to_controller").val( "Representative " + results[1].full_name);
-						$("#results_party2").empty().append( results[1].party + " Party");
-						$("#results_chamber2").empty().append("State House, District " + results[1].roles[0].district);
 						
 						
-						//email fix
-						if (results[1].email != undefined){
-							$("#results_email2").empty().append( results[1].email);
-							$("#email2_to_controller").val(results[1].email);
-						}else if (results[1].offices[0].email != undefined){
-							$("#results_email2").empty().append( results[1].offices[0].email);
-							$("#email2_to_controller").val(results[1].offices[0].email);
-						}else{
+
 							
-							$("#results_email2").empty().append( "Email: *** missing ***");
-						}
+						$('.progress-bar .meter').css('width', '100%');
+						$('#progressbar').fadeOut(1000);
+						$('#lookup_errors').delay(1000).fadeOut(2000);	
 						
 						
 
-						$("#results_term2").empty().append("Term: " + results[1].roles[0].term);
-						//$('.progress-bar .meter').css('width', '75%');
-					
-					
-					
-					}else if (results[1].roles[0].chamber == "upper"){
-						
-						$("#results_name2").empty().append( "Senator " + results[1].full_name);
-						$("#name2_to_controller").val( "Senator " + results[1].full_name);
-						$("#results_party2").empty().append( results[1].party + " Party");
-						$("#results_chamber2").empty().append("State Seante, District " + results[1].roles[0].district);
-						$('#district_2').val("State Seante, District " + results[1].roles[0].district);
-						
-						//email fix
-						if (results[1].email != undefined){
-							$("#results_email2").empty().append( results[1].email);
-							$("#email2_to_controller").val(results[1].email);
-						}else if (results[1].offices[0].email != undefined){
-							$("#results_email2").empty().append( results[1].offices[0].email);
-							$("#email2_to_controller").val(results[1].offices[0].email);
-						}else if (results[1].first_name == "Charles S. \"Charlie"){
-														
-							$("#results_email2").empty().append( "dean.charles@flsenate.gov");
-							$("#email2_to_controller").val("dean.charles@flsenate.gov");
-						}
-						$("#results_term2").empty().append("Term: " + results[1].roles[0].term);
-						//$('.progress-bar .meter').css('width', '75%');
-					
-					}					
-					
-					console.log('alpha');
-					
-					
-					leg_id0 = results[0].leg_id;
-					leg_id1 = results[1].leg_id;
-					
-					//$('#lookup_errors').append(results[0].full_name + ": " + results[0].leg_id + "<br>");
-					//$('#lookup_errors').append(results[1].full_name + ": " + results[1].leg_id + "<br>");
-					
-					//get additional info based on legislative id 1of2
-					//$.getJSON("https://openstates.org/api/v1//legislators/"+ leg_id0 +"/?apikey=" + sunlight, function(data) {
+
+
+						console.log('alpha');
 						
 						
-						//$("#results_work").empty().append( data.offices[0].name + ":");
-						//$("#results_phone").empty().append( data.offices[0].phone);
-						//$("#results_address").empty().append( data.offices[0].address);
-						//$("#results_work-b").empty().append( data.offices[1].name + ":");
-						//$("#results_phone-b").empty().append( data.offices[1].phone);
-						//$("#results_address-b").empty().append( data.offices[1].address);
-												
-					//	if (data.offices[0].email != undefined){
-					//		$("#results_email").empty().append( data.offices[0].email);
-					//		$("#email_to_controller").val(data.offices[0].email);
-					//	}else if (data.offices[1].email != undefined){
-					//		$("#results_email").empty().append( data.offices[1].email);
-					//		$("#email_to_controller").val(data.offices[1].email);
-					//	}
-					//	
-					//	console.log('beta');
-					//});
+						
+						$('#progressbar').fadeOut(1000);						
+						$('#lookup_errors').delay(1000).fadeOut(2000);					
+						
+							
+						
 					
 					
-					//get additional info based on legislative id 2of2
-					//$.getJSON("https://openstates.org/api/v1//legislators/"+ leg_id1 +"/?apikey=" + sunlight, function(lore) {
-						
-						
-						//$("#results_work2").empty().append( lore.offices[0].name + ":");
-						//$("#results_phone2").empty().append( lore.offices[0].phone);
-						//$("#results_address2").empty().append( lore.offices[0].address);
-						
-						//$("#results_work2-b").empty().append( lore.offices[1].name + ":");
-						//$("#results_phone2-b").empty().append( lore.offices[1].phone);
-						//$("#results_address2-b").empty().append( lore.offices[1].address);
-						
-					//	if (lore.offices[0].email != undefined){
-					//		$("#results_email2").empty().append( lore.offices[0].email);
-					//		$("#email2_to_controller").val(lore.offices[0].email);
-					//	}else if (lore.offices[1].email != undefined){
-					//		$("#results_email2").empty().append( lore.offices[1].email);
-					//		$("#email2_to_controller").val(lore.offices[1].email);
-					//	}
-					//	
-					//	console.log('charlie');
-					//	$('#progressbar').fadeOut(1000);						
-					//	$('#lookup_errors').delay(1000).fadeOut(2000);					
-					//});
-						
 					
 				});
-				*/
-
 			}); 
 
 		};
@@ -427,6 +373,10 @@ $(document).ready(function(){
 		}
 	  
 	});
+
+	function hasWhiteSpace(string) {
+  		return string.indexOf(' ');
+	}
 	//$('#lookup_zip').keyup(function(event){
 	//	if(event.keyCode == 13){
 	//		getGuts();

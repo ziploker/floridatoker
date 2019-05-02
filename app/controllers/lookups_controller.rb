@@ -3,7 +3,13 @@ class LookupsController < ApplicationController
 #  before_filter :cors_preflight_check
 #  after_filter :cors_set_access_control_headers
 
-  
+require './lib/web_scraper.rb'
+
+  respond_to do |format|
+  	format.js
+	  format.html {}
+	     
+	end
 
 # For all responses in this controller, return the CORS access control headers.
 
@@ -32,6 +38,30 @@ class LookupsController < ApplicationController
   def all
     
   end 
+
+  def getinfo
+
+  	@newD = params[:var1]
+  	@newDJS = @newD+"67676"
+
+  	#puts @newD + " addddsdfsdfdd"
+  	#respond_with(@newD)
+  	
+  	#return @newDJS
+
+  	value = web_scraper
+  	
+  	
+
+
+
+  	render json: {"email" => value}
+  	
+
+  	
+  	
+
+  end
   
   
   

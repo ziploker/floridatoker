@@ -15,7 +15,11 @@ gem 'figaro'
 gem 'opentok', "~> 2.2"
 gem 'ancestry'
 gem 'shareable'
-
+gem 'nokogiri'
+gem 'httparty'
+gem 'pry'
+gem 'byebug'
+gem 'xpath'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record

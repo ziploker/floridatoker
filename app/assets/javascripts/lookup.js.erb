@@ -220,8 +220,34 @@ $(document).ready(function(){
 
 						$('.progress-bar .meter').css('width', '58%');
 
-						$("#results_email").empty().append( myJson.data.people.edges[0].node.contactDetails[4].value);
-						$("#email_to_controller").val(myJson.data.people.edges[0].node.contactDetails[4].value);
+						var indexWithEmailInIt = 4;
+						console.log("number in aaaray is " + myJson.data.people.edges[0].node.contactDetails.length.toString());
+
+						$.each(myJson.data.people.edges[0].node.contactDetails, function (index, value){
+							
+							
+							console.log(value.type);
+
+							if (value.type == "email"){
+								
+								console.log("email is at index " + index);
+								indexWithEmailInIt = index;
+								return false;
+							}
+
+							
+
+						});
+
+						if (myJson.data.people.edges[0].node.name == "Janet Cruz"){
+
+							$("#results_email").empty().append( "cruz.janet@flsenate.gov");
+							$("#email_to_controller").val("cruz.janet@flsenate.gov");
+						}else{
+							$("#results_email").empty().append( myJson.data.people.edges[0].node.contactDetails[indexWithEmailInIt].value);
+							$("#email_to_controller").val(myJson.data.people.edges[0].node.contactDetails[indexWithEmailInIt].value);
+						}
+						
 
 
 						//first.last@myfloridahouse.gov

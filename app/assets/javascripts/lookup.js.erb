@@ -125,7 +125,7 @@ $(document).ready(function(){
 					    }\
 					  }\
 					}\
-					";
+				";
 
 				//var myHeaders = new Headers();
 				//myHeaders.append("Accept", "application/json");
@@ -139,44 +139,28 @@ $(document).ready(function(){
 				//body: JSON.stringify({query: myQuery}),
 				//})
 
-				console.log(myQuery);
+				//console.log(myQuery);
 
 
-			  	$.ajax({
-			  		type: "get",
-			  		url: "/getinfo/email",
-			  		data: {"var1":"testpacket"},
-
-
-			  		success: function(data){
-			  			
-			  			alert(data.email)
-
-
-			  		},
-			  		error: function(){
-			  			alert("error happened")
-			  		}
-
-			  	});
+			  	
 
 
 
 			  	
 
 			 	fetch('https://openstates.org/graphql', {
-				  method: 'POST',
-				  mode: 'cors',
-				  headers: { 'Content-Type': 'application/json', 'X-API-KEY': sunlight, 'Content-Type': 'application/json' },
-				  body: JSON.stringify({ query: myQuery}),
+					method: 'POST',
+					mode: 'cors',
+					headers: { 'Content-Type': 'application/json', 'X-API-KEY': sunlight, 'Content-Type': 'application/json' },
+					body: JSON.stringify({ query: myQuery}),
 				})
-				  /*.then(res => res.json())
-				  .then(res => console.log(res.data))*/
-		 		  .then(function(response){
-		 		  	return response.json();
-		 		  })
-		 		  .then(function(myJson){
-  					  console.log("test: " + JSON.stringify(myJson.data.people.edges[0].node.image));
+					/*.then(res => res.json())
+					.then(res => console.log(res.data))*/
+				.then(function(response){
+					return response.json();
+				})
+				.then(function(myJson){
+					console.log("test: " + JSON.stringify(myJson.data.people.edges[0].node.image));
   					  		 		  
 
 
@@ -245,10 +229,15 @@ $(document).ready(function(){
 						var spaceCount = myJson.data.people.edges[1].node.name.split(" ").length - 1;
 						//console.log("answer is " + spaceCount);
 
+						
+						//if first and last names are not blank and have no spaces in them, use it to build the missing email
 						if (myJson.data.people.edges[1].node.givenName != "" && hasWhiteSpace(myJson.data.people.edges[1].node.givenName) == -1 && hasWhiteSpace(myJson.data.people.edges[1].node.familyName) == -1){
 
 							var houseEmail = myJson.data.people.edges[1].node.givenName+ "."+myJson.data.people.edges[1].node.familyName+"@myfloridahouse.gov";
-
+							$("#results_email2").empty().append( houseEmail);
+							$("#email2_to_controller").val(houseEmail);
+						//this is if given and family name are blank, get the full name field and see if theres only
+						//one space, if thete is then split it and use it to build the missing email
 						}else if (  spaceCount == 1   ){
 							console.log("answer is in ");
 
@@ -257,19 +246,46 @@ $(document).ready(function(){
 							var lastN = fullName.substr(fullName.indexOf(' ')+1); 
 
 
-							var houseEmail = firstN.toLowerCase()+"."+lastN.toLowerCase()+"@myfloridahouse.gov";
+							var houseEmail = firstN.toLowerCase()+"."+lastN.toLowerCase()+"@myfloridahouse.gov *";
+							$("#results_email2").empty().append( houseEmail);
+							$("#email2_to_controller").val(houseEmail);
 							
 
-							
+						//then last resort, scrape other site to get the missing email	
 						}else{
+							
 
-							var houseEmail = "** missing emaiL **"
+							$.ajax({
+						  		type: "get",
+						  		url: "/getinfo/email",
+						  		
+						  		//this sends the name to the controller
+						  		data: {"name": myJson.data.people.edges[1].node.name },
+
+
+						  		success: function(data){
+						  			
+						  			var houseEmail = data.missingEmail;
+						  			$("#results_email2").empty().append( houseEmail+" **");
+									$("#email2_to_controller").val(houseEmail);
+
+
+						  		},
+						  		error: function(){
+						  			var houseEmail = "*** missing email **";
+						  			$("#results_email2").empty().append( houseEmail);
+									$("#email2_to_controller").val(houseEmail);
+						  		}
+
+			  				});
+
+
+							//var houseEmail = "** missing emaiL **"
 
 						};
 							
 
-						$("#results_email2").empty().append( houseEmail);
-						$("#email2_to_controller").val(houseEmail);
+						
 							
 						
 						$('.progress-bar .meter').css('width', '58%');

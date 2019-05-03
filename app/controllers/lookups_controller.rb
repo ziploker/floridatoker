@@ -4,6 +4,11 @@ class LookupsController < ApplicationController
 #  after_filter :cors_set_access_control_headers
 
 require './lib/web_scraper.rb'
+require 'nokogiri'
+
+require 'httparty'
+
+require 'pry'
 
   respond_to do |format|
   	format.js
@@ -41,28 +46,72 @@ require './lib/web_scraper.rb'
 
   def getinfo
 
-  	@newD = params[:var1]
-  	@newDJS = @newD+"67676"
+    api_key = "AIzaSyAbTbFbYQsj-on_JDtx_5uIgxUWeiNZCzc"
 
-  	#puts @newD + " addddsdfsdfdd"
-  	#respond_with(@newD)
+  	@name = params[:name]
   	
-  	#return @newDJS
+    search_phrase_encoded = URI::encode(@name)
+  	
+    thc = HTTParty.get("https://www.googleapis.com/customsearch/v1?q=#{search_phrase_encoded}&cx=003645805095083477600%3A7hraibewjhe&siteSearch=lobbytools.com&key=AIzaSyAbTbFbYQsj-on_JDtx_5uIgxUWeiNZCzc")
 
-  	value = web_scraper
+    theLink = thc["items"][0]["link"]
+
+    doc = HTTParty.get(theLink)
+
+    @parse_page = Nokogiri::HTML(doc)
+
+    selector = "//a[starts-with(@href, \"mailto:\")]/@href"
+
+
+    nodes = @parse_page.xpath selector
+
+    address = nodes.collect {|n| n.value[7..-1]}
+
+  	#value = web_scraper
+    
+    
+
+    
+
+    
+
+    
+
+    #puts address
+
+    #return address + @name
   	
-  	
+  	#value = address + @name
 
 
 
-  	render json: {"email" => value}
+  	
   	
 
   	
   	
+
+  
+  
+  
+
+    
+
+    
+
+
+    #puts "https://www.googleapis.com/customsearch/v1?q=#{search_phrase_encoded}&cx=003645805095083477600%3A7hraibewjhe&siteSearch=lobbytools.com&key=AIzaSyAbTbFbYQsj-on_JDtx_5uIgxUWeiNZCzc"
+
+    #seid = "003645805095083477600:7hraibewjhe"
+
+    #jsonFile = JSON.parse(thc.to_s)
+    #link = jsonFile.items[0].link
+
+    render json: {"missingEmail" => address} 
+
+
 
   end
-  
   
   
 end

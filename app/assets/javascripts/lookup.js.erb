@@ -17,7 +17,7 @@ $(document).ready(function(){
 		var leg_id0;
 		var leg_id1;
 
-		var google = "<% ENV['google_api_key'] %>";
+		var google = "<%= ENV['google_geo_api_key'] %>";
 		var sunlight = "<%= ENV['sunlight_foundation_api_key'] %>";
 		
 		if(addy == "" || city == ""){
@@ -65,9 +65,8 @@ $(document).ready(function(){
 	
 			
 			
-			
 			//STEP ONE;;;;   get lat and lng info based on user input
-			$.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address=" + addy + "," + city + "&components=administrative_area:FL|country:US&key=AIzaSyAdiUvnwghttRAxeemccUDdH6PaGZCxRVA", function(json){
+			$.getJSON("https://maps.googleapis.com/maps/api/geocode/json?address=" + addy + "," + city + "&components=administrative_area:FL|country:US&key=" + google, function(json){
             
 				
 				if (json.results.length > 1){
@@ -75,9 +74,7 @@ $(document).ready(function(){
 					$('#progressbar').hide();
 				} else {
 
-					console.log(json);
 
-					console.log("https://maps.googleapis.com/maps/api/geocode/json?address=" + addy + "," + city + "&components=administrative_area:FL|country:US&key=" + google);
 				 	//$('#lookup_errors').empty().append("Lat: " + json.results[0].geometry.location.lat + "<br>" + "Lng:" + json.results[0].geometry.location.lng + "<br>" + sunlight + "<br>" + google);
 			 		lat = json.results[0].geometry.location.lat;
 			 		lng = json.results[0].geometry.location.lng;
@@ -150,7 +147,7 @@ $(document).ready(function(){
 
 			 	fetch('https://openstates.org/graphql', {
 					method: 'POST',
-					mode: 'no-cors',
+					mode: 'cors',
 					headers: { 'Content-Type': 'application/json', 'X-API-KEY': sunlight, 'Content-Type': 'application/json' },
 					body: JSON.stringify({ query: myQuery}),
 				})
@@ -160,24 +157,21 @@ $(document).ready(function(){
 					return response.json();
 				})
 				.then(function(myJson){
-					console.log("test: " + JSON.stringify(myJson.data.people.edges[0].node.image));
   					  		 		  
 
 
 		 		  
 
-
+					console.log(myJson);
 
 				 	
 				 	//STEP TWO:::::   use lat and lng to lookup reps.
 				 	//$.getJSON("https://openstates.org/api/v1/legislators/geo/?lat=" + lat + "&long=" + lng + "&apikey=" + sunlight, function(results) {
 						
-				 		//var badUrlCheck = results[0].photo_url;
+				 		var badUrlCheck0 = myJson.data.people.edges[0].node.image;
 
-				 		//var goodUrl = badUrlCheck.replace("flhouse","myfloridahouse");
-
-						//$("#headshot").attr("src", goodUrl);
-						$("#headshot").attr("src", myJson.data.people.edges[0].node.image);
+				 		var goodUrl0 = badUrlCheck0.replace("flhouse","myfloridahouse");
+						$("#headshot").attr("src", goodUrl0);
 
 						var badUrlCheck = myJson.data.people.edges[1].node.image;
 
@@ -220,22 +214,18 @@ $(document).ready(function(){
 
 						$('.progress-bar .meter').css('width', '58%');
 
-						var indexWithEmailInIt = 4;
-						console.log("number in aaaray is " + myJson.data.people.edges[0].node.contactDetails.length.toString());
+						var indexWithEmailInIt = 1978;
 
 						$.each(myJson.data.people.edges[0].node.contactDetails, function (index, value){
 							
 							
-							console.log(value.type);
 
 							if (value.type == "email"){
 								
-								console.log("email is at index " + index);
 								indexWithEmailInIt = index;
 								return false;
 							}
 
-							
 
 						});
 
@@ -243,9 +233,13 @@ $(document).ready(function(){
 
 							$("#results_email").empty().append( "cruz.janet@flsenate.gov");
 							$("#email_to_controller").val("cruz.janet@flsenate.gov");
-						}else{
+						}else if  (indexWithEmailInIt != 1978){
 							$("#results_email").empty().append( myJson.data.people.edges[0].node.contactDetails[indexWithEmailInIt].value);
 							$("#email_to_controller").val(myJson.data.people.edges[0].node.contactDetails[indexWithEmailInIt].value);
+						}else{
+							$("#results_email").empty().append( "*** missing email ***");
+							//$("#email_to_controller").val(myJson.data.people.edges[0].node.contactDetails[indexWithEmailInIt].value);
+
 						}
 						
 
@@ -265,7 +259,6 @@ $(document).ready(function(){
 						//this is if given and family name are blank, get the full name field and see if theres only
 						//one space, if thete is then split it and use it to build the missing email
 						}else if (  spaceCount == 1   ){
-							console.log("answer is in ");
 
 							var fullName = myJson.data.people.edges[1].node.name;
 							var firstN = fullName.substr(0,fullName.indexOf(' ')); 

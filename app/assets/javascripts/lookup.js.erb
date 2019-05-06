@@ -159,7 +159,7 @@ $(document).ready(function(){
 
 				fetch('http://localhost:3000/lookups/api', {
 					method: 'POST',
-					mode: 'cors',
+					mode: 'no-cors',
 					headers: { 'Content-Type': 'application/json', 'X-API-KEY': sunlight, 'Accept': 'application/json' },
 					body: JSON.stringify({ lat: lat, lng: lng}),
 				})

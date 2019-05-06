@@ -19,7 +19,7 @@ gem 'shareable'
 gem 'nokogiri', '~> 1.6.8.rc2'
 gem 'httparty'
 gem 'pry'
-gem 'byebug'
+
 gem 'xpath'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

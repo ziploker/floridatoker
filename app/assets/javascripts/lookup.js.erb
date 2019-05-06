@@ -85,8 +85,8 @@ $(document).ready(function(){
 
 			 	}
 
-			 	//var OS_KEY = ‘xxxxxxxxx’; // Actual API key filled in
-				//var API_url = ‘https://openstates.org/graphql 1’;
+			 	//was used when request to openstates was made by client instead of from server
+			 	//done by server because of cors issues
 				var myQuery = "\
 					{\
 					  people(latitude: " +lat+", longitude: " +lng+", first: 100) {\
@@ -124,6 +124,7 @@ $(document).ready(function(){
 					}\
 				";
 
+
 				//var myHeaders = new Headers();
 				//myHeaders.append("Accept", "application/json");
 				//myHeaders.append("Content-Type", "application/json");
@@ -139,27 +140,41 @@ $(document).ready(function(){
 				//console.log(myQuery);
 
 
-			  	
-
-
-
-			  	
-
+				/*
+				//local fetch request to openstates, done by server instead due to cors issues
 			 	fetch('https://openstates.org/graphql', {
 					method: 'POST',
 					mode: 'cors',
-					headers: { 'Content-Type': 'application/json', 'X-API-KEY': sunlight, 'Content-Type': 'application/json' },
+					headers: { 'Content-Type': 'application/json', 'X-API-KEY': sunlight, 'Accept': 'application/json' },
 					body: JSON.stringify({ query: myQuery}),
 				})
-					/*.then(res => res.json())
-					.then(res => console.log(res.data))*/
+					
 				.then(function(response){
 					return response.json();
 				})
 				.then(function(myJson){
   					  		 		  
 
+				*/
 
+				fetch('http://localhost:3000/lookups/api', {
+					method: 'POST',
+					mode: 'cors',
+					headers: { 'Content-Type': 'application/json', 'X-API-KEY': sunlight, 'Accept': 'application/json' },
+					body: JSON.stringify({ lat: lat, lng: lng}),
+				})
+					
+				.then(function(response){
+					
+
+					//returns the extracted json to the next .then
+					return response.json();
+				})
+				.then(function(myJson){
+					console.log("pp" + JSON.stringify(myJson));
+
+
+				
 		 		  
 
 					console.log(myJson);
@@ -333,6 +348,16 @@ $(document).ready(function(){
 					
 					
 				});
+			
+			
+
+
+			
+
+
+
+
+
 			}); 
 
 		};

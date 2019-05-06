@@ -1,40 +1,36 @@
 class LookupsController < ApplicationController
   
-#  before_filter :cors_preflight_check
-#  after_filter :cors_set_access_control_headers
+  #  before_filter :cors_preflight_check
+  #  after_filter :cors_set_access_control_headers
 
-require './lib/web_scraper.rb'
-require 'nokogiri'
+  skip_before_action :verify_authenticity_token
 
-require 'httparty'
+  require './lib/web_scraper.rb'
+  require 'nokogiri'
+  require 'httparty'
+  require 'pry'
 
-require 'pry'
+    
 
-  respond_to do |format|
-  	format.js
-	  format.html {}
-	     
-	end
+  # For all responses in this controller, return the CORS access control headers.
+  #def cors_set_access_control_headers
+    #headers['Access-Control-Allow-Origin'] = '*'
+    #headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
+    #headers['Access-Control-Request-Method'] = '*'
+    #headers['Access-Control-Allow-Headers'] = '*'
+    #headers['Access-Control-Max-Age'] = "1728000"
+  #end
+  #  
+   # def cors_preflight_check
+   # if request.method == :options
+    #  headers['Access-Control-Allow-Origin'] = '*'
+   #   headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
+    #  headers['Access-Control-Allow-Headers'] = '*'
+    #  headers['Access-Control-Request-Method'] = '*'
+    #  headers['Access-Control-Max-Age'] = '1728000'
+    #  render :text => '', :content_type => 'text/plain'
+ # end
 
-# For all responses in this controller, return the CORS access control headers.
-def cors_set_access_control_headers
-  headers['Access-Control-Allow-Origin'] = '*'
-  headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
-  headers['Access-Control-Request-Method'] = '*'
-  headers['Access-Control-Allow-Headers'] = '*'
-  headers['Access-Control-Max-Age'] = "1728000"
-end
-#  
-  def cors_preflight_check
-  if request.method == :options
-    headers['Access-Control-Allow-Origin'] = '*'
-    headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
-    headers['Access-Control-Allow-Headers'] = '*'
-    headers['Access-Control-Request-Method'] = '*'
-    headers['Access-Control-Max-Age'] = '1728000'
-    render :text => '', :content_type => 'text/plain'
-  end
-end
   def new
     
   end
@@ -42,6 +38,77 @@ end
   def all
     
   end 
+
+  def api
+
+    query = "{
+            people(latitude: #{params[:lat]}, longitude: #{params[:lng]}, first: 100) {
+              edges {
+                node {
+                  name
+                  givenName
+                  familyName
+                  image
+                  party: currentMemberships(classification:\"party\") {
+                    organization {
+                        name
+                      }
+                  }
+                  contactDetails {
+                  note
+                  type
+                  value
+                }
+                  chamber: currentMemberships(classification:[\"upper\", \"lower\"]) {
+                    post {
+                      label
+                    }
+                    organization {
+                      name
+                      classification
+                      parent {
+                        name
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }"
+        
+    
+    url = "https://openstates.org/graphql"
+    
+    
+
+    body = {
+      
+      "query" => query
+    }
+
+    headers = {
+
+      "X-API-KEY" => "70717a1b-75dc-45cc-82cd-5ba4725e4f0d"
+    }
+
+
+    result = HTTParty.post(url, :body => body, :headers => headers)
+    
+    @JO = JSON.parse(result.body)
+
+    
+    #render :nothing => true
+    #@jsonFile = {one: "someshit", two: request.body}
+
+    respond_to do |format|
+      
+      format.json  { render json: @JO}
+
+    end
+    
+  end
+
+  
 
   def getinfo
 

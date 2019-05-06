@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-#gem 'ruby', '2.3.0'
+ruby '2.3.8'
 
 gem 'bourbon', '4.2.7'
 gem 'neat', '~> 1.8.0'

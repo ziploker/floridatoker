@@ -64,7 +64,7 @@ gem 'fog-aws'
 #gem 'fog'
 gem 'sitemap_generator'
 gem 'friendly_id', '~> 5.1'
-gem 'rack-cors', :require => 'rack/cors'
+#gem 'rack-cors', :require => 'rack/cors'
 #group :production do 
 #  	 gem 'rails_12factor'
 #end

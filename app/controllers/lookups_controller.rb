@@ -122,7 +122,7 @@ class LookupsController < ApplicationController
 
     puts "name encoded is "+ search_phrase_encoded
   	
-    thc = HTTParty.get("https://www.googleapis.com/customsearch/v1?q=#{search_phrase_encoded}&cx=003645805095083477600%3A7hraibewjhe&siteSearch=lobbytools.com&key=#{api_key}")
+    thc = HTTParty.get("https://www.googleapis.com/customsearch/v1?q=#{search_phrase_encoded}&cx=003645805095083477600%3A7hraibewjhe&siteSearch=lobbytools.com&key=#{ENV['google_search_api_key']}")
 
     puts thc.to_s
 

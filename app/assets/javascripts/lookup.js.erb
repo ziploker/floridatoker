@@ -17,6 +17,8 @@ $(document).ready(function(){
 		var leg_id0;
 		var leg_id1;
 
+		var openstates_url_request;
+
 		var google = "<%= ENV['google_geo_api_key'] %>";
 		var sunlight = "<%= ENV['sunlight_foundation_api_key'] %>";
 		
@@ -157,7 +159,15 @@ $(document).ready(function(){
 
 				*/
 
-				fetch('https://ancient-shore-55511.herokuapp.com/lookups/api', {
+				if (<% Rails.env.devlopment? %>){
+
+					openstates_url_request = "http://localhost:3000/lookups/api"
+				}else {
+
+					openstates_url_request = "https://ancient-shore-55511.herokuapp.com/lookups/api"
+				}
+
+				fetch( openstates_url_request, {
 					method: 'POST',
 					mode: 'cors',
 					headers: { 'Content-Type': 'application/json', 'X-API-KEY': sunlight, 'Accept': 'application/json' },
@@ -310,7 +320,7 @@ $(document).ready(function(){
 						  			$("#results_email2").empty().append( houseEmail);
 									$("#email2_to_controller").val(houseEmail);
 
-									$("#results_email2").empty().append( error);
+									
 						  		}
 
 			  				});

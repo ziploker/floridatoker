@@ -115,6 +115,8 @@ class LookupsController < ApplicationController
     api_key = ENV['google_search_api_key']
 
   	@name = params[:name]
+
+    puts "name is "+ @name
   	
     search_phrase_encoded = URI::encode(@name)
   	
@@ -173,7 +175,13 @@ class LookupsController < ApplicationController
     #jsonFile = JSON.parse(thc.to_s)
     #link = jsonFile.items[0].link
 
-    render json: {"missingEmail" => address} 
+    respond_to do |format|
+      
+      format.json  { render json: {"missingEmail" => address}}
+
+    end
+
+    
 
 
 

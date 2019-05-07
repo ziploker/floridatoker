@@ -305,10 +305,12 @@ $(document).ready(function(){
 
 
 						  		},
-						  		error: function(){
+						  		error: function(error){
 						  			var houseEmail = "*** missing email **";
 						  			$("#results_email2").empty().append( houseEmail);
 									$("#email2_to_controller").val(houseEmail);
+
+									$("#results_email2").empty().append( error);
 						  		}
 
 			  				});

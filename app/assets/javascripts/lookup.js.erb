@@ -17,7 +17,7 @@ $(document).ready(function(){
 		var leg_id0;
 		var leg_id1;
 
-		var rails_env = '<%= Rails.env %>'
+		var rails_env = $('#RAILS_ENV_CONSTANT').text();
 
 		var openstates_url_request;
 		var house_email_api_url;

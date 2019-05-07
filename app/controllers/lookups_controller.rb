@@ -126,20 +126,20 @@ class LookupsController < ApplicationController
 
     puts thc.to_s
 
-    #theLink = thc["items"][0]["link"]
+    theLink = thc["items"][0]["link"]
 
-    #doc = HTTParty.get(theLink)
+    doc = HTTParty.get(theLink)
 
-    #@parse_page = Nokogiri::HTML(doc)
+    @parse_page = Nokogiri::HTML(doc)
 
-    #selector = "//a[starts-with(@href, \"mailto:\")]/@href"
+    selector = "//a[starts-with(@href, \"mailto:\")]/@href"
 
 
-    #nodes = @parse_page.xpath selector
+    nodes = @parse_page.xpath selector
 
-    #address = nodes.collect {|n| n.value[7..-1]}
+    address = nodes.collect {|n| n.value[7..-1]}
 
-  	#value = web_scraper
+  	value = web_scraper
     
     
 

@@ -119,8 +119,12 @@ class LookupsController < ApplicationController
     puts "name is "+ @name
   	
     search_phrase_encoded = URI::encode(@name)
+
+    puts "name encoded is "+ search_phrase_encoded
   	
     thc = HTTParty.get("https://www.googleapis.com/customsearch/v1?q=#{search_phrase_encoded}&cx=003645805095083477600%3A7hraibewjhe&siteSearch=lobbytools.com&key=#{api_key}")
+
+    puts "THC is  " + thc
 
     theLink = thc["items"][0]["link"]
 

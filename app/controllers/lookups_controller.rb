@@ -124,20 +124,20 @@ class LookupsController < ApplicationController
   	
     thc = HTTParty.get("https://www.googleapis.com/customsearch/v1?q=#{search_phrase_encoded}&cx=003645805095083477600%3A7hraibewjhe&siteSearch=lobbytools.com&key=#{api_key}")
 
-    puts thc["items"][0]["link"]
+    puts thc.to_s
 
-    theLink = thc["items"][0]["link"]
+    #theLink = thc["items"][0]["link"]
 
-    doc = HTTParty.get(theLink)
+    #doc = HTTParty.get(theLink)
 
-    @parse_page = Nokogiri::HTML(doc)
+    #@parse_page = Nokogiri::HTML(doc)
 
-    selector = "//a[starts-with(@href, \"mailto:\")]/@href"
+    #selector = "//a[starts-with(@href, \"mailto:\")]/@href"
 
 
-    nodes = @parse_page.xpath selector
+    #nodes = @parse_page.xpath selector
 
-    address = nodes.collect {|n| n.value[7..-1]}
+    #address = nodes.collect {|n| n.value[7..-1]}
 
   	#value = web_scraper
     

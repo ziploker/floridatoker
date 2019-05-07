@@ -160,7 +160,7 @@ $(document).ready(function(){
 
 				*/
 
-				if ( "<%=Rails.env.devlopment?%>"){
+				if ( "<%=!Rails.env.production?%>"){
 
 					openstates_url_request = "http://localhost:3000/lookups/api"
 				
@@ -301,7 +301,7 @@ $(document).ready(function(){
 						}else{
 							
 
-							if ( "<%=Rails.env.devlopment?%>"){
+							if ( "<%=!Rails.env.production?%>"){
 
 								house_email_api_url = "http://localhost:3000/lookups/getinfo"
 							}else {

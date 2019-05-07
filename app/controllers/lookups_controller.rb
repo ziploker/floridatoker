@@ -124,7 +124,7 @@ class LookupsController < ApplicationController
   	
     thc = HTTParty.get("https://www.googleapis.com/customsearch/v1?q=#{search_phrase_encoded}&cx=003645805095083477600%3A7hraibewjhe&siteSearch=lobbytools.com&key=#{api_key}")
 
-    puts "THC is  " + thc
+    puts thc["items"][0]["link"]
 
     theLink = thc["items"][0]["link"]
 

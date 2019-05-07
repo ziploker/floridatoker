@@ -17,6 +17,8 @@ $(document).ready(function(){
 		var leg_id0;
 		var leg_id1;
 
+		var rails_env = '<%= Rails.env %>'
+
 		var openstates_url_request;
 		var house_email_api_url;
 
@@ -160,7 +162,7 @@ $(document).ready(function(){
 
 				*/
 
-				if ( "<%=!Rails.env.production?%>"){
+				if ( rails_env == "development" ){
 
 					openstates_url_request = "http://localhost:3000/lookups/api"
 				
@@ -301,7 +303,7 @@ $(document).ready(function(){
 						}else{
 							
 
-							if ( "<%=!Rails.env.production?%>"){
+							if ( rails_env == "development" ){
 
 								house_email_api_url = "http://localhost:3000/lookups/getinfo"
 							}else {

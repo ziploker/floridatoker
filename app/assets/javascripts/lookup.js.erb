@@ -18,6 +18,7 @@ $(document).ready(function(){
 		var leg_id1;
 
 		var openstates_url_request;
+		var house_email_api_url;
 
 		var google = "<%= ENV['google_geo_api_key'] %>";
 		var sunlight = "<%= ENV['sunlight_foundation_api_key'] %>";
@@ -159,9 +160,10 @@ $(document).ready(function(){
 
 				*/
 
-				if (<% Rails.env.devlopment? %>){
+				if ( "<%=Rails.env.devlopment?%>"){
 
 					openstates_url_request = "http://localhost:3000/lookups/api"
+				
 				}else {
 
 					openstates_url_request = "https://ancient-shore-55511.herokuapp.com/lookups/api"
@@ -299,9 +301,18 @@ $(document).ready(function(){
 						}else{
 							
 
+							if ( "<%=Rails.env.devlopment?%>"){
+
+								house_email_api_url = "http://localhost:3000/lookups/getinfo"
+							}else {
+
+								house_email_api_url = "https://ancient-shore-55511.herokuapp.com/lookups/getinfo"
+							}
+
+
 							$.ajax({
 						  		type: "get",
-						  		url: "https://ancient-shore-55511.herokuapp.com/getinfo/email",
+						  		url: house_email_api_url,
 						  		
 						  		//this sends the name to the controller
 						  		data: {"name": myJson.data.people.edges[1].node.name },

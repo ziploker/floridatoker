@@ -14,10 +14,25 @@
     
     Sincerely, <br />
     
-    <%= @letter.name %><br />
-    <%= @letter.address %><br />
-    <%= @letter.city %> FL, <%= @letter.zip %><br />
-    <%= @user %>
+    <% if @letter.name == "" %>
+      concerned citizen<br/>
+    <% else %>
+      <%= @letter.name %><br />
+    <%end%>
+
+    <% if@letter.address == "" %>
+      
+    <% else %>
+      <%= @letter.address %><br />
+    <%end%>
+
+    <% if  @letter.city == "" && @letter.zip == "" %>
+      
+    <% else %>
+      <%= @letter.city %> FL, <%= @letter.zip %><br />
+    <%end%>
+
+
     
 </body>
 </html>

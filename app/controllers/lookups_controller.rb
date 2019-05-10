@@ -186,12 +186,52 @@ class LookupsController < ApplicationController
       format.json  { render json: {"missingEmail" => address}}
 
     end
+  end
+
+  def get_bills
+
+    
+
+
+    url = "https://openstates.org/graphql"
+  
+  
+
+    body = {
+      
+      "query" => params[:search]
+    }
+
+    headers = {
+
+      "X-API-KEY" => ENV['sunlight_foundation_api_key']
+    }
+
+
+    result = HTTParty.post(url, :body => body, :headers => headers)
+    
+    @bills = JSON.parse(result.body)
+
+
+
+    
+    #render :nothing => true
+    #@jsonFile = {one: "someshit", two: request.body}
+
+    respond_to do |format|
+      
+      format.json  { render json: {"bills" => @bills}}
+
+    end
+  
+
+  end
 
     
 
 
 
-  end
+  
   
   
 end

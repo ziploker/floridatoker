@@ -33,6 +33,7 @@
 	 		<ul>
 	 			<li><%= @name %></li>
 	 			<li><%= @name2 %></li>
+	 			
 	 		</ul>
 	 		
 	 		<div id="letter_inst">
@@ -61,7 +62,7 @@
 		-->
 		<%= f.hidden_field :name1, :value => @name %>
 		<%= f.hidden_field :name2, :value => @name2 %>
-		<%= f.hidden_field :email1, :value => @email %>
+		<%= f.hidden_field :email1, :value => @email1 %>
 		<%= f.hidden_field :email2, :value => @email2 %>
 		
 		<%= f.text_field :name, :placeholder => "your full name" %>

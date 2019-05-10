@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   get '/lookups/getinfo' => 'lookups#getinfo'
   post '/lookups/api' => 'lookups#api'
+  post '/lookups/bills' => 'lookups#get_bills'
   
   
   #get 'lookups/review' => 'lookups#review'

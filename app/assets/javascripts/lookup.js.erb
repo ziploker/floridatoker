@@ -160,7 +160,19 @@ $(document).ready(function(){
 				.then(function(myJson){
   					  		 		  
 
+				
+
+				console.log("yes" + myJson);
 				*/
+
+
+
+
+
+
+
+
+				
 
 				if ( rails_env == "development" ){
 
@@ -185,77 +197,58 @@ $(document).ready(function(){
 					return response.json();
 				})
 				.then(function(myJson){
-					console.log("pp" + JSON.stringify(myJson));
-
-
-				
-		 		  
-
 					console.log(myJson);
 
-				 	
-				 	//STEP TWO:::::   use lat and lng to lookup reps.
+
+					var title1 = "Senator";
+					var title2 = "Representative";
+
+		 		  
+
+					//STEP TWO:::::   use lat and lng to lookup reps.
 				 	//$.getJSON("https://openstates.org/api/v1/legislators/geo/?lat=" + lat + "&long=" + lng + "&apikey=" + sunlight, function(results) {
 						
-				 		var badUrlCheck0 = myJson.data.people.edges[0].node.image;
+			 		$('.progress-bar .meter').css('width', '41%');	
+					
+					
+					if (myJson.data.people.edges[0].node.chamber[0].organization.classification == "upper"){
 
-				 		var goodUrl0 = badUrlCheck0.replace("flhouse","myfloridahouse");
-						$("#headshot").attr("src", goodUrl0);
+						
 
+						$("#headshot").attr("src", myJson.data.people.edges[0].node.image);
 						var badUrlCheck = myJson.data.people.edges[1].node.image;
-
-				 		var goodUrl = badUrlCheck.replace("flhouse","myfloridahouse");
+						var goodUrl = badUrlCheck.replace("flhouse","myfloridahouse");
 						$("#headshot2").attr("src",goodUrl);
-
-						$('.progress-bar .meter').css('width', '41%');	
+					
 						
-						
-						if (myJson.data.people.edges[0].node.chamber[0].organization.classification == "upper"){
-
-							var title1 = "Senator";
-							var title2 = "Representative";
-						
-						}else{
-
-							var title1 = "Representative";
-							var title2 = "Senator";
-						};
-							
 						$("#results_name").empty().append( title1 +" "+ myJson.data.people.edges[0].node.name);
 						$("#name_to_controller").val( title1+ " "  + myJson.data.people.edges[0].node.name);
 						$("#results_party").empty().append( myJson.data.people.edges[0].node.party[0].organization.name + " Party");
 						$("#results_chamber").empty().append( myJson.data.people.edges[0].node.chamber[0].organization.name);
 						$("#results_district").empty().append( "District " + myJson.data.people.edges[0].node.chamber[0].post.label);
-
-						$('#district_1').val(myJson.data.people.edges[0].node.chamber[0].post.label);
+						$('#district_1').val("District " + myJson.data.people.edges[0].node.chamber[0].post.label);
 						
 					
 						$("#results_name2").empty().append( title2+" " + myJson.data.people.edges[1].node.name);
 						$("#name2_to_controller").val( title2 + " " + myJson.data.people.edges[1].node.name);
 						$("#results_party2").empty().append( myJson.data.people.edges[1].node.party[0].organization.name + " Party");
-						
 						$("#results_chamber2").empty().append(myJson.data.people.edges[1].node.chamber[0].organization.name);
-		 		  		$("#results_district2").empty().append("District "+ + myJson.data.people.edges[1].node.chamber[0].post.label)
-		 		  		$('#district_2').val(myJson.data.people.edges[1].node.chamber[0].post.labelt);
+		 		  		$("#results_district2").empty().append("District "+ myJson.data.people.edges[1].node.chamber[0].post.label)
+		 		  		$('#district_2').val("District " + myJson.data.people.edges[1].node.chamber[0].post.labelt);
 
 
-		 		  		
 
-						$('.progress-bar .meter').css('width', '58%');
+		 		  		//for senantors emails
+		 		  		var indexWithEmailInIt = 1978;
 
-						var indexWithEmailInIt = 1978;
-
+						//loop each time till you get the email field
 						$.each(myJson.data.people.edges[0].node.contactDetails, function (index, value){
-							
-							
-
+						
 							if (value.type == "email"){
 								
 								indexWithEmailInIt = index;
 								return false;
 							}
-
-
 						});
 
 						if (myJson.data.people.edges[0].node.name == "Janet Cruz"){
@@ -267,26 +260,24 @@ $(document).ready(function(){
 							$("#email_to_controller").val(myJson.data.people.edges[0].node.contactDetails[indexWithEmailInIt].value);
 						}else{
 							$("#results_email").empty().append( "*** missing email ***");
-							//$("#email_to_controller").val(myJson.data.people.edges[0].node.contactDetails[indexWithEmailInIt].value);
+							$("#email_to_controller").val("missing email");
 
 						}
-						
 
 
-						//first.last@myfloridahouse.gov
-						
+						//for house members emails
 						var spaceCount = myJson.data.people.edges[1].node.name.split(" ").length - 1;
 						//console.log("answer is " + spaceCount);
 
-						
+					
 						//if first and last names are not blank and have no spaces in them, use it to build the missing email
 						if (myJson.data.people.edges[1].node.givenName != "" && hasWhiteSpace(myJson.data.people.edges[1].node.givenName) == -1 && hasWhiteSpace(myJson.data.people.edges[1].node.familyName) == -1){
 
 							var houseEmail = myJson.data.people.edges[1].node.givenName+ "."+myJson.data.people.edges[1].node.familyName+"@myfloridahouse.gov";
 							$("#results_email2").empty().append( houseEmail);
 							$("#email2_to_controller").val(houseEmail);
-						//this is if given and family name are blank, get the full name field and see if theres only
-						//one space, if thete is then split it and use it to build the missing email
+							//this is if given and family name are blank, get the full name field and see if theres only
+							//one space, if thete is then split it and use it to build the missing email
 						}else if (  spaceCount == 1   ){
 
 							var fullName = myJson.data.people.edges[1].node.name;
@@ -299,9 +290,10 @@ $(document).ready(function(){
 							$("#email2_to_controller").val(houseEmail);
 							
 
-						//then last resort, scrape other site to get the missing email	
+					
+							//then last resort, scrape other site to get the missing email	
 						}else{
-							
+						
 
 							if ( rails_env == "development" ){
 
@@ -331,7 +323,7 @@ $(document).ready(function(){
 						  		error: function(error){
 						  			var houseEmail = "*** missing email **";
 						  			$("#results_email2").empty().append( houseEmail);
-									$("#email2_to_controller").val(houseEmail);
+									$("#email2_to_controller").val("missing email");
 
 									
 						  		}
@@ -339,40 +331,192 @@ $(document).ready(function(){
 			  				});
 
 
-							//var houseEmail = "** missing emaiL **"
+						//var houseEmail = "** missing emaiL **"
 
 						};
+
+
+
+					
+
+
+
+					//else if [0] is for "HOUSE -LOWER and [1] is for upper -Senators"
+					}else{
+
+						
+
+						$("#headshot").attr("src",myJson.data.people.edges[1].node.image);
+						var badUrlCheck = myJson.data.people.edges[0].node.image;
+						var goodUrl = badUrlCheck.replace("flhouse","myfloridahouse");
+						$("#headshot2").attr("src", goodUrl);
+						
+					
+						
+						$("#results_name").empty().append( title1 +" "+ myJson.data.people.edges[1].node.name);
+						$("#name_to_controller").val( title1+ " "  + myJson.data.people.edges[1].node.name);
+						$("#results_party").empty().append( myJson.data.people.edges[1].node.party[0].organization.name + " Party");
+						$("#results_chamber").empty().append( myJson.data.people.edges[1].node.chamber[0].organization.name);
+						$("#results_district").empty().append( "District " + myJson.data.people.edges[1].node.chamber[0].post.label);
+						//$('#district_1').val("District " + myJson.data.people.edges[1].node.chamber[0].post.label);
+						
+					
+						$("#results_name2").empty().append( title2+" " + myJson.data.people.edges[0].node.name);
+						$("#name2_to_controller").val( title2 + " " + myJson.data.people.edges[0].node.name);
+						$("#results_party2").empty().append( myJson.data.people.edges[0].node.party[0].organization.name + " Party");
+						$("#results_chamber2").empty().append(myJson.data.people.edges[0].node.chamber[0].organization.name);
+		 		  		$("#results_district2").empty().append("District "+ myJson.data.people.edges[0].node.chamber[0].post.label)
+		 		  		//$('#district_2').val("District " + myJson.data.people.edges[0].node.chamber[0].post.labelt);
+
+
+
+		 		  		//for seators emails
+		 		  		// if its still 1978 after each loops, it means loop diddnt find email
+		 		  		var indexWithEmailInIt = 1978;
+
+						$.each(myJson.data.people.edges[1].node.contactDetails, function (index, value){
+						
+							if (value.type == "email"){
+								
+								indexWithEmailInIt = index;
+								return false;
+							}
+						});
+
+						if (myJson.data.people.edges[1].node.name == "Janet Cruz"){
+
+							$("#results_email").empty().append( "cruz.janet@flsenate.gov");
+							$("#email_to_controller").val("cruz.janet@flsenate.gov");
+						}else if  (indexWithEmailInIt != 1978){
+							$("#results_email").empty().append( myJson.data.people.edges[1].node.contactDetails[indexWithEmailInIt].value);
+							$("#email_to_controller").val(myJson.data.people.edges[1].node.contactDetails[indexWithEmailInIt].value);
+						}else{
+							$("#results_email").empty().append( "*** missing email ***");
+							$("#email_to_controller").val("missing email");
+
+						}
+
+
+						//for house members emails
+						var spaceCount = myJson.data.people.edges[0].node.name.split(" ").length - 1;
+						//console.log("answer is " + spaceCount);
+
+					
+						//if first and last names are not blank and have no spaces in them, use it to build the missing email
+						if (myJson.data.people.edges[0].node.givenName != "" && hasWhiteSpace(myJson.data.people.edges[0].node.givenName) == -1 && hasWhiteSpace(myJson.data.people.edges[0].node.familyName) == -1){
+
+							var houseEmail = myJson.data.people.edges[0].node.givenName+ "."+myJson.data.people.edges[0].node.familyName+"@myfloridahouse.gov";
+							$("#results_email2").empty().append( houseEmail);
+							$("#email2_to_controller").val(houseEmail);
+							//this is if given and family name are blank, get the full name field and see if theres only
+							//one space, if thete is then split it and use it to build the missing email
+						}else if (  spaceCount == 1   ){
+
+							var fullName = myJson.data.people.edges[0].node.name;
+							var firstN = fullName.substr(0,fullName.indexOf(' ')); 
+							var lastN = fullName.substr(fullName.indexOf(' ')+1); 
+
+
+							var houseEmail = firstN.toLowerCase()+"."+lastN.toLowerCase()+"@myfloridahouse.gov *";
+							$("#results_email2").empty().append( houseEmail);
+							$("#email2_to_controller").val(houseEmail);
 							
 
-						
-							
-						
-						$('.progress-bar .meter').css('width', '58%');
-						
+					
+							//then last resort, scrape other site to get the missing email	
+						}else{
 						
 
-							
-						$('.progress-bar .meter').css('width', '100%');
-						$('#progressbar').fadeOut(1000);
-						$('#lookup_errors').delay(1000).fadeOut(2000);	
+							if ( rails_env == "development" ){
+
+								house_email_api_url = "http://localhost:3000/lookups/getinfo"
+							}else {
+
+								house_email_api_url = "https://ancient-shore-55511.herokuapp.com/lookups/getinfo"
+							}
+
+
+							$.ajax({
+						  		type: "get",
+						  		url: house_email_api_url,
+						  		
+						  		//this sends the name to the controller
+						  		data: {"name": myJson.data.people.edges[0].node.name },
+
+
+						  		success: function(data){
+						  			
+						  			var houseEmail = data.missingEmail;
+						  			$("#results_email2").empty().append( houseEmail+" **");
+									$("#email2_to_controller").val(houseEmail);
+
+
+						  		},
+						  		error: function(error){
+						  			var houseEmail = "*** missing email **";
+						  			$("#results_email2").empty().append( houseEmail);
+									$("#email2_to_controller").val("missing email");
+
+									
+						  		}
+
+			  				});
+
+
+						//var houseEmail = "** missing emaiL **"
+
+						};
+
+
 						
+					};
 						
+					
+
+
+	 		  		
+
+					$('.progress-bar .meter').css('width', '58%');
+
+					
+					
+
+
+					//first.last@myfloridahouse.gov
+					
+					
+						
+
+					
+						
+					
+					$('.progress-bar .meter').css('width', '58%');
+					
+					
+
+						
+					$('.progress-bar .meter').css('width', '100%');
+					$('#progressbar').fadeOut(1000);
+					$('#lookup_errors').delay(1000).fadeOut(2000);	
+					
+					
 
 
 
-						console.log('alpha');
-						
-						
-						
-						$('#progressbar').fadeOut(1000);						
-						$('#lookup_errors').delay(1000).fadeOut(2000);					
-						
+					console.log('alpha');
+					
+					
+					
+					$('#progressbar').fadeOut(1000);						
+					$('#lookup_errors').delay(1000).fadeOut(2000);					
+					
 							
 						
 					
-					
+				
 					
 				});
+				
 			
 			
 

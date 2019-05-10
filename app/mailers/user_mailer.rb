@@ -12,17 +12,25 @@ class UserMailer < ApplicationMailer
     @email = letter.email1
     @letter = letter
     @user = user
-    #mail(to: "amsterdamAL@gmail.com", from: "yourmomma@att.com", cc: @raffomail, subject: @letter.subject)
+    #mail(to: @email, from: @user, subject: @letter.subject)
     
   end
   
   def reach_out_email_secondary(letter, user)
-    @email = letter.email1
+    @email = letter.email2
     @letter = letter
     @user = user
     
-    #mail(to: "amsterdamAL@gmail.com", from: "from@hehe.com", cc: @raffomail, subject: @letter.subject)
+    #mail(to: @email, from: @user, subject: @letter.subject)
+  end
+
+  def confirmation(letter, user)
     
+    @letter = letter
+    
+    @user = user
+    
+    #mail(to: @user, from: "blazeTeam@blaze305.com", subject: "You did it !!!!!")
   end
   
 end

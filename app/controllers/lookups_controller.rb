@@ -31,7 +31,102 @@ class LookupsController < ApplicationController
     #  render :text => '', :content_type => 'text/plain'
  # end
 
+def info
+    flash[:lat] = params[:lat]
+    flash[:lng] = params[:lng]
+    
+    respond_to do |format|
+      #format.html { redirect_to(person_list_url) }
+      format.js {render :js => "window.location = '/find/all'"}
+      #format.xml  { render :xml => @person.to_xml(:include => @company) }
+    end
+
+ 
+end
+
   def new
+
+    @lat = flash[:lat]
+    @lng = flash[:lng]
+
+
+   
+
+    query = "{
+            people(latitude: #{flash[:lat]}, longitude: #{flash[:lng]}, first: 2) {
+              edges {
+                node {
+                  name
+                  givenName
+                  familyName
+                  image
+                  party: currentMemberships(classification:\"party\") {
+                    organization {
+                        name
+                      }
+                  }
+                  contactDetails {
+                  note
+                  type
+                  value
+                }
+                  chamber: currentMemberships(classification:[\"upper\", \"lower\"]) {
+                    post {
+                      label
+                    }
+                    organization {
+                      name
+                      classification
+                      parent {
+                        name
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }"
+        
+    
+    url = "https://openstates.org/graphql"
+    
+    
+
+    body = {
+      
+      "query" => query
+    }
+
+    headers = {
+
+      "X-API-KEY" => ENV['sunlight_foundation_api_key']
+    }
+
+
+    result = HTTParty.post(url, :body => body, :headers => headers)
+    
+    @jsonResults = JSON.parse(result.body).to_json
+
+    puts @jsonResults
+
+
+    
+
+    
+    #render :nothing => true
+    #@jsonFile = {one: "someshit", two: request.body}
+
+    #respond_to do |format|
+      
+     # format.json  { render json: @JO}
+
+   # end
+
+
+   #puts @JO.to_s
+
+
+    
     
   end
   

@@ -1,6 +1,13 @@
+<%= javascript_include_tag 'lookup' %>
+
+
+
+
 <div class="lookup_wrapper">	
-	
-	
+
+
+
+	<!--
 	
 	<div id="lookup_form" >
 		<div id="lookup_form_inner">
@@ -25,11 +32,11 @@
 		</div>
 	</div>
 		
-		
+	-->	
 	
-
+<!--
 	<div id="arrow">
-		 <!-- render :partial => 'shared/sign_left' -->
+		  render :partial => 'shared/sign_left' 
 		 <div id="why">
 		 	<div id="why_header">
 		 		<h1>Florida Legislator lookup tool!</h1>
@@ -55,6 +62,7 @@
 
 		 </div>
 	</div>
+-->
 	
 	
 	<div id="results_wrap">	
@@ -129,5 +137,8 @@
 
 </div>
 <div id="RAILS_ENV_CONSTANT" style="display: none"><%= Rails.env%></div>
+<div id="LAT" style="display: none"><%= @lat %></div>
+<div id="LNG" style="display: none"><%= @lng %></div>
+<div id="JSON" data-url="<%= @jsonResults %>"></div>
 <div id="flag"></div>
 

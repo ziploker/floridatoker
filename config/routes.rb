@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   #get "/find/all" => "articles#list", :constraints => lambda { |request| request.params[:keyword] && request.params[:keyword] != ""}
   
   get 'find/all' => 'lookups#new'
+  get 'find/info' => 'lookups#info'
+
   get 'chats/demo' => 'chats#demo'
 
   get '/lookups/getinfo' => 'lookups#getinfo'

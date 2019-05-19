@@ -228,7 +228,7 @@ form.search-bar
   +span-columns(3)
   //box-shadow: 3px 1px 10px #888888
   margin: 0px 0px 20px 10px
-#one, #two
+.one, .two
   border: 1px solid rgba(10, 68, 4, .2) 
   //background: $myblack
   //+linear-gradient(#e0f2e6, #d2e5d8)
@@ -237,12 +237,12 @@ form.search-bar
   margin: 0px 0px 40px 0px
   box-shadow: 3px 1px 10px #888888
 
-#two
+.two
   margin-top: 0px
   a
     font-size: 1em
 
-#register_mini, #chat_mini
+.register_mini, .chat_mini
   padding: 7px
   text-align: center
   
@@ -252,18 +252,18 @@ form.search-bar
     //padding-bottom: 5pxreg
     
 
-  #go_mini
+  .go_mini
     width: 100%
     background-color: $green3
 
-  #go_mini:hover
+  .go_mini:hover
     background-color: $green2
 
     
 
       
 
-#chat_mini
+.chat_mini
         
   img
        
@@ -502,12 +502,12 @@ form.search-bar
   .featured_main
     +media($handheld)
       +span-columns(8)
-      width: 100% !important
+      //width: 100% !important
       
   .freeze
     position: fixed
 
-  #one, #two
+  .one, .two
     margin-top: 20px
   #mnav ul
     background: $myblack
@@ -556,24 +556,25 @@ form.search-bar
       +span-columns(8)
       
 
-  #one 
+  .one 
     //float: left
     +media($handheld)
       +span-columns(4)
       
-  #two
+  .two
     //float: right
     +media($handheld)
       +span-columns(4)
       
 
 
-@media screen and (max-width: 500px)
+@media screen and (max-width: 650px)
 
-  .featured_wrapper .featured_main
+  .featured_main
     +media($mobile)
-      +span-columns(4)
-      width: 100% !important
+      +span-columns(12)
+      min-width: 190px
+      //width: 100% !important
       box-shadow: none
   
   
@@ -595,25 +596,12 @@ form.search-bar
   .side
     +media($mobile)
       +span-columns(4)
-      width: 100% 
+      min-width: 190px
+      //width: 100% 
 
 
 
 
 
-  #one 
-    //float: left
-    +media($mobile)
-      +span-columns(4)
-      box-shadow: none
-      margin-bottom: 20px
-      
-      
-  #two
-    //float: right
-    +media($mobile)
-      +span-columns(4)
-      box-shadow: none
-      margin-top: 0px
-      
+  
 

@@ -31,7 +31,7 @@ pre
   white-space: pre-line
   margin: 0
 
-#lookup_form
+.lookup_form
   +span-columns(4)
   //background: tint($green_base, 98%)
   @include linear-gradient(#ececec, #f9fcfa)
@@ -55,13 +55,21 @@ pre
   height: 300px
   border: 1px solid lighten($grays, 10%)
   box-shadow: 5px 5px 15px #888888
-#lookup_results
+#lookup_results, #lookup_results2
   
   float: left
   padding-right: 5px
+  #results_img, #results_img2
+    float: left
+    display: inline
+    margin-right: 20px
+  #results_info, #results_info2
+    float: left
+    display: inline
+    //padding-left: 20px
   
-#lookup_results2
-  float: right
+
+  
 
   
   
@@ -76,7 +84,7 @@ pre
 #lookup_wrap
   padding: 0px 5px 0 10px  
   +clearfix
-#lookup_stepone
+.lookup_stepone
   width: 100%
   
   
@@ -87,7 +95,7 @@ pre
   margin-bottom: 8px
   +border-top-radius(5px)
   
-#lookup_address_div
+.lookup_address_div
   padding-left: 10px
   padding-right: 10px
  
@@ -102,7 +110,7 @@ pre
   padding: 5px
   margin-bottom: 8px
   +border-top-radius(5px)
-#lookup_button, #review_button
+.lookup_button, #review_button
   
   width: 100% !important
   //height: 40px
@@ -114,11 +122,12 @@ pre
   
  
 .buttontwo
-  width: 100%
+  width: 100% !important
   white-space: normal !important
   overflow: hidden
 #results_wrap
   margin: 0 auto
+  width: 100%
   box-shadow: 5px 5px 15px #888888
   background: tint($green_base, 98%)
   
@@ -126,7 +135,7 @@ pre
   +clearfix
   overflow: hidden
   
-  +span-columns(6)
+  //+span-columns(6)
   
   +border-top-radius(5px)
   +border-right-radius(5px)
@@ -170,11 +179,11 @@ pre
   padding-left: 10px
   padding-right: 10px
 
-#lookup_city
+.lookup_city
   width: 54%
   float: left
   
-#lookup_zip
+.lookup_zip
   width: 46%
   float: right
   
@@ -250,13 +259,13 @@ ul
 
   
 
-#lookup_form_inner
+.lookup_form_inner
   //padding: 15px
   //background: tint($green_base, 88%)
   
 
 
-#lookup_form
+.lookup_form
   +linear-gradient(#E8FAEB, $offwhite)
   +media($tablet)
     +span-columns(4)
@@ -275,7 +284,8 @@ ul
 
 #results_wrap
   +media($tablet)
-    +span-columns(4)
+    //+span-columns(4)
+    width: 100%
     margin-top: 20px
     box-shadow: none
     border: none
@@ -286,9 +296,10 @@ ul
 
 
 
-#lookup_form
+.lookup_form
   +media($mobile)
-    +span-columns(4)
+    //+span-columns(4)
+    width: 100%
     margin-top: 20px
     box-shadow: none
     border: none
@@ -328,3 +339,16 @@ ol
 #lookup_results2
   +media($tablet)
     float: left
+
+
+
+.lookup_errors
+  margin: 0 auto
+  text-align: center    
+
+
+
+#results_info, #results_info2
+  +media($switch)
+    clear: left
+    

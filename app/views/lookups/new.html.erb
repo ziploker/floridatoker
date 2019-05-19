@@ -4,133 +4,154 @@
 
 
 <div class="lookup_wrapper">	
-
-
-
-	<!--
-	
-	<div id="lookup_form" >
-		<div id="lookup_form_inner">
+	<div class="featured_main">
 		
-			<div id="lookup_stepone"><strong>Step 1:</strong> &nbsp&nbsp&nbsp Enter address.</div>
-			<div id="lookup_address_div">
-				<input type="text" placeholder="Address" id="lookup_address" /></div>
-			<div id="smoosh">
-				<input type="text" placeholder="City" id="lookup_city" />
-				<% if false %>
-				<input type="text" placeholder="Zip (optional)" id="lookup_zip" />
+		<div id="results_wrap">	
+			
+			<div id="lookup_steptwo"><strong>Step 2:</strong> &nbsp&nbsp Your Florida representatives.</div>
+			<div id="lookup_wrap">
+			
+				<div id="lookup_results">
+					
+					<div id="results_img"><%= image_tag("man2.png", :id => "headshot", :alt => "picture placeholder") %></div>
+					
+					<div id="results_info">
+						<div id="results_name"> </div>
+						<div id="results_party"> </div>
+						<div id="results_email"> </div>
+						
+						
+						<div id="results_chamber"> </div>
+						<div id="results_district"> </div>
+					</div>
+					
+						
+				</div>		
+				
+				<div id="lookup_results2">
+					
+					<div id="results_img2"><%= image_tag("man2.png", :id => "headshot2", :alt => "picture placeholder") %></div>
+					
+					<div id="results_info2">
+						<div id="results_name2"> </div>
+						<div id="results_party2"> </div>
+						<div id="results_email2"> </div>
+						
+						<div id="results_chamber2"> </div>
+						<div id="results_district2"> </div>
+
+					</div>
+				</div>	
+
+			
+
+			</div>
+
+			<div id="review_button">
+				<%= form_tag("/letters/review", method: "get") do %>
+					
+					<%= hidden_field_tag 'email_to_controller' %>
+					<%= hidden_field_tag 'name_to_controller' %>
+					<%= hidden_field_tag 'email2_to_controller' %>
+					<%= hidden_field_tag 'name2_to_controller' %>
+					
+						
+						
+					
+				
+				<%= button_to "NEXT STEP: review & send letter ", {:action => "review", :controller => "letters"}, :method => "get", :class => "buttontwo" %>
 				<% end %>
 			</div>
-			<input type="submit" value="Find" id="lookup_button" />
-			<pre id="lookup_errors">
+			
+		</div>
+
+
+
+
+		
+
+	</div>
+
+
+
+
+
+
+
+	<div class="side">
+		
+		<div class="lookup_form" >
+		<div class="lookup_form_inner">
+		
+			<div class="lookup_stepone"><strong>Step 1:</strong> &nbsp&nbsp&nbsp Enter address.</div>
+			<div class="lookup_address_div">
+				<input type="text" placeholder="Address" class="lookup_address" /></div>
+			<div id="smoosh">
+				<input type="text" placeholder="City" class="lookup_city" />
+				<% if false %>
+				<input type="text" placeholder="Zip (optional)" class="lookup_zip" />
+				<% end %>
+			</div>
+			<input type="submit" value="Find" class="lookup_button" />
+			<pre class="lookup_errors">
 			</pre>
-				<div id="progressbar">
+				<div class="progressbar">
 					<div class="progress-bar">
 		  				<span class="meter" style="width: 10%"></span>
 					</div>
 				</div>
 		</div>
 	</div>
-		
-	-->	
-	
-<!--
-	<div id="arrow">
-		  render :partial => 'shared/sign_left' 
-		 <div id="why">
-		 	<div id="why_header">
-		 		<h1>Florida Legislator lookup tool!</h1>
-		 	</div>
-		 	<div id="why_body">
-		 		<ol>
-		 			<li>
-		 				<p>
-		 					Lookup your Florida Representatives based on your address and city.
-		 					
-		 				</p>
-		 			</li>
-		 			<li>
-		 				<p>
-		 					Send your representatives our pre-formated letter regarding marijuana legalization. 
-		 				</p>
-
-		 			</li>
-		 			
-		 		</ol>
-		 	</div>
 
 
-		 </div>
-	</div>
--->
-	
-	
-	<div id="results_wrap">	
-		
-		<div id="lookup_steptwo"><strong>Step 2:</strong> &nbsp&nbsp Your Florida representatives.</div>
-		<div id="lookup_wrap">
-		
-			<div id="lookup_results">
-				<div id="results_img"><%= image_tag("man2.png", :id => "headshot", :alt => "picture placeholder") %></div>
-				<div id="results_name"> </div>
-				<div id="results_party"> </div>
-				<div id="results_email"> </div>
-				
-				
-				<div id="results_chamber"> </div>
-				<div id="results_district"> </div>
-				
-					
-			</div>		
-			
-			<div id="lookup_results2">
-				<div id="results_img2"><%= image_tag("man2.png", :id => "headshot2", :alt => "picture placeholder") %></div>
-				<div id="results_name2"> </div>
-				<div id="results_party2"> </div>
-				<div id="results_email2"> </div>
-				
-				<div id="results_chamber2"> </div>
-				<div id="results_district2"> </div>
-			</div>	
 
-		
 
-		</div>
 
-		<div id="review_button">
-			<%= form_tag("/letters/review", method: "get") do %>
-				
-				<%= hidden_field_tag 'email_to_controller' %>
-				<%= hidden_field_tag 'name_to_controller' %>
-				<%= hidden_field_tag 'email2_to_controller' %>
-				<%= hidden_field_tag 'name2_to_controller' %>
-				
-					
-					
-				
-			
-			<%= button_to "NEXT STEP: review & send letter ", {:action => "review", :controller => "letters"}, :method => "get", :class => "buttontwo" %>
-			<% end %>
-		</div>
+
+
+
+
+
+
+
+
+
+
 		
 	</div>
-
-
-
-
-<%	if false %>
-	//<aside id="lookup_aside">
-	//	<div id="lookup_review">
-		
-	//	<h1> ASSIIDEE </h1>
-		
-	//	</div>
 	
-	//</aside>
+	<div class="side">
+		<% if !user_signed_in? %>
+			<div class="one">
+				
+				<div class="register_mini">
+					<h5>GET OUR UPDATES ONE DAY</h5>
+					<p>join our community and stay informed.  
+				
+					</p>
+					
+					<input type="text" placeholder="email" class="email_mini" />
+					
+					<input type="submit" value="subscribe" class="go_mini" />
+				</div>
+				
+			</div>
+		<% end %>
+		<%= link_to(chats_demo_path) do %>
+			<div class="two">
 
-<% end %>
+				<div class="chat_mini">		
+					<h5>Live camera feeds</h5>
+					<p>see whos online live.</p>
 
+				
+					<%= image_tag("small_chat.png") %>
+				</div>
 
+				
+		<% end %>		
+			</div>
+	</div>
 
 
 

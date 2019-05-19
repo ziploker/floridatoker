@@ -157,7 +157,7 @@ $(document).ready(function(){
         if(comment == "" ){
             console.log('insideIT');
             $(this).parent().find('.commenterrors').show().empty().append("<h2>Please enter a comment.</h2").delay(1000).fadeOut(4278);
-            //$('#lookup_errors').show().empty().append("Please enter at least a zipcode.");
+            //$('.lookup_errors').show().empty().append("Please enter at least a zipcode.");
             return;
         }
 
@@ -201,7 +201,7 @@ $(document).ready(function(){
         if(comment == "" ){
             console.log('insideIT');
             $(this).parent().find('.commenterrors').show().empty().append("<h2>Please enter a comment.</h2").delay(1000).fadeOut(4278);
-            //$('#lookup_errors').show().empty().append("Please enter at least a zipcode.");
+            //$('.lookup_errors').show().empty().append("Please enter at least a zipcode.");
             return;
         }
 
@@ -247,7 +247,7 @@ $(document).ready(function(){
         if(comment == "" ){
             console.log('insideIT2');
             $(this).parent().find('.commenterrors').show().empty().append("<h2>Please enter a comment.</h2").delay(1000).fadeOut(4278);
-            //$('#lookup_errors').show().empty().append("Please enter at least a zipcode.");
+            //$('.lookup_errors').show().empty().append("Please enter at least a zipcode.");
             return;
         }
         
@@ -286,7 +286,7 @@ $(document).ready(function(){
         if(comment == "" ){
             console.log('insideIT');
             $(this).parent().find('.commenterrors').show().empty().append("<h2>Please enter a comment.</h2").delay(1000).fadeOut(4278);
-            //$('#lookup_errors').show().empty().append("Please enter at least a zipcode.");
+            //$('.lookup_errors').show().empty().append("Please enter at least a zipcode.");
             return;
         }
 

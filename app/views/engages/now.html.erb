@@ -117,22 +117,23 @@
 	
 	<div class="side">
 		
-		<div id="lookup_form" >
-		<div id="lookup_form_inner">
+		<div class="lookup_form" >
+		<div class="lookup_form_inner">
 		
-			<div id="lookup_stepone"><strong>Step 1:</strong> &nbsp&nbsp&nbsp Enter address.</div>
-			<div id="lookup_address_div">
-				<input type="text" placeholder="Address" id="lookup_address" /></div>
+			<div class="lookup_stepone"><strong>Step 1:</strong> &nbsp&nbsp&nbsp Enter address.</div>
+			<div class="lookup_address_div">
+				<input type="text" placeholder="Address" class="lookup_address" /></div>
 			<div id="smoosh">
-				<input type="text" placeholder="City" id="lookup_city" />
+				<input type="text" placeholder="City" class="lookup_city" />
 				<% if false %>
-				<input type="text" placeholder="Zip (optional)" id="lookup_zip" />
+				<input type="text" placeholder="Zip (optional)" class="lookup_zip" />
 				<% end %>
 			</div>
-			<input type="submit" value="Find" id="lookup_button" />
-			<pre id="lookup_errors">
+			<input type="submit" value="Find" class="lookup_button" />
+			<pre class="lookup_errors">
+				
 			</pre>
-				<div id="progressbar">
+				<div class="progressbar">
 					<div class="progress-bar">
 		  				<span class="meter" style="width: 10%"></span>
 					</div>
@@ -159,25 +160,25 @@
 	
 	<div class="side">
 		<% if !user_signed_in? %>
-			<div id="one">
+			<div class="one">
 				
-				<div id="register_mini">
+				<div class="register_mini">
 					<h5>GET OUR UPDATES ONE DAY</h5>
 					<p>join our community and stay informed.  
 				
 					</p>
 					
-					<input type="text" placeholder="email" id="email_mini" />
+					<input type="text" placeholder="email" class="email_mini" />
 					
-					<input type="submit" value="subscribe" id="go_mini" />
+					<input type="submit" value="subscribe" class="go_mini" />
 				</div>
 				
 			</div>
 		<% end %>
 		<%= link_to(chats_demo_path) do %>
-			<div id="two">
+			<div class="two">
 
-				<div id="chat_mini">		
+				<div class="chat_mini">		
 					<h5>Live camera feeds</h5>
 					<p>see whos online live.</p>
 

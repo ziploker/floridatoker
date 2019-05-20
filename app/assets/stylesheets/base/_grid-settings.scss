@@ -17,7 +17,7 @@ $handheld: 7680px;
 $switch: new-breakpoint(max-width 550px);
 $mobile: new-breakpoint(max-width 650px);
 $tablet: new-breakpoint(max-width 1000px);
-//$small-screen-up: new-breakpoint(min-width $small-screen 4);
+$small-screen-up: new-breakpoint(max-width $small-screen 4);
 
 //$medium-screen-up: new-breakpoint(max-width $small-screen 4);
 //$large-screen-up: new-breakpoint(min-width $large-screen 12);

@@ -13,6 +13,7 @@ class UserMailer < ApplicationMailer
     @letter = letter
     @user = user
     #mail(to: @email, from: @user, subject: @letter.subject)
+    mail(to: ENV['email'], from: @user, subject: @letter.subject)
     
   end
   
@@ -22,6 +23,7 @@ class UserMailer < ApplicationMailer
     @user = user
     
     #mail(to: @email, from: @user, subject: @letter.subject)
+    mail(to: ENV['email'], from: @user, subject: @letter.subject)
   end
 
   def confirmation(letter, user)

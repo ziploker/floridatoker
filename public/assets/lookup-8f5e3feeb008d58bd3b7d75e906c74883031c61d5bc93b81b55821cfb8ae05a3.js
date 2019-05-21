@@ -328,8 +328,8 @@ $(document).ready(function(){
 		var openstates_url_request;
 		var house_email_api_url;
 
-		var google = "<%= ENV['google_geo_api_key'] %>";
-		var sunlight = "<%= ENV['sunlight_foundation_api_key'] %>";
+		var google = "AIzaSyAdiUvnwghttRAxeemccUDdH6PaGZCxRVA";
+		var sunlight = "70717a1b-75dc-45cc-82cd-5ba4725e4f0d";
 		
 		if(addy == "" || city == ""){
 			//$('#flag').show();

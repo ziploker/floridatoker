@@ -12,7 +12,8 @@ class ChatsController < ApplicationController
     opentok = OpenTok::OpenTok.new @api_key, api_secret
     @session = opentok.create_session :media_mode => :routed
     numbr = rand(400..900)
-    @session_id = @session.session_id
+    #@session_id = @session.session_id
+    @session_id = ENV['session_id']
     
    	@token = @session.generate_token
     #@token = opentok.generate_token :role => :publisher

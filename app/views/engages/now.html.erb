@@ -120,7 +120,8 @@
 		<div class="lookup_form" >
 		<div class="lookup_form_inner">
 		
-			<div class="lookup_stepone"><strong>Step 1:</strong> &nbsp&nbsp&nbsp Enter address.</div>
+			<h1>Find Your Rep.</h1>
+			
 			<div class="lookup_address_div">
 				<input type="text" placeholder="Address" class="lookup_address" /></div>
 			<div id="smoosh">
@@ -159,14 +160,15 @@
 	</div>
 	
 	<div class="side">
-		<% if !user_signed_in? %>
+		
+
+		<!--
+		< if !user_signed_in? %>
 			<div class="one">
 				
 				<div class="register_mini">
-					<h5>GET OUR UPDATES ONE DAY</h5>
-					<p>join our community and stay informed.  
-				
-					</p>
+					<h5>Subscribe</h5>
+					
 					
 					<input type="text" placeholder="email" class="email_mini" />
 					
@@ -174,7 +176,8 @@
 				</div>
 				
 			</div>
-		<% end %>
+		< end %>
+		-->
 		<%= link_to(chats_demo_path) do %>
 			<div class="two">
 

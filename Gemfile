@@ -13,11 +13,11 @@ gem 'activesupport'
 gem 'readmorejs_rails', '~> 0.0.1'
 gem 'devise', '~> 3.5.10'
 gem 'figaro'
-gem 'opentok', "~> 2.2"
+gem 'opentok', '~> 3.1.0'
 gem 'ancestry'
 gem 'shareable'
 gem 'nokogiri', '~> 1.6.8.rc2'
-gem 'httparty'
+gem 'httparty', '~> 0.15.5'
 gem 'pry'
 gem 'byebug'
 

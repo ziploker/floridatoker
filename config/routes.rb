@@ -82,7 +82,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  resources :engages, :letters, :feedbacks
+  resources :engages, :letters, :feedbacks, :chats
   
   resources :articles do
     resources :comments

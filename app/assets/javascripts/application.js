@@ -18,4 +18,5 @@
 //= require_tree .
 //= stub 'lookup'
 //= stub 'engage'
+//= stub 'chats'
 

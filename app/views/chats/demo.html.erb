@@ -2,8 +2,10 @@
 <html>
   <head>
     <title>Opentok Quick Start</title>
+    
     <script src='https://static.opentok.com/v2/js/opentok.min.js'></script>
     <script type="text/javascript">
+
 
 $(document).ready(function() {	
 
@@ -18,6 +20,11 @@ $(document).ready(function() {
     
     
     
+    
+
+
+
+
     function connect() {
 	  
 	  	if (OT.checkSystemRequirements() == 0) {
@@ -66,8 +73,12 @@ $(document).ready(function() {
 	            console.log("connectionCreated by forign user, watchers: "+watchers+" & streamers: "+ streamers);
 	            var usernames = document.getElementById("user_area");
 	            
-	        	$('#user_area ul').append('<li id="'+event.connection.data+'"><span class="usernames">' +event.connection.data+ '</span></li>');
+	        	
+	            if (event.connection.data != null){
 
+
+	        		$('#Users ul').append('<li id="'+event.connection.data+'"><span class="usernames">' +event.connection.data+ '</span></li>');
+        		}
 
 				//$.trim(usernames);
 				
@@ -176,7 +187,7 @@ $(document).ready(function() {
 	        
 
 	        session.on("signal", function(event) {
-	      		console.log("Signal sent from connection " + event.from.id);
+	      		console.log("Signal sent from connection " + JSON.stringify(event));
 	      		// Process the event.data property, if there is any data.
 	      		//$('#text_area').append("\n" + event.data);
 	      		$('#text_area ul').append('<li><span class="textmsg">' +event.data+ '</span></li>');
@@ -297,6 +308,11 @@ $(document).ready(function() {
 		});
 
 
+
+
+		
+
+
 });
 
 
@@ -310,6 +326,7 @@ $(document).ready(function() {
 
     </script>
   </head>
+  <%= javascript_include_tag 'chats' %>
   <body>
     
     <div id="streams_wrapper">
@@ -380,13 +397,40 @@ $(document).ready(function() {
 	            	</ul>
             	</div>
             	<div id="user_area">
-            		<ul>
+            		
+            		<!-- Tab links -->
+					<div class="tab">
+					  
+					  <button class="tablinks" onclick="clickedUsers(event, 'Users')">users</button>
+					  <button class="tablinks" onclick="clickedRooms(event, 'Rooms')">rooms</button>
+					  
+					</div>
 
-            		</ul>
+					<!-- Tab content -->
+					<div id="Users" class="tabcontent">
+					  
+					  	<ul>
+
+        				</ul>
+					</div>
+
+					<div id="Rooms" class="tabcontent">
+					  <% @allChats.each do |room| %> 
+					  		<ul><%= room.room_name %></ul></br>
+			  			<% end %>
+					</div>
+
+
+
+
+
+            		
 
             	</div>
             	
 	    	</div>	
+	    	<P> Room: <%= @newChat.room_name %> </P>
+	    	<P> ID: <%= @newChat.id %> </P>
 	    	
 	    	<div id="msg">
     			<%= text_field_tag 'message', nil, placeholder: 'speak here...' %>

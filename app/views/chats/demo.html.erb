@@ -9,7 +9,7 @@
 
 $(document).ready(function() {	
 
-
+	var ip = "<%= @ipAddress %>";
 	var publisher;
     var streams = [];
     var token = "<%= @token %>";
@@ -45,7 +45,7 @@ $(document).ready(function() {
 
 	            //document.getElementById('disconnectBtn').style.display = 'block';
 	            //$('#disconnectBtn').hide();
-	            console.log("session.connect, Connected to the session.");
+	            console.log("session.connect, Connected to the session with ip "+ip);
 	          }
 	        });
 	        
@@ -60,8 +60,32 @@ $(document).ready(function() {
 			
 			//session connection destroyed
 			session.on("sessionDisconnected", function(event) {
-				console.log("The session disconnected. " + event.reason);
+				console.log("The session disconnected. " + event.reason+ ". ip was "+ip);
 				watchers--;
+
+
+				$.ajax({
+			  		type: "get",
+			  		url: "/chats/connection",
+			  		
+			  		//this sends the name to the controller
+			  		data: {"ip": ip},
+			  		dataType: 'json',
+
+
+			  		success: function(data){
+			  			
+			  			
+
+
+			  		},
+			  		error: function(error){
+			  			
+
+						
+			  		}
+
+				});
 		    });
 	        
 	        	

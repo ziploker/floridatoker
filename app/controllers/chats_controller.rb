@@ -145,6 +145,7 @@ class ChatsController < ApplicationController
 
 		respond_to do |format| 
 		    puts "connectionCreated is = " + params[:event] 
+		    @userName = params[:data]
 
     		format.js { render 'chats/updateChat' }
 

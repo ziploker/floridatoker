@@ -2,5 +2,5 @@
 
 	
 
-	alert("wtf");
+	console.log("asdasdfasdfsdfasdfasdf");
 

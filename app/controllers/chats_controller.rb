@@ -22,8 +22,10 @@ class ChatsController < ApplicationController
 	    #if no rooms exists at the moment
 	    if @allChats.length == 0
 	    	
-	    	#create ne DB record
+	    	#create ne DB record for a session
 	    	@newChat = Chat.new
+	    	
+			#create ne DB record for a IPaddress
 	    	@ip = Connect.new
 	    	
 	    	#create session and session ID
@@ -33,127 +35,104 @@ class ChatsController < ApplicationController
 	    	#set values for new DB record
 	    	@newChat.room_name = "main room"
 	    	@newChat.session_id = @session_id
-
+	    	@newChat.save!
+	    	
+	    	#save new users ip address in DB
 	    	@ip.ip = @ipAddress
 	    	@ip.save
 	    	#save new record
-	    	@newChat.save!
-	    	puts "created new session"
-			#@token = opentok.generate_token @session_id, :data => 'guest_' + numbr.to_s
 	    	
+	    	puts "created new session"
+			
+	    	
+			#create Token
 			if user_signed_in? && current_user.nickname != ""
 				
 				@token = opentok.generate_token @session_id, :data => current_user.nickname
+    			puts "created new token for user with nickname"
     		
     		elsif user_signed_in? && current_user.nickname == ""
 
 				@token = opentok.generate_token @session_id, :data => 'user_' + numbr.to_s
+    			puts "created new token for user with random nickname"
     		
     		elsif !user_signed_in?
     			
     			@token = opentok.generate_token @session_id, :data => 'guest_' + numbr.to_s
-
+    			puts "created new token for guest"
 
     		end
 
 
-
-
+		# else if there is an existing room
 		else 
 
+			#search for ip in DB to see if user is connected
 			@numberOfTimesIpIsInConnectDb = Connect.where("ip = ?", @ipAddress)
 
-			
+			#get first session ID from DB
 			@newChat = Chat.first
 			@session_id = @newChat.session_id
 
-			@ip = Connect.new
-
-
-		    
-		    #@session = opentok.create_session :media_mode => :routed
-		    #numbr = rand(400..900)
-		    #session_id = @session.session_id
-		    #@session = ENV['session_id']
-		    #@session_id = ENV['session_id']
-		    
-		   	#@token = @session.generate_token
-		   	#@token = opentok.generate_token @session_id, :data => 'guest_' + numbr.to_s
-		    if user_signed_in? && current_user.nickname != ""
+			
+		    #create token
+		    if user_signed_in? && current_user.nickname != "" && @numberOfTimesIpIsInConnectDb.length == 0
 				
 				@token = opentok.generate_token @session_id, :data => current_user.nickname
     			puts "TOKEN CREATION 1"
     			@ip.ip = @ipAddress
 	    		@ip.save
-    		elsif user_signed_in? && current_user.nickname == ""
+    		elsif user_signed_in? && current_user.nickname == "" && @numberOfTimesIpIsInConnectDb.length == 0
 
 				@token = opentok.generate_token @session_id, :data => 'user_' + numbr.to_s
     			puts "TOKEN CREATION 2"
     			@ip.ip = @ipAddress
 	    		@ip.save
-    		elsif !user_signed_in?
+    		elsif !user_signed_in? && @numberOfTimesIpIsInConnectDb.length == 0
     			
     			@token = opentok.generate_token @session_id, :data => 'guest_' + numbr.to_s
 				puts "TOKEN CREATION 3"
 				@ip.ip = @ipAddress
 	    		@ip.save
 			
-				
-				
-
-    		end
-
-    		
-
-
-		    #@token = opentok.generate_token :role => :publisher
-		    #puts "session = "+ @session.to_s
-		    #puts "SESSION ID = " + @session_id
-		    #puts "TOKEN = "+ @token
-	    
-	    	
-		end
-	    
-	end
-
-
-	def connection
-
-		puts "DISSCONNECT = " + params["ip"]
-
-		#@allConnections = Connect.all
-
-		userDisconnect = Connect.where("ip = ?", params["ip"])
-		if userDisconnect.length > 1
-			userDisconnect.each do |user|
-				user.destroy
-				puts "destroyed ALL ip address from connect list"
-
 			end
-		elsif userDisconnect.length < 1
-			puts "couldent find "+params["ip"]+ " in db"
-		else
-			userDisconnect[0].destroy
-			puts "destroyed ip address " + params["ip"]
-		end
 
-		render :nothing => true
-
+    	end
+	    
 	end
 
+
+	
 	def stats
 
-		respond_to do |format| 
-		    puts "connectionCreated is = " + params[:event] 
-		    puts "USERNAME is = "+ params[:connection][:data]
-		    @userName = params[:connection][:data]
+		#respond_to do |format| 
+		#    puts "connectionCreated is = " + params[:event] 
+		#    puts "USERNAME is = "+ params[:connection][:data]
+		#    @userName = params[:connection][:data]
 
-    		format.js
-    		
+    	#	format.js
+    	#end
 
-		      
-		    
-  		end
+    	begin
+		    event = JSON.parse(request.body.read)
+		    method = "handle_" + event['event']
+		    self.send method, event
+		rescue JSON::ParserError => e
+			render json: {:status => 400, :error => "Invalid payload"} and return
+		rescue NoMethodError => e
+			# missing event handler
+		end
+			render json: {:status => 200}
+	end
+
+
+	def handle_connectionCreated(event)
+	  puts "event HANDLED MOFO!!! " + event[:connection][:data]
+	end
+
+	def handle_invoice_payment_failed(event)
+	  #handle the event
+	end
 
 	end
   

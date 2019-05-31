@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get 'find/info' => 'lookups#info'
 
   get 'chats/demo' => 'chats#demo'
-  get 'chats/connection' => 'chats#connection'
+  
   post 'chats/stats' => 'chats#stats'
 
   get '/lookups/getinfo' => 'lookups#getinfo'

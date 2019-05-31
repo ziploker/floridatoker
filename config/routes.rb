@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   get 'chats/demo' => 'chats#demo'
   get 'chats/connection' => 'chats#connection'
+  post 'chats/stats' => 'chats#stats'
 
   get '/lookups/getinfo' => 'lookups#getinfo'
   post '/lookups/api' => 'lookups#api'

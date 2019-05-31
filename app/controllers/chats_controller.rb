@@ -78,27 +78,27 @@ class ChatsController < ApplicationController
 		    
 		   	#@token = @session.generate_token
 		   	#@token = opentok.generate_token @session_id, :data => 'guest_' + numbr.to_s
-		    if user_signed_in? && current_user.nickname != "" && @numberOfTimesIpIsInConnectDb.length == 0
+		    if user_signed_in? && current_user.nickname != ""
 				
 				@token = opentok.generate_token @session_id, :data => current_user.nickname
     			puts "TOKEN CREATION 1"
     			@ip.ip = @ipAddress
 	    		@ip.save
-    		elsif user_signed_in? && current_user.nickname == "" && @numberOfTimesIpIsInConnectDb.length == 0
+    		elsif user_signed_in? && current_user.nickname == ""
 
 				@token = opentok.generate_token @session_id, :data => 'user_' + numbr.to_s
     			puts "TOKEN CREATION 2"
     			@ip.ip = @ipAddress
 	    		@ip.save
-    		elsif !user_signed_in? && @numberOfTimesIpIsInConnectDb.length == 0
+    		elsif !user_signed_in?
     			
     			@token = opentok.generate_token @session_id, :data => 'guest_' + numbr.to_s
 				puts "TOKEN CREATION 3"
 				@ip.ip = @ipAddress
 	    		@ip.save
-			elsif @numberOfTimesIpIsInConnectDb.length > 0
+			
 				
-				puts "unable to create token"
+				
 
     		end
 
@@ -137,6 +137,12 @@ class ChatsController < ApplicationController
 		end
 
 		render :nothing => true
+
+	end
+
+	def stats
+
+
 
 	end
   

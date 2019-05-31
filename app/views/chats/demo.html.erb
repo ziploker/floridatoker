@@ -71,7 +71,7 @@ $(document).ready(function() {
 			//forign user connects to the session
 			session.on("connectionCreated", function(event){
 				var stream = event.stream;
-	            var un = event.connection.data.substr(0, addy.indexOf('@'));
+	            var un = event.connection.data.substr(0, event.connection.data.indexOf('@'));
 
 	            watchers++;
 	            console.log("connectionCreated by forign user, watchers: "+watchers+" & streamers: "+ streamers);
@@ -95,7 +95,7 @@ $(document).ready(function() {
 			session.on("connectionDestroyed", function(event){
 				watchers--;
 				
-				var un = event.connection.data.substr(0, addy.indexOf('@')); 
+				var un = event.connection.data.substr(0, event.connection.data.indexOf('@')); 
 
 				console.log("session connection destroyed, watchers: "+watchers+" & streamers: "+ streamers);
 	        	

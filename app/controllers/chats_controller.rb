@@ -132,8 +132,23 @@ class ChatsController < ApplicationController
 	  puts "saved " + ipString + " to DB"
 	end
 
-	def handle_invoice_payment_failed(event)
-	  #handle the event
+	def handle_connectionDestroyed(event)
+	  
+	  tokenData = params[:connection][:data]
+
+	  ipString = tokenData.partition('@').last
+
+
+	  ipSearchResult = Connect.where("ip = ?", ipString)
+
+	  if ipSearchResult.length > 0
+
+	  	puts "IP(s) have been purged**************"
+	  	ipSearchResult.destroy_all
+	  else
+	  	puts "NO IP(s) have been harmed in the making of the notice********"
+  	  end
+
 	end
 
 	

@@ -144,10 +144,12 @@ class ChatsController < ApplicationController
 	def stats
 
 		respond_to do |format| 
-		    if data["event"] = "connectionCreated"
+		    if params[:event] = "connectionCreated"
 		      puts "CONECTIONCREATED"
+		      puts params.inspect
 		    else
 		      puts "EEELLLSSSEEE"
+		      puts params.inspect
 		    end
   		end
 

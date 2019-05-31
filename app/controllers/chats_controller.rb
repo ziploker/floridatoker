@@ -87,7 +87,9 @@ class ChatsController < ApplicationController
     			@token = opentok.generate_token @session_id, :data => 'guest_' + numbr.to_s+"@"+@ipAddress
 				puts "TOKEN CREATION 3"
 				
-			
+			elsif @numberOfTimesIpIsInConnectDb.length > 0
+
+				puts "**Unable to create dual service token ****************"
 			end
 
     	end

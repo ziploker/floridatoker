@@ -145,11 +145,12 @@ class ChatsController < ApplicationController
 
 		respond_to do |format| 
 		    if params[:event] = "connectionCreated"
-		      puts "CONECTIONCREATED"
-		      puts params.inspect
+
+	    		format.js { render 'updateChat' }
+
+		      
 		    else
-		      puts "EEELLLSSSEEE"
-		      puts params.inspect
+		    	render :nothing => true
 		    end
   		end
 

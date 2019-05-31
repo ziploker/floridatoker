@@ -64,28 +64,28 @@ $(document).ready(function() {
 				watchers--;
 
 
-				$.ajax({
-			  		type: "get",
-			  		url: "/chats/connection",
+				//$.ajax({
+			  	//	type: "get",
+			  	//	url: "/chats/connection",
 			  		
-			  		//this sends the name to the controller
-			  		data: {"ip": ip},
-			  		dataType: 'json',
+			  	//	//this sends the name to the controller
+			  	//	data: {"ip": ip},
+			  	//	dataType: 'json',
 
 
-			  		success: function(data){
+			  	//	success: function(data){
 			  			
 			  			
 
 
-			  		},
-			  		error: function(error){
+			  	//	},
+			  	//	error: function(error){
 			  			
 
 						
-			  		}
+			  	//	}
 
-				});
+				//});
 		    });
 	        
 	        	
@@ -98,11 +98,11 @@ $(document).ready(function() {
 	            var usernames = document.getElementById("user_area");
 	            
 	        	
-	            if (event.connection.data != null){
+	            //if (event.connection.data != null){
 
 
-	        		$('#Users ul').append('<li id="'+event.connection.data+'"><span class="usernames">' +event.connection.data+ '</span></li>');
-        		}
+	        		//$('#Users ul').append('<li id="'+event.connection.data+'"><span class="usernames">' +event.connection.data+ '</span></li>');
+        		//}
 
 				//$.trim(usernames);
 				

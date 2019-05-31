@@ -71,16 +71,18 @@ $(document).ready(function() {
 			//forign user connects to the session
 			session.on("connectionCreated", function(event){
 				var stream = event.stream;
+	            var un = event.connection.data.substr(0, addy.indexOf('@'));
+
 	            watchers++;
 	            console.log("connectionCreated by forign user, watchers: "+watchers+" & streamers: "+ streamers);
 	            var usernames = document.getElementById("user_area");
 	            
 	        	
-	            if (event.connection.data != null){
+	            
 
 
-	        		$('#Users ul').append('<li id="'+event.connection.data+'"><span class="usernames">' +event.connection.data+ '</span></li>');
-        		}
+	        	$('#Users ul').append('<li id="'+un+'"><span class="usernames">' +un+ '</span></li>');
+        		
 
 				$('#user_area').scrollTop(  $('#user_area')[0].scrollHeight   );
 	      		
@@ -92,14 +94,17 @@ $(document).ready(function() {
 			//session connection destroyed
 			session.on("connectionDestroyed", function(event){
 				watchers--;
+				
+				var un = event.connection.data.substr(0, addy.indexOf('@')); 
+
 				console.log("session connection destroyed, watchers: "+watchers+" & streamers: "+ streamers);
 	        	
 
-				$('#text_area ul').append('<li><span class="infomsg">** '+event.connection.data+' has left the room. **</span></li>');
+				$('#text_area ul').append('<li><span class="infomsg">** '+un+' has left the room. **</span></li>');
 	      		$('#text_area').scrollTop(  $('#text_area')[0].scrollHeight   );
 
 
-	        	$('#'+event.connection.data+'').remove();
+	        	$('#'+un).remove();
 	        });
 			
 			

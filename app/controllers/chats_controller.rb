@@ -143,16 +143,16 @@ class ChatsController < ApplicationController
 
 	def stats
 
-		respond_to do |format| 
-		    puts "connectionCreated is = " + params[:event] 
-		    puts "USERNAME is = "+ params[:connection][:data]
-		    @userName = params[:connection][:data]
+		 
+	    puts "connectionCreated is = " + params[:event] 
+	    puts "USERNAME is = "+ params[:connection][:data]
+	    @userName = params[:connection][:data]
 
-    		#format.js { render 'chats/updateChat.js.erb' }
+		#format.js { render 'chats/updateChat.js.erb' }
 
 		      
 		    
-  		end
+  		
 
 	end
   

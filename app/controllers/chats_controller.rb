@@ -134,7 +134,7 @@ class ChatsController < ApplicationController
 	  #handle the event
 	end
 
-	end
+	
   
   
   

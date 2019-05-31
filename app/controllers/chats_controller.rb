@@ -25,8 +25,7 @@ class ChatsController < ApplicationController
 	    	#create ne DB record for a session
 	    	@newChat = Chat.new
 	    	
-			#create ne DB record for a IPaddress
-	    	@ip = Connect.new
+			
 	    	
 	    	#create session and session ID
 	    	@session = opentok.create_session :media_mode => :routed
@@ -37,10 +36,7 @@ class ChatsController < ApplicationController
 	    	@newChat.session_id = @session_id
 	    	@newChat.save!
 	    	
-	    	#save new users ip address in DB
-	    	@ip.ip = @ipAddress
-	    	@ip.save
-	    	#save new record
+	    	
 	    	
 	    	puts "created new session"
 			
@@ -80,20 +76,17 @@ class ChatsController < ApplicationController
 				
 				@token = opentok.generate_token @session_id, :data => current_user.nickname
     			puts "TOKEN CREATION 1"
-    			@ip.ip = @ipAddress
-	    		@ip.save
+    			
     		elsif user_signed_in? && current_user.nickname == "" && @numberOfTimesIpIsInConnectDb.length == 0
 
 				@token = opentok.generate_token @session_id, :data => 'user_' + numbr.to_s
     			puts "TOKEN CREATION 2"
-    			@ip.ip = @ipAddress
-	    		@ip.save
+    			
     		elsif !user_signed_in? && @numberOfTimesIpIsInConnectDb.length == 0
     			
     			@token = opentok.generate_token @session_id, :data => 'guest_' + numbr.to_s
 				puts "TOKEN CREATION 3"
-				@ip.ip = @ipAddress
-	    		@ip.save
+				
 			
 			end
 

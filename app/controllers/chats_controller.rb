@@ -44,17 +44,17 @@ class ChatsController < ApplicationController
 			#create Token
 			if user_signed_in? && current_user.nickname != ""
 				
-				@token = opentok.generate_token @session_id, :data => current_user.nickname
+				@token = opentok.generate_token @session_id, :data => current_user.nickname+"@"+@ipAddress
     			puts "created new token for user with nickname"
     		
     		elsif user_signed_in? && current_user.nickname == ""
 
-				@token = opentok.generate_token @session_id, :data => 'user_' + numbr.to_s
+				@token = opentok.generate_token @session_id, :data => 'user_' + numbr.to_s+"@"+@ipAddress
     			puts "created new token for user with random nickname"
     		
     		elsif !user_signed_in?
     			
-    			@token = opentok.generate_token @session_id, :data => 'guest_' + numbr.to_s
+    			@token = opentok.generate_token @session_id, :data => 'guest_' + numbr.to_s+"@"+@ipAddress
     			puts "created new token for guest"
 
     		end
@@ -74,17 +74,17 @@ class ChatsController < ApplicationController
 		    #create token
 		    if user_signed_in? && current_user.nickname != "" && @numberOfTimesIpIsInConnectDb.length == 0
 				
-				@token = opentok.generate_token @session_id, :data => current_user.nickname
+				@token = opentok.generate_token @session_id, :data => current_user.nickname+"@"+@ipAddress
     			puts "TOKEN CREATION 1"
     			
     		elsif user_signed_in? && current_user.nickname == "" && @numberOfTimesIpIsInConnectDb.length == 0
 
-				@token = opentok.generate_token @session_id, :data => 'user_' + numbr.to_s
+				@token = opentok.generate_token @session_id, :data => 'user_' + numbr.to_s+"@"+@ipAddress
     			puts "TOKEN CREATION 2"
     			
     		elsif !user_signed_in? && @numberOfTimesIpIsInConnectDb.length == 0
     			
-    			@token = opentok.generate_token @session_id, :data => 'guest_' + numbr.to_s
+    			@token = opentok.generate_token @session_id, :data => 'guest_' + numbr.to_s+"@"+@ipAddress
 				puts "TOKEN CREATION 3"
 				
 			
@@ -123,6 +123,10 @@ class ChatsController < ApplicationController
 
 	def handle_connectionCreated(event)
 	  puts "event HANDLED MOFO!!! " + params[:connection][:data]
+	  tokenData = params[:connection][:data]
+
+	  ipString = tokenData.partition('@').last
+	  puts "IP SHOULS Be, drum rolllll please ...... " + ipString
 	end
 
 	def handle_invoice_payment_failed(event)

@@ -110,7 +110,7 @@ class ChatsController < ApplicationController
     	begin
 		    
 		    method = "handle_" + params[:event]
-		    self.send method, event
+		    self.send method, params[:event]
 		    puts "INNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNrrrrrrrrrrNNNNNN"
 		rescue JSON::ParserError => e
 			render json: {:status => 400, :error => "Invalid payload"} and return

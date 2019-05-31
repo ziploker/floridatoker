@@ -148,7 +148,7 @@ class ChatsController < ApplicationController
 		    puts "USERNAME is = "+ params[:connection][:data]
 		    @userName = params[:connection][:data]
 
-    		format.js { render layout: false, 'chats/updateChat.js.erb' }
+    		#format.js { render 'chats/updateChat.js.erb' }
 
 		      
 		    

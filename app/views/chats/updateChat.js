@@ -1,1 +1,0 @@
-$('#Users ul').append('<li id="'+event.connection.data+'"><span class="usernames">' +event.connection.data+ '</span></li>');

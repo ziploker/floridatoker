@@ -108,8 +108,8 @@ class ChatsController < ApplicationController
     	puts "INNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
 
     	begin
-		    event = JSON.parse(request.body.read)
-		    method = "handle_" + event['event']
+		    
+		    method = "handle_" + params[:event]
 		    self.send method, event
 		    puts "INNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNrrrrrrrrrrNNNNNN"
 		rescue JSON::ParserError => e
@@ -122,7 +122,7 @@ class ChatsController < ApplicationController
 
 
 	def handle_connectionCreated(event)
-	  puts "event HANDLED MOFO!!! " + event[:connection][:data]
+	  puts "event HANDLED MOFO!!! " + params[:connection][:data]
 	end
 
 	def handle_invoice_payment_failed(event)

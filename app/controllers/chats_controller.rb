@@ -149,7 +149,9 @@ class ChatsController < ApplicationController
 		    @userName = params[:connection][:data]
 
     		#format.js { render 'chats/updateChat.js.erb' }
-    		format.html
+    		format.js { render             
+		        # raw javascript to be executed on client-side
+		        "alert('Hello Rails');"}
 
 		      
 		    

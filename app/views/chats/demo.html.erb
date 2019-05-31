@@ -76,24 +76,13 @@ $(document).ready(function() {
 	            var usernames = document.getElementById("user_area");
 	            
 	        	
-	            //if (event.connection.data != null){
+	            if (event.connection.data != null){
 
 
-	        		//$('#Users ul').append('<li id="'+event.connection.data+'"><span class="usernames">' +event.connection.data+ '</span></li>');
-        		//}
+	        		$('#Users ul').append('<li id="'+event.connection.data+'"><span class="usernames">' +event.connection.data+ '</span></li>');
+        		}
 
-				//$.trim(usernames);
-				
-				//if ( $('#user_area').val() ){
-	        	//	$('#user_area').val(  $('#user_area').val() + "\n" +event.connection.data);
-	        	//	$.trim('#user_area');
-	        	//	console.log('true');
-	    	    //}else{
-	    	    //	$('#user_area').val(  $('#user_area').val() + event.connection.data);
-	    	    //	$.trim('#user_area');
-	    	    //	console.log('falsee');
-	    	    //}
-	        	$('#user_area').scrollTop(  $('#user_area')[0].scrollHeight   );
+				$('#user_area').scrollTop(  $('#user_area')[0].scrollHeight   );
 	      		
 	        });
 			
@@ -110,9 +99,6 @@ $(document).ready(function() {
 	      		$('#text_area').scrollTop(  $('#text_area')[0].scrollHeight   );
 
 
-	        	//$('#text_area').append("\n *** " + event.connection.data + " has left the room. ***");
-	      		//$('#text_area').scrollTop(  $('#text_area')[0].scrollHeight   );
-	      		
 	        	$('#'+event.connection.data+'').remove();
 	        });
 			

@@ -122,11 +122,14 @@ class ChatsController < ApplicationController
 
 
 	def handle_connectionCreated(event)
-	  puts "event HANDLED MOFO!!! " + params[:connection][:data]
+	  
 	  tokenData = params[:connection][:data]
 
 	  ipString = tokenData.partition('@').last
-	  puts "IP SHOULS Be, drum rolllll please ...... " + ipString
+
+	  newIpToSaveInDb = Connect.new(:ip => ipString)
+	  newIpToSaveInDb.save
+	  puts "saved " + ipString + " to DB"
 	end
 
 	def handle_invoice_payment_failed(event)

@@ -105,15 +105,17 @@ class ChatsController < ApplicationController
 
     	#	format.js
     	#end
+    	puts "INNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
 
     	begin
 		    event = JSON.parse(request.body.read)
 		    method = "handle_" + event['event']
 		    self.send method, event
+		    puts "INNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNrrrrrrrrrrNNNNNN"
 		rescue JSON::ParserError => e
 			render json: {:status => 400, :error => "Invalid payload"} and return
 		rescue NoMethodError => e
-			# missing event handler
+			puts "INNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNrrrrrrrfffdddddrrrNNNNNN"
 		end
 			render json: {:status => 200}
 	end

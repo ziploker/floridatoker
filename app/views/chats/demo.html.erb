@@ -7,6 +7,7 @@
     <script type="text/javascript">
 
 
+
 $(document).ready(function() {	
 
 	var ip = "<%= @ipAddress %>";
@@ -300,10 +301,20 @@ $(document).ready(function() {
 		  
 		});
 
+	if ( $('#flag_initial_room_creation').text() == "true"){
+		console.log("room just created, display html");
+		var id = "<%= @newChat.id %>"
+		var roomName = "<%= @newChat.room_name %>"
+
+	
+		$('#Rooms ul').append("<li id=room"+id+"><a href='/chats/switchSession?room="+id+"'>"+roomName+"</a></li>");
 
 
+	}else{
 
-		
+		console.log("room existed already, no further action needed");
+	}
+
 
 
 });
@@ -394,8 +405,9 @@ $(document).ready(function() {
             		<!-- Tab links -->
 					<div class="tab">
 					  
-					  <button class="tablinks" onclick="clickedUsers(event, 'Users')">users</button>
-					  <button class="tablinks" onclick="clickedRooms(event, 'Rooms')">rooms</button>
+					  <button id="userButt", class="tablinks active", onclick="clickedUsers(event, 'Users')">users</button>
+					  <button id="roomButt", class="tablinks", onclick="clickedRooms(event, 'Rooms')">rooms</button>
+					  <button id="createButt", class="tablinks", onclick="clickedCreate(event, 'Create')">create</button>
 					  
 					</div>
 
@@ -408,9 +420,47 @@ $(document).ready(function() {
 					</div>
 
 					<div id="Rooms" class="tabcontent">
-					  <% @allChats.each do |room| %> 
-					  		<ul><%= room.room_name %></ul></br>
-			  			<% end %>
+					
+						
+					  		<ul>
+					  			<% @allChats.each do |room| %> 
+						  			
+					  				
+
+
+						  			<li id="room<%=room.id%>">
+
+							  			<%= link_to room.room_name, switchSession_path(:room => room.id), :remote => true %>
+							  		
+							  			<% if user_signed_in? && current_user.admin == true %>
+							  				<%= link_to "D", :controller => 'chats', :action => 'deleteSession', :query => room.id, :remote => true  %>
+						  				<% end %>
+					  				</li>
+			  					<% end %>
+
+						  		
+
+					  		</ul>
+					  		
+			  			
+					
+					</div>
+
+					<div id="Create" class="tabcontent">
+					
+						<h2 id="newRoomTitle"> create new room </h2>
+						
+
+					  	<%= form_for :chat, :url => createSession_path, :remote => true do |f| %>
+						  <%= f.text_field :room_name, :placeholder => "enter room name...", :maxlength => 15 %><br />
+						 <div class="buttonHolder">
+						  <%= f.submit "create"%>
+						  	</div>
+						<% end %>
+  
+						
+			  			
+					
 					</div>
 
 
@@ -423,6 +473,7 @@ $(document).ready(function() {
             	
 	    	</div>	
 	    	<P> Room: <%= @newChat.room_name %> </P>
+	    	<P> Session: <%= @session_id %> </P>
 	    	<P> ID: <%= @newChat.id %> </P>
 	    	
 	    	<div id="msg">
@@ -448,7 +499,11 @@ $(document).ready(function() {
 	    <% end %>
 </div>
     
-    
- 
+    <% if @flag  %>
+ 		<div id="flag_initial_room_creation" style="display: none;">true</div>
+	<% else %>
+		<div id="flag_initial_room_creation" style="display: none;">i ant got time fo dat</div>
+
+	<% end %>
   </body>
 </html>

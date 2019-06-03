@@ -2,7 +2,12 @@ class ChatsController < ApplicationController
 	require 'opentok'
 	skip_before_action :verify_authenticity_token
 	  
-	  
+	
+	
+
+
+
+
 	def demo
 
 		@api_key = ENV['api_key']
@@ -21,6 +26,10 @@ class ChatsController < ApplicationController
 	    
 	    #if no rooms exists at the moment
 	    if @allChats.length == 0
+
+	    	
+
+	    	@flag = true
 	    	
 	    	#create ne DB record for a session
 	    	@newChat = Chat.new
@@ -150,6 +159,148 @@ class ChatsController < ApplicationController
 	  else
 	  	puts "NO IP(s) have been harmed in the making of the notice********"
   	  end
+
+	end
+
+
+	def switchSession
+		@ipAddress = request.remote_ip
+		@api_key = ENV['api_key']
+	    api_secret = ENV['api_secret']
+		    
+		    
+	    opentok = OpenTok::OpenTok.new @api_key, api_secret
+
+		puts "Switched Session +++++++++++++++++++ " + params[:room]
+		roomID = params[:room]
+
+
+		
+		@c = Chat.find(roomID)
+		
+		
+
+		puts @c.id.to_i.to_s + " <--------------------"
+		puts "MY ID IAS sSSSSSSS " 
+
+		@session_id = @c.session_id
+		#create token
+	    if user_signed_in? && current_user.nickname != ""
+			puts "SESSION ID ++++++ IS "+ @c.session_id
+			@token = opentok.generate_token @session_id, :data => current_user.nickname+"@"+@ipAddress
+			puts "TOKEN CREATION 1"
+			
+		elsif user_signed_in? && current_user.nickname == ""
+
+			@token = opentok.generate_token @session_id, :data => 'user_' + numbr.to_s+"@"+@ipAddress
+			puts "TOKEN CREATION 2"
+			
+		elsif !user_signed_in?
+			@token = opentok.generate_token @session_id, :data => 'guest_' + numbr.to_s+"@"+@ipAddress
+			puts "TOKEN CREATION 3"
+			
+		
+		end
+
+		#render 'demo.html.erb'
+
+	end
+
+
+
+	def createSession
+
+		numbr = rand(400..5000)
+    	@ipAddress = request.remote_ip
+    	puts "IP address is = "+ @ipAddress
+
+		@api_key = ENV['api_key']
+	    api_secret = ENV['api_secret']
+		    
+		    
+	    opentok = OpenTok::OpenTok.new @api_key, api_secret
+	
+		
+	    
+		#get the room name from userInput form
+		@newRoomName = params[:chat][:room_name]
+
+		puts "new room name is "+ params[:chat][:room_name]
+		
+		
+
+		#create ne DB record for a session
+    	@newChat = Chat.new
+
+    	
+		
+    	
+    	#create session and session ID
+    	@session = opentok.create_session :media_mode => :routed
+    	@session_id = @session.session_id
+
+    	#set values for new DB record
+    	@newChat.room_name = @newRoomName
+    	@newChat.session_id = @session_id
+    	@newChat.save!
+    	
+    	
+    	
+    	puts "created brand new session"
+		
+    	
+		#create Token
+		if user_signed_in? && current_user.nickname != ""
+			
+			@token = opentok.generate_token @session_id, :data => current_user.nickname+"@"+@ipAddress
+			puts "created new token for user with nickname"
+		
+		elsif user_signed_in? && current_user.nickname == ""
+
+			@token = opentok.generate_token @session_id, :data => 'user_' + numbr.to_s+"@"+@ipAddress
+			puts "created new token for user with random nickname"
+		
+		elsif !user_signed_in?
+			
+			@token = opentok.generate_token @session_id, :data => 'guest_' + numbr.to_s+"@"+@ipAddress
+			puts "created new token for guest"
+
+		end
+
+
+		respond_to do |format|
+	      if @newChat.save
+	        format.html { render(:text => "not implemented") }
+	        format.js   { }
+	        #format.json { render :show, status: :created, location: @comment }
+	      else
+	        #format.html { render :new }
+	        format.json { render json: @comment.errors, status: :unprocessable_entity }
+	      end
+	    end
+	end
+
+
+
+	def deleteSession
+		puts "DElete SESSIon XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" + params[:query]
+
+		@roomToDelete = Chat.find(params[:query])
+
+		@roomToDelete.destroy
+		
+		
+		respond_to do |format|
+	      if Chat.exists?(@roomToDelete)
+	        format.html { render(:text => "not implemented") }
+	        format.json { render json: @comment.errors, status: :unprocessable_entity }
+	        
+	        #format.json { render :show, status: :created, location: @comment }
+	      else
+	        format.html { render(:text => "not implemented") }
+	        format.js   { }
+	      end
+	    end
 
 	end
 

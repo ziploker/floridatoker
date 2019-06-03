@@ -21,8 +21,11 @@ Rails.application.routes.draw do
   get 'find/info' => 'lookups#info'
 
   get 'chats/demo' => 'chats#demo'
+  get 'chats/switchSession' => 'chats#switchSession', :as => "switchSession"
+  post 'chats/createSession' => 'chats#createSession', :as => "createSession"
   
   post 'chats/stats' => 'chats#stats'
+  get 'chats/deleteSession' => 'chats#deleteSession', :as => "deleteSession"
 
   get '/lookups/getinfo' => 'lookups#getinfo'
   post '/lookups/api' => 'lookups#api'
@@ -84,10 +87,15 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  resources :engages, :letters, :feedbacks, :chats
+  resources :engages, :letters, :feedbacks
   
   resources :articles do
     resources :comments
+  end
+
+  resources :chats do
+    post :switchSession, :on => :member
+    post :createSession, :on => :member
   end
 
 end

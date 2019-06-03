@@ -1,0 +1,13 @@
+
+
+	document.getElementById("Create").style.display = "none";
+	document.getElementById("Rooms").style.display = "block";
+	document.getElementById("Users").style.display = "none";
+	var id = "<%= @newChat.id %>"
+	var roomName = "<%= @newChat.room_name %>"
+
+	
+	$('#Rooms ul').append("<li id=room"+id+"><a href='/chats/switchSession?room="+id+"'>"+roomName+"</a></li>");
+
+
+	

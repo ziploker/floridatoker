@@ -147,7 +147,7 @@ class ChatsController < ApplicationController
 	  
 	  tokenData = params[:connection][:data]
 
-	  #@session.forceUnpublish(params[:connection][:id]);
+	  @session.disconnect();
 
 	  #puts "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiin hcc event is " + params[:connection][:id]
 

@@ -1,0 +1,158 @@
+<div id="streams_container">
+         	
+
+
+
+         	<div id="streams_bin">
+		    	<div id="ovid1">
+		    		<div id="ivid1">
+		    			
+		    			<div class="connectdown">
+		    				<strong>(( (connect)) )</strong>
+		    			</div>	
+		    			
+		    			<div class="overlayno">
+		    				Disconnect.
+		    			</div>
+		    		</div>
+		    	</div>		
+				<div id="ovid2">
+		    		<div id="ivid2">
+		    			<div class="connectdown">
+		    				<strong>(( (connect)) )</strong>
+		    			</div>	
+		    			
+		    			<div class="overlayno">
+		    				Disconnect.
+		    			</div>
+	    			</div>
+		    	</div>
+		    	<div id="ovid3">
+		    		<div id="ivid3">
+		    			<div class="connectdown">
+		    				<strong>(( (connect)) )</strong>
+		    			</div>	
+		    			
+		    			<div class="overlayno">
+		    				Disconnect.
+		    			</div>
+		    	   </div>		
+		    	</div>
+		    	<div id="ovid4">
+		    		<div id="ivid4">
+		    			<div class="connectdown">
+		    				<strong>(( (connect)) )</strong>
+		    			</div>	
+		    			
+		    			<div class="overlayno">
+		    				Disconnect.
+		    			</div>
+		    		</div> 	
+		    	</div>
+		    	<div id="ovid5">
+		    		<div id="ivid5">
+		    			<div class="connectdown">
+		    				<strong>(( (connect)) )</strong>
+		    			</div>	
+		    			
+		    			<div class="overlayno">
+		    				Disconnect.
+		    			</div>
+	    			  </div>
+		    	</div>
+            </div>
+            <div id="chat_window">
+            	<div id="text_area">
+	            	<ul>
+	            		<li> [welcome to Florida Toker webcam chat] </li>
+	            		<li> ...chat servers currently offline </li>
+	            	</ul>
+            	</div>
+            	<div id="user_area">
+            		
+            		<!-- Tab links -->
+					<div class="tab">
+					  
+					  <button id="userButt", class="tablinks active", onclick="clickedUsers(event, 'Users')">users</button>
+					  <button id="roomButt", class="tablinks", onclick="clickedRooms(event, 'Rooms')">rooms</button>
+					  <button id="createButt", class="tablinks", onclick="clickedCreate(event, 'Create')">create</button>
+					  
+					</div>
+
+					<!-- Tab content -->
+					<div id="Users" class="tabcontent">
+					  
+					  	<ul>
+
+        				</ul>
+					</div>
+
+					<div id="Rooms" class="tabcontent">
+					
+						
+					  		<ul>
+					  			<% @allChats.each do |room| %> 
+						  			
+					  				
+
+
+						  			<li id="room<%=room.id%>">
+
+							  			<%= link_to room.room_name, switchSession_path(:room => room.id), :remote => true %>
+							  		
+							  			<% if user_signed_in? && current_user.admin == true %>
+							  				<%= link_to "D", :controller => 'chats', :action => 'deleteSession', :query => room.id, :remote => true  %>
+						  				<% end %>
+					  				</li>
+			  					<% end %>
+
+						  		
+
+					  		</ul>
+					  		
+			  			
+					
+					</div>
+
+					<div id="Create" class="tabcontent">
+					
+						<h2 id="newRoomTitle"> create new room </h2>
+						
+
+					  	<%= form_for :chat, :url => createSession_path, :remote => true do |f| %>
+						  <%= f.text_field :room_name, :placeholder => "enter room name...", :maxlength => 15 %><br />
+						 <div class="buttonHolder">
+						  <%= f.submit "create"%>
+						  	</div>
+						<% end %>
+  
+						
+			  			
+					
+					</div>
+
+
+
+
+
+            		
+
+            	</div>
+            	
+	    	</div>	
+	    	<P> Room: <%= @newChat.room_name %> </P>
+	    	<P> Session: <%= @session_id %> </P>
+	    	<P> ID: <%= @newChat.id %> </P>
+	    	
+	    	<div id="msg">
+    			<%= text_field_tag 'message', nil, placeholder: 'speak here...' %>
+    			<%= button_tag(type: 'submit') do %>
+  				<%=		content_tag(:strong, 'SEND!') %>
+				<% 	end %>
+
+
+
+
+				 
+			</div>
+	    </div>

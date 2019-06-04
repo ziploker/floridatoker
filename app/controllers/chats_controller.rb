@@ -122,7 +122,7 @@ class ChatsController < ApplicationController
 		    
 		    method = "handle_" + params[:event]
 		    self.send method, params[:event]
-		    puts "INNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNrrrrrrrrrrNNNNNN"
+		    puts "INNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNrrrrrrrrrrNNNNNN + " + params[:connection]
 		rescue JSON::ParserError => e
 			render json: {:status => 400, :error => "Invalid payload"} and return
 		rescue NoMethodError => e
@@ -135,6 +135,8 @@ class ChatsController < ApplicationController
 	def handle_connectionCreated(event)
 	  
 	  tokenData = params[:connection][:data]
+
+	  puts "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiin hcc event is " + event
 
 	  ipString = tokenData.partition('@').last
 
@@ -164,29 +166,37 @@ class ChatsController < ApplicationController
 
 
 	def switchSession
-		@ipAddress = request.remote_ip
+
 		@api_key = ENV['api_key']
 	    api_secret = ENV['api_secret']
 		    
 		    
 	    opentok = OpenTok::OpenTok.new @api_key, api_secret
+	    
+	    @allChats = Chat.all
+
+	    numbr = rand(400..5000)
+    	@ipAddress = request.remote_ip
+    	puts "IP address is = "+ @ipAddress
+		
+		
 
 		puts "Switched Session +++++++++++++++++++ " + params[:room]
 		roomID = params[:room]
+		@allChats = Chat.all
 
+		@newChat = Chat.find(roomID)
+		
+		
+		
 
-		
-		@c = Chat.find(roomID)
-		
-		
-
-		puts @c.id.to_i.to_s + " <--------------------"
+		puts @newChat.id.to_i.to_s + " <--------------------"
 		puts "MY ID IAS sSSSSSSS " 
 
-		@session_id = @c.session_id
+		@session_id = @newChat.session_id
 		#create token
 	    if user_signed_in? && current_user.nickname != ""
-			puts "SESSION ID ++++++ IS "+ @c.session_id
+			puts "SESSION ID ++++++ IS "+ @newChat.session_id
 			@token = opentok.generate_token @session_id, :data => current_user.nickname+"@"+@ipAddress
 			puts "TOKEN CREATION 1"
 			
@@ -201,6 +211,15 @@ class ChatsController < ApplicationController
 			
 		
 		end
+
+
+		respond_to do |format|
+	      
+	        format.html { render(:text => "not implemented") }
+	        format.js   { }
+	        #format.json { render :show, status: :created, location: @comment }
+	      
+	    end
 
 		#render 'demo.html.erb'
 

@@ -1,10 +1,4 @@
-
-<html>
-  <head>
-    <title>Opentok Quick Start</title>
-    
-    <script src='https://static.opentok.com/v2/js/opentok.min.js'></script>
-    <script type="text/javascript">
+$("#streams_wrapper").html("<%= escape_javascript(render partial: 'chatInfo' ) %>");
 
 
 
@@ -28,7 +22,7 @@ $(document).ready(function() {
 
     function connect() {
 
-    	alert("THC");
+    	alert("THC switcher");
 	  
 	  	if (OT.checkSystemRequirements() == 0) {
         	
@@ -57,7 +51,7 @@ $(document).ready(function() {
 			//Local user connects to the session
 			session.on("sessionConnected", function(event){
 				console.log("sessionConnected by local user, watchers: "+watchers+" & streamers: "+ streamers);
-				alert("THC mainer");
+				alert("THC switcher connect");
 			});	
 			
 		
@@ -326,37 +320,3 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-
-    </script>
-  </head>
-  <%= javascript_include_tag 'chats' %>
-  <body>
-    
-    <div id="streams_wrapper">
-		
-
-    	<%= render partial: 'chatInfo' %>
-
-	    
-	    <% if false %>
-			<div id="chats_aside">
-				<h1>H1 tag</h1>
-				<h3> test aside</h3>
-				
-				
-		    </div>
-	    <% end %>
-	</div>
-    
-    <% if @flag  %>
- 		<div id="flag_initial_room_creation" style="display: none;">true</div>
-	<% else %>
-		<div id="flag_initial_room_creation" style="display: none;">i ant got time fo dat</div>
-
-	<% end %>
-  </body>
-</html>

@@ -126,7 +126,7 @@ class ChatsController < ApplicationController
 		rescue JSON::ParserError => e
 			render json: {:status => 400, :error => "Invalid payload"} and return
 		rescue NoMethodError => e
-			puts "INNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNrrrrrrrfffdddddrrrNNNNNN"
+			puts "INNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNrrrrrrrfffdddddrrrNNNNNN" + e.to_string
 		end
 			
 		

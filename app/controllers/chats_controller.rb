@@ -116,13 +116,13 @@ class ChatsController < ApplicationController
 
     	#	format.js
     	#end
-    	puts "INNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
+    	puts "Stats Action Starting............"
 
     	begin
-		    puts "uuuuuuuuuuuuuuuu " + params[:event]
+		    puts "incomming event: " + params[:event]
 		    method = "handle_" + params[:event]
 		    self.send method, params[:connection]
-		    puts "INNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNrrrrrrrrrrNNNNNN + "
+		    puts "back to sssssssssssssssssssssssssssssssssstats action"
 		rescue JSON::ParserError => e
 			render json: {:status => 400, :error => "Invalid payload"} and return
 		rescue NoMethodError => e
@@ -142,6 +142,8 @@ class ChatsController < ApplicationController
 
 
 	def handle_connectionCreated(event)
+
+	  puts "hanble connection crated action Starting............"
 	  
 	  tokenData = params[:connection][:data]
 

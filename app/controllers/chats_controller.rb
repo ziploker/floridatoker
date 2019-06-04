@@ -2,7 +2,13 @@ class ChatsController < ApplicationController
 	require 'opentok'
 	skip_before_action :verify_authenticity_token
 	  
-	
+	@api_key = ENV['api_key']
+	api_secret = ENV['api_secret']
+		    
+		    
+    opentok = OpenTok::OpenTok.new @api_key, api_secret
+
+    @session = opentok.create_session :media_mode => :routed
 	
 
 
@@ -10,11 +16,7 @@ class ChatsController < ApplicationController
 
 	def demo
 
-		@api_key = ENV['api_key']
-	    api_secret = ENV['api_secret']
-		    
-		    
-	    opentok = OpenTok::OpenTok.new @api_key, api_secret
+		
 	    
 	    @allChats = Chat.all
 
@@ -37,7 +39,7 @@ class ChatsController < ApplicationController
 			
 	    	
 	    	#create session and session ID
-	    	@session = opentok.create_session :media_mode => :routed
+	    	
 	    	@session_id = @session.session_id
 
 	    	#set values for new DB record
@@ -181,11 +183,11 @@ class ChatsController < ApplicationController
 
 	def switchSession
 
-		@api_key = ENV['api_key']
-	    api_secret = ENV['api_secret']
+		#@api_key = ENV['api_key']
+	    #api_secret = ENV['api_secret']
 		    
 		    
-	    opentok = OpenTok::OpenTok.new @api_key, api_secret
+	    #opentok = OpenTok::OpenTok.new @api_key, api_secret
 	    
 	    @allChats = Chat.all
 

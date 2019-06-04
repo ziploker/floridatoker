@@ -121,14 +121,23 @@ class ChatsController < ApplicationController
     	begin
 		    
 		    method = "handle_" + params[:event]
-		    self.send method, params[:event]
+		    self.send method, params[:connection]
 		    puts "INNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNrrrrrrrrrrNNNNNN + " + params[:connection]
 		rescue JSON::ParserError => e
 			render json: {:status => 400, :error => "Invalid payload"} and return
 		rescue NoMethodError => e
 			puts "INNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNrrrrrrrfffdddddrrrNNNNNN"
 		end
-			render json: {:status => 200}
+			
+		
+
+		respond_to do |format|
+	     
+	        
+	        format.js   { render :json => {:status => 200} }
+	        #format.json { render :show, status: :created, location: @comment }
+	      
+	    end
 	end
 
 
@@ -136,7 +145,7 @@ class ChatsController < ApplicationController
 	  
 	  tokenData = params[:connection][:data]
 
-	  puts "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiin hcc event is " + event
+	  puts "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiin hcc event is " + event.id
 
 	  ipString = tokenData.partition('@').last
 

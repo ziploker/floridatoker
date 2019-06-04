@@ -119,7 +119,7 @@ class ChatsController < ApplicationController
     	puts "INNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
 
     	begin
-		    
+		    puts "uuuuuuuuuuuuuuuu " + params[:event]
 		    method = "handle_" + params[:event]
 		    self.send method, params[:connection]
 		    puts "INNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNrrrrrrrrrrNNNNNN + "

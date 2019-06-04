@@ -145,9 +145,9 @@ class ChatsController < ApplicationController
 	  
 	  tokenData = params[:connection][:data]
 
-	  @session.forceUnpublish(event);
+	  @session.forceUnpublish(params[:connection][:id]);
 
-	  puts "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiin hcc event is " + event.id.to_s
+	  puts "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiin hcc event is "
 
 
 	  ipString = tokenData.partition('@').last

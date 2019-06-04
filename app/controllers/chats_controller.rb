@@ -122,7 +122,7 @@ class ChatsController < ApplicationController
 		    
 		    method = "handle_" + params[:event]
 		    self.send method, params[:connection]
-		    puts "INNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNrrrrrrrrrrNNNNNN + " + params[:connection]
+		    puts "INNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNrrrrrrrrrrNNNNNN + "
 		rescue JSON::ParserError => e
 			render json: {:status => 400, :error => "Invalid payload"} and return
 		rescue NoMethodError => e
@@ -145,7 +145,7 @@ class ChatsController < ApplicationController
 	  
 	  tokenData = params[:connection][:data]
 
-	  #@session.forceUnpublish(params[:connection][:id]);
+	  @session.forceUnpublish(params[:connection][:id]);
 
 	  #puts "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiin hcc event is " + params[:connection][:id]
 

@@ -122,14 +122,14 @@ class ChatsController < ApplicationController
     	begin
 		    puts "incomming event: " + params[:event]
 		    method = "handle_" + params[:event]
-		    self.send method, params[:connection]
-		    puts "back to sssssssssssssssssssssssssssssssssstats action"
+		    self.send method, params[:connection][:data]
+		    puts "back to stats action for no reason"
 		rescue JSON::ParserError => e
 			render json: {:status => 400, :error => "Invalid payload"} and return
 		rescue NoMethodError => e
-			puts "INNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNrrrrrrrfffdddddrrrNNNNNN" + e.to_string
+			puts "no method error"
 		end
-			
+			 
 		
 
 		respond_to do |format|
@@ -148,7 +148,7 @@ class ChatsController < ApplicationController
 	  
 	  tokenData = params[:connection][:data]
 
-	  $session.disconnect();
+	 
 
 	  #puts "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiin hcc event is " + params[:connection][:id]
 

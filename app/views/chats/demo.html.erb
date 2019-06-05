@@ -28,7 +28,7 @@ $(document).ready(function() {
 
     function connect() {
 
-    	alert("THC");
+    	
 	  
 	  	if (OT.checkSystemRequirements() == 0) {
         	
@@ -57,7 +57,7 @@ $(document).ready(function() {
 			//Local user connects to the session
 			session.on("sessionConnected", function(event){
 				console.log("sessionConnected by local user, watchers: "+watchers+" & streamers: "+ streamers);
-				alert("THC mainer");
+				
 			});	
 			
 		
@@ -86,6 +86,7 @@ $(document).ready(function() {
 
 
 	        	$('#Users ul').append('<li id="'+un+'"><span class="usernames">' +un+ '</span></li>');
+
         		
 
 				$('#user_area').scrollTop(  $('#user_area')[0].scrollHeight   );
@@ -317,6 +318,12 @@ $(document).ready(function() {
 
 		console.log("room existed already, no further action needed");
 	}
+
+	$("ziploker").on("click", function() {
+  				session = OT.initSession(api_key, session_id);
+  				session.disconnect();
+  				alert("D");
+			});
 
 
 

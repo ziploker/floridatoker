@@ -253,6 +253,11 @@ class ChatsController < ApplicationController
 		    
 		    
 	    opentok = OpenTok::OpenTok.new @api_key, api_secret
+
+
+	    session = OT.initSession(api_key, session_id);
+		session.disconnect();
+		
 	
 		
 	    

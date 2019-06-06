@@ -4,8 +4,7 @@ class ChatsController < ApplicationController
 	  
 	
 	
-	$session
-
+	
 
 
 	def demo
@@ -38,7 +37,7 @@ class ChatsController < ApplicationController
 	    	
 	    	#create session and session ID
 	    	@session = opentok.create_session :media_mode => :routed
-	    	$session = @session
+	    	
 	    	@session_id = @session.session_id
 
 	    	#set values for new DB record
@@ -100,6 +99,7 @@ class ChatsController < ApplicationController
 			elsif @numberOfTimesIpIsInConnectDb.length > 0
 
 				puts "**Unable to create dual service token ****************"
+				@token = opentok.generate_token @session_id, :data => 'luckyassbiatch_' + numbr.to_s+"@"+@ipAddress
 			end
 
     	end

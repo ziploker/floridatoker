@@ -5,8 +5,15 @@
     
     <script src='https://static.opentok.com/v2/js/opentok.min.js'></script>
     <script type="text/javascript">
+var api_key = "<%= @api_key %>"
+	var session_id = "<%= @session_id %>"
 
 
+function disconnect(){
+		session = OT.initSession(api_key, session_id);
+		session.disconnect();
+		alert("D");
+	}
 
 $(document).ready(function() {	
 
@@ -85,7 +92,8 @@ $(document).ready(function() {
 	            
 
 
-	        	$('#Users ul').append('<li id="'+un+'"><span class="usernames">' +un+ '</span></li>');
+	        	$('#Users ul').append('<li id="'+un+'" onclick="disconnect()" ><span class="usernames">' +un+ '</span></li>');
+
 
         		
 
@@ -319,12 +327,9 @@ $(document).ready(function() {
 		console.log("room existed already, no further action needed");
 	}
 
-	$("ziploker").on("click", function() {
-  				session = OT.initSession(api_key, session_id);
-  				session.disconnect();
-  				alert("D");
-			});
-
+	
+			
+	
 
 
 });

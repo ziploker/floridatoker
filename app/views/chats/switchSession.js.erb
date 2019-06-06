@@ -24,7 +24,7 @@ $(document).ready(function() {
 
     function connect() {
 
-    	alert("THC switcher");
+    	
 	  
 	  	if (OT.checkSystemRequirements() == 0) {
         	
@@ -40,11 +40,13 @@ $(document).ready(function() {
 	          if (error) {
 	          	
 	            OT.log("Unable to connect: ", error.message);
+	          
 	          } else {
 
 	            //document.getElementById('disconnectBtn').style.display = 'block';
 	            //$('#disconnectBtn').hide();
 	            console.log("session.connect, Connected to the session with ip "+ip);
+	            console.log("session.created_triggered_in_switchSession");
 	          }
 	        });
 	        
@@ -53,7 +55,7 @@ $(document).ready(function() {
 			//Local user connects to the session
 			session.on("sessionConnected", function(event){
 				console.log("sessionConnected by local user, watchers: "+watchers+" & streamers: "+ streamers);
-				alert("THC switcher connect");
+				console.log("sessionConnected_triggered_in_switchSession");
 			});	
 			
 		
@@ -62,7 +64,7 @@ $(document).ready(function() {
 			session.on("sessionDisconnected", function(event) {
 				console.log("The session disconnected. " + event.reason+ ". ip was "+ip);
 				watchers--;
-
+				console.log("sessionDisconnected_triggered_in_switchSession");
 
 		    });
 	        
@@ -80,7 +82,7 @@ $(document).ready(function() {
 	        	
 	            
 
-
+	            console.log("connectionCreated_triggered_in_switchSession");
 	        	$('#Users ul').append('<li id="'+un+'"><span class="usernames">' +un+ '</span></li>');
         		
 
@@ -105,6 +107,7 @@ $(document).ready(function() {
 
 
 	        	$('#'+un).remove();
+	        	console.log("sessionDestroyed_triggered_in_switchSession");
 	        });
 			
 			
@@ -144,6 +147,8 @@ $(document).ready(function() {
 						console.log("no more room for streams")	
 					}		
 			  	}
+
+			  	console.log("streamCreated_triggered_in_switchSession");
 			  	
 			});	
 			  	
@@ -169,6 +174,7 @@ $(document).ready(function() {
 					// not sure what to do at this point zzzZZz
 				}
 				
+				console.log("streamDestroyed_triggered_in_switchSession");
 				
 			});	
 			
@@ -185,16 +191,12 @@ $(document).ready(function() {
 	      		//$('#text_area').append("\n" + event.data);
 	      		$('#text_area ul').append('<li><span class="textmsg">' +event.data+ '</span></li>');
 	      		$('#text_area').scrollTop(  $('#text_area')[0].scrollHeight   );
+
+	      		console.log("signal_triggered_in_switchSession");
 			});
 	        
 	        
 	       
-			$(".usernames").on("click", function() {
-  				session = OT.initSession(api_key, session_id);
-  				session.disconnect();
-  				alert("D");
-			});
-			
 			
 			
 			

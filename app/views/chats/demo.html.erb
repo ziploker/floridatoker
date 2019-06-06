@@ -5,15 +5,12 @@
     
     <script src='https://static.opentok.com/v2/js/opentok.min.js'></script>
     <script type="text/javascript">
-var api_key = "<%= @api_key %>"
+	
+	var api_key = "<%= @api_key %>"
 	var session_id = "<%= @session_id %>"
 
 
-function disconnect(){
-		session = OT.initSession(api_key, session_id);
-		session.disconnect();
-		alert("D");
-	}
+
 
 $(document).ready(function() {	
 
@@ -56,6 +53,7 @@ $(document).ready(function() {
 	            //document.getElementById('disconnectBtn').style.display = 'block';
 	            //$('#disconnectBtn').hide();
 	            console.log("session.connect, Connected to the session with ip "+ip);
+	            console.log("session.connect_triggered_in_demo");
 	          }
 	        });
 	        
@@ -64,7 +62,7 @@ $(document).ready(function() {
 			//Local user connects to the session
 			session.on("sessionConnected", function(event){
 				console.log("sessionConnected by local user, watchers: "+watchers+" & streamers: "+ streamers);
-				
+				console.log("sessionConnected_triggered_in_demo");
 			});	
 			
 		
@@ -73,7 +71,7 @@ $(document).ready(function() {
 			session.on("sessionDisconnected", function(event) {
 				console.log("The session disconnected. " + event.reason+ ". ip was "+ip);
 				watchers--;
-
+				console.log("sessionDisconnected_triggered_in_demo");
 
 		    });
 	        
@@ -89,7 +87,7 @@ $(document).ready(function() {
 	            var usernames = document.getElementById("user_area");
 	            
 	        	
-	            
+	            console.log("connection_created_triggered_in_Demo");
 
 
 	        	$('#Users ul').append('<li id="'+un+'" onclick="disconnect()" ><span class="usernames">' +un+ '</span></li>');
@@ -98,6 +96,8 @@ $(document).ready(function() {
         		
 
 				$('#user_area').scrollTop(  $('#user_area')[0].scrollHeight   );
+
+				console.log("connectionCreated_triggered_in_demo");
 	      		
 	        });
 			
@@ -111,13 +111,14 @@ $(document).ready(function() {
 				var un = event.connection.data.substr(0, event.connection.data.indexOf('@')); 
 
 				console.log("session connection destroyed, watchers: "+watchers+" & streamers: "+ streamers);
-	        	
+	        	console.log("connection_destroied_triggered_in_Demo");
 
 				$('#text_area ul').append('<li><span class="infomsg">** '+un+' has left the room. **</span></li>');
 	      		$('#text_area').scrollTop(  $('#text_area')[0].scrollHeight   );
 
 
 	        	$('#'+un).remove();
+	        	console.log("connectionDestroyed_triggered_in_demo");
 	        });
 			
 			
@@ -157,6 +158,8 @@ $(document).ready(function() {
 						console.log("no more room for streams")	
 					}		
 			  	}
+
+			  	console.log("streamCreated_triggered_in_demo");
 			  	
 			});	
 			  	
@@ -181,7 +184,7 @@ $(document).ready(function() {
 				}else{
 					// not sure what to do at this point zzzZZz
 				}
-				
+				console.log("streamDestroyed_triggered_in_demo");
 				
 			});	
 			
@@ -198,6 +201,8 @@ $(document).ready(function() {
 	      		//$('#text_area').append("\n" + event.data);
 	      		$('#text_area ul').append('<li><span class="textmsg">' +event.data+ '</span></li>');
 	      		$('#text_area').scrollTop(  $('#text_area')[0].scrollHeight   );
+
+	      		console.log("signal_triggered_in_demo");
 			});
 	        
 	        

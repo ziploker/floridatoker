@@ -182,20 +182,22 @@ class ChatsController < ApplicationController
 
 	def switchSession
 
+		puts "Switch session action GOOOOOOOOO!!!!!!"
+
 		@api_key = ENV['api_key']
 	    api_secret = ENV['api_secret']
 		    
 		    
 	    opentok = OpenTok::OpenTok.new @api_key, api_secret
 	    
+	    puts "Get All Chats in the DBand save it as @allChat"
 	    @allChats = Chat.all
 
 	    numbr = rand(400..5000)
     	@ipAddress = request.remote_ip
     	puts "IP address is = "+ @ipAddress
 		
-		session = OT.initSession(api_key, session_id);
-		session.disconnect()
+
 		
 		
 
@@ -209,23 +211,23 @@ class ChatsController < ApplicationController
 		
 
 		puts @newChat.id.to_i.to_s + " <--------------------"
-		puts "MY ID IAS sSSSSSSS " 
+		puts "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSStarting token creaton logic " 
 
 		@session_id = @newChat.session_id
 		#create token
 	    if user_signed_in? && current_user.nickname != ""
-			puts "SESSION ID ++++++ IS "+ @newChat.session_id
+			
 			@token = opentok.generate_token @session_id, :data => current_user.nickname+"@"+@ipAddress
-			puts "TOKEN CREATION 1"
+			puts "TOKEN CREATION 1, user signed in and has a nick"
 			
 		elsif user_signed_in? && current_user.nickname == ""
 
 			@token = opentok.generate_token @session_id, :data => 'user_' + numbr.to_s+"@"+@ipAddress
-			puts "TOKEN CREATION 2"
+			puts "TOKEN CREATION 2, user is signed in and has no nick"
 			
 		elsif !user_signed_in?
 			@token = opentok.generate_token @session_id, :data => 'guest_' + numbr.to_s+"@"+@ipAddress
-			puts "TOKEN CREATION 3"
+			puts "TOKEN CREATION 3, user not signed in at all"
 			
 		
 		end

@@ -194,6 +194,9 @@ class ChatsController < ApplicationController
     	@ipAddress = request.remote_ip
     	puts "IP address is = "+ @ipAddress
 		
+		session = OT.initSession(api_key, session_id);
+		session.disconnect()
+		
 		
 
 		puts "Switched Session +++++++++++++++++++ " + params[:room]
@@ -255,9 +258,7 @@ class ChatsController < ApplicationController
 	    opentok = OpenTok::OpenTok.new @api_key, api_secret
 
 
-	    session = OT.initSession(api_key, session_id);
-		session.disconnect();
-		
+	    
 	
 		
 	    

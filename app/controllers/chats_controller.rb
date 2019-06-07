@@ -203,7 +203,7 @@ class ChatsController < ApplicationController
 
 		puts "Switched Session +++++++++++++++++++ " + params[:room]
 		roomID = params[:room]
-		@allChats = Chat.all
+		
 
 		@newChat = Chat.find(roomID)
 		
@@ -233,15 +233,16 @@ class ChatsController < ApplicationController
 		end
 
 
-		respond_to do |format|
+		#respond_to do |format|
 	      
-	        format.html { render(:text => "not implemented") }
-	        format.js   { }
+	        render 'demo.html.erb'
+	        #format.js   { }
 	        #format.json { render :show, status: :created, location: @comment }
 	      
-	    end
+	   # end
 
 		#render 'demo.html.erb'
+
 
 	end
 

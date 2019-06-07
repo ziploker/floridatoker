@@ -98,10 +98,10 @@
 
 						  			<li id="room<%=room.id%>">
 
-							  			<%= link_to room.room_name, switchSession_path(:room => room.id), :remote => true %>
+							  			<%= link_to room.room_name, switchSession_path(:room => room.id) %>
 							  		
 							  			<% if user_signed_in? && current_user.admin == true %>
-							  				<%= link_to "D", :controller => 'chats', :action => 'deleteSession', :query => room.id, :remote => true  %>
+							  				
 						  				<% end %>
 					  				</li>
 			  					<% end %>

@@ -199,7 +199,17 @@
 		      		console.log("Signal sent from connection " + JSON.stringify(event));
 		      		// Process the event.data property, if there is any data.
 		      		//$('#text_area').append("\n" + event.data);
-		      		$('#text_area ul').append('<li><span class="textmsg">' +event.data+ '</span></li>');
+
+		      		var NN = event.data
+		      		//alert(NN);
+
+		      		var nick = NN.substr(0, NN.lastIndexOf("@"));
+
+		      		
+		      		//alert(NN.lastIndexOf("_"));
+		      		
+
+		      		$('#text_area ul').append('<li><span class="textmsg">' +nick+ '</span></li>');
 		      		$('#text_area').scrollTop(  $('#text_area')[0].scrollHeight   );
 
 		      		console.log("signal_triggered_in_demo");

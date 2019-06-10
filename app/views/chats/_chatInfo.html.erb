@@ -65,7 +65,7 @@
             	<div id="text_area">
 	            	<ul>
 	            		<li> [welcome to Florida Toker webcam chat] </li>
-	            		<li> ...chat servers currently offline </li>
+	            		<li> [ <%= @roomName %> ] </li>
 	            	</ul>
             	</div>
             	<div id="user_area">
@@ -140,9 +140,6 @@
             	</div>
             	
 	    	</div>	
-	    	<P> Room: <%= @newChat.room_name %> </P>
-	    	<P> Session: <%= @session_id %> </P>
-	    	<P> ID: <%= @newChat.id %> </P>
 	    	
 	    	<div id="msg">
     			<%= text_field_tag 'message', nil, placeholder: 'speak here...' %>

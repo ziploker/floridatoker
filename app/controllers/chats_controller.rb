@@ -9,6 +9,8 @@ class ChatsController < ApplicationController
 
 	def demo
 
+		puts "started demo action in chat controller"
+
 		@api_key = ENV['api_key']
 	    api_secret = ENV['api_secret']
 		    
@@ -26,7 +28,7 @@ class ChatsController < ApplicationController
 	    #if no rooms exists at the moment
 	    if @allChats.length == 0
 
-	    	
+	    	puts "IP address is = "+ @ipAddress
 
 	    	@flag = true
 	    	
@@ -44,7 +46,7 @@ class ChatsController < ApplicationController
 	    	@newChat.room_name = "main room"
 	    	@newChat.session_id = @session_id
 	    	@newChat.save!
-	    	
+	    	@roomName = "main room"
 	    	
 	    	
 	    	puts "created new session"
@@ -54,23 +56,28 @@ class ChatsController < ApplicationController
 			if user_signed_in? && current_user.nickname != ""
 				
 				@token = opentok.generate_token @session_id, :data => current_user.nickname+"@"+@ipAddress
+    			session[:username] = current_user.nickname+"@"+@ipAddress
     			puts "created new token for user with nickname"
     		
     		elsif user_signed_in? && current_user.nickname == ""
 
 				@token = opentok.generate_token @session_id, :data => 'user_' + numbr.to_s+"@"+@ipAddress
     			puts "created new token for user with random nickname"
+    			session[:username] = 'user_' + numbr.to_s
+
     		
     		elsif !user_signed_in?
     			
     			@token = opentok.generate_token @session_id, :data => 'guest_' + numbr.to_s+"@"+@ipAddress
     			puts "created new token for guest"
+    			session[:username] = 'guest_' + numbr.to_s
 
     		end
 
 
 		# else if there is an existing room
 		else 
+			puts "IP address is = "+ @ipAddress
 
 			#search for ip in DB to see if user is connected
 			@numberOfTimesIpIsInConnectDb = Connect.where("ip = ?", @ipAddress)
@@ -78,28 +85,32 @@ class ChatsController < ApplicationController
 			#get first session ID from DB
 			@newChat = Chat.first
 			@session_id = @newChat.session_id
-
+			@roomName = @newChat.room_name
 			
 		    #create token
 		    if user_signed_in? && current_user.nickname != "" && @numberOfTimesIpIsInConnectDb.length == 0
 				
 				@token = opentok.generate_token @session_id, :data => current_user.nickname+"@"+@ipAddress
     			puts "TOKEN CREATION 1"
+    			session[:username] = current_user.nickname
     			
     		elsif user_signed_in? && current_user.nickname == "" && @numberOfTimesIpIsInConnectDb.length == 0
 
 				@token = opentok.generate_token @session_id, :data => 'user_' + numbr.to_s+"@"+@ipAddress
     			puts "TOKEN CREATION 2"
+    			session[:username] = 'user_' + numbr.to_s
     			
     		elsif !user_signed_in? && @numberOfTimesIpIsInConnectDb.length == 0
     			
     			@token = opentok.generate_token @session_id, :data => 'guest_' + numbr.to_s+"@"+@ipAddress
 				puts "TOKEN CREATION 3"
+				session[:username] = 'guest_' + numbr.to_s
 				
 			elsif @numberOfTimesIpIsInConnectDb.length > 0
 
 				puts "**Unable to create dual service token ****************"
 				@token = opentok.generate_token @session_id, :data => 'luckyassbiatch_' + numbr.to_s+"@"+@ipAddress
+				session[:username] = 'luckyassbiatch_' + numbr.to_s+"@"+@ipAddress
 			end
 
     	end
@@ -195,7 +206,7 @@ class ChatsController < ApplicationController
 
 	    numbr = rand(400..5000)
     	@ipAddress = request.remote_ip
-    	puts "IP address is = "+ @ipAddress
+    	puts "SWITCHSESSION IP address is = "+ @ipAddress
 		
 
 		
@@ -206,27 +217,44 @@ class ChatsController < ApplicationController
 		
 
 		@newChat = Chat.find(roomID)
+
+		@roomName = @newChat.room_name
 		
 		
 		
 
 		puts @newChat.id.to_i.to_s + " <--------------------"
-		puts "SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSStarting token creaton logic " 
+		puts "SSSStarting token creaton logic " 
 
 		@session_id = @newChat.session_id
 		#create token
 	    if user_signed_in? && current_user.nickname != ""
+
+
 			
 			@token = opentok.generate_token @session_id, :data => current_user.nickname+"@"+@ipAddress
 			puts "TOKEN CREATION 1, user signed in and has a nick"
 			
 		elsif user_signed_in? && current_user.nickname == ""
 
-			@token = opentok.generate_token @session_id, :data => 'user_' + numbr.to_s+"@"+@ipAddress
+			if session[:username] != nil
+				@token = opentok.generate_token @session_id, :data => session[:username]+"@"+@ipAddress
+			else
+
+				@token = opentok.generate_token @session_id, :data => 'user_' + numbr.to_s+"@"+@ipAddress
+			end
 			puts "TOKEN CREATION 2, user is signed in and has no nick"
 			
 		elsif !user_signed_in?
-			@token = opentok.generate_token @session_id, :data => 'guest_' + numbr.to_s+"@"+@ipAddress
+
+			if session[:username] != nil
+				@token = opentok.generate_token @session_id, :data => session[:username]+"@"+@ipAddress
+				puts "IIIIIIIFFFFFFFF"
+			else
+				puts "EEELLLSSSEEEEE"
+
+				@token = opentok.generate_token @session_id, :data => 'guest_' + numbr.to_s+"@"+@ipAddress
+			end
 			puts "TOKEN CREATION 3, user not signed in at all"
 			
 		

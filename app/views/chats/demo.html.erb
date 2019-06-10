@@ -209,7 +209,7 @@
 		      		//alert(NN.lastIndexOf("_"));
 		      		
 
-		      		$('#text_area ul').append('<li><span class="textmsg">' +nick+ '</span></li>');
+		      		$('#text_area ul').append('<li><span class="textmsg">' +event.data+'</span></li>');
 		      		$('#text_area').scrollTop(  $('#text_area')[0].scrollHeight   );
 
 		      		console.log("signal_triggered_in_demo");
@@ -225,10 +225,19 @@
 				
 				window.sendMSG = function() {       
 		       
-		       
+		       		var NN = session.connection.data
+		      		
+
+		      		var nick = NN.substr(0, NN.lastIndexOf("@"));
+			        
+
+
 			        session.signal(
 			  			{
-			    			data: session.connection.data + ": " + $('#message').val()
+			    			
+
+
+			    			data: nick + ": " + $('#message').val()
 			  			},
 			  			function(error) {
 			    			if (error) {

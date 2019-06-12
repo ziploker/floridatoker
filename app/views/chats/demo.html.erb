@@ -23,7 +23,9 @@
 		var api_key = "<%= @api_key %>"
 		var session_id = "<%= @session_id %>"
 	    
-	    
+	    var loadflag = 0;
+
+
 	    
 	    
 
@@ -61,8 +63,18 @@
 				//Initial session connection
 				//Local user connects to the session
 				session.on("sessionConnected", function(event){
+
+					var username = event.target.connection.data.toString();
+
+					var un = username.substr(0, username.indexOf('@'));
+
+					console.log(event);
+					
 					console.log("sessionConnected by local user, watchers: "+watchers+" & streamers: "+ streamers);
 					console.log("sessionConnected_triggered_in_demo");
+
+					$('#text_area ul').append('<li><span class="infomsg">** you have joined the room <%= @roomName %> as: '+un+' **</span></li>');
+		      		$('#text_area').scrollTop(  $('#text_area')[0].scrollHeight );
 				});	
 				
 			
@@ -79,25 +91,32 @@
 				
 				//forign user connects to the session
 				session.on("connectionCreated", function(event){
-					var stream = event.stream;
-		            var un = event.connection.data.substr(0, event.connection.data.indexOf('@'));
+					
+					var un = event.connection.data.substr(0, event.connection.data.indexOf('@'));
 
-		            watchers++;
-		            console.log("connectionCreated by forign user, watchers: "+watchers+" & streamers: "+ streamers);
-		            var usernames = document.getElementById("user_area");
-		            
-		        	
-		            
+					if (loadflag == 0) {
+
+						loadflag ++ 
+						console.log("<first run> connectionCreated_triggered_in_demo, loadflag set");
+
+					}else{
+
+						
+
+		            	$('#text_area ul').append('<li><span class="infomsg">** '+un+' has joined the room. **</span></li>');
+		      			$('#text_area').scrollTop(  $('#text_area')[0].scrollHeight   );
+
+		      			console.log("<second run> connectionCreated_triggered_in_demo, loadflag set");
+
+					};
+					
 
 
-		        	$('#Users ul').append('<li id="'+un+'"><span class="usernames">' +un+ '</span></li>');
-
-
-	        		
-
+		            $('#Users ul').append('<li id="'+un+'"><span class="usernames">' +un+ '</span></li>');
 					$('#user_area').scrollTop(  $('#user_area')[0].scrollHeight   );
 
-					console.log("connectionCreated_triggered_in_demo");
+					console.log("connectionCreated_triggered_in_demo, ending");
+					console.log("connectionCreated by forign user, watchers: "+watchers+" & streamers: "+ streamers);
 		      		
 		        });
 				

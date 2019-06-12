@@ -109,8 +109,8 @@ class ChatsController < ApplicationController
 			elsif @numberOfTimesIpIsInConnectDb.length > 0
 
 				puts "**Unable to create dual service token ****************"
-				@token = opentok.generate_token @session_id, :data => 'luckyassbiatch_' + numbr.to_s+"@"+@ipAddress
-				session[:username] = 'luckyassbiatch_' + numbr.to_s+"@"+@ipAddress
+				#@token = opentok.generate_token @session_id, :data => 'luckyassbiatch_' + numbr.to_s+"@"+@ipAddress
+				#session[:username] = 'luckyassbiatch_' + numbr.to_s+"@"+@ipAddress
 			end
 
     	end
@@ -233,7 +233,7 @@ class ChatsController < ApplicationController
 
 			
 			@token = opentok.generate_token @session_id, :data => current_user.nickname+"@"+@ipAddress
-			puts "TOKEN CREATION 1, user signed in and has a nick"
+			puts "switchSession TOKEN CREATION 1, user signed in and has a nick"
 			
 		elsif user_signed_in? && current_user.nickname == ""
 
@@ -243,7 +243,7 @@ class ChatsController < ApplicationController
 
 				@token = opentok.generate_token @session_id, :data => 'user_' + numbr.to_s+"@"+@ipAddress
 			end
-			puts "TOKEN CREATION 2, user is signed in and has no nick"
+			puts "switchSession TOKEN CREATION 2, user is signed in and has no nick"
 			
 		elsif !user_signed_in?
 
@@ -255,7 +255,7 @@ class ChatsController < ApplicationController
 
 				@token = opentok.generate_token @session_id, :data => 'guest_' + numbr.to_s+"@"+@ipAddress
 			end
-			puts "TOKEN CREATION 3, user not signed in at all"
+			puts "switchSession TOKEN CREATION 3, user not signed in at all"
 			
 		
 		end

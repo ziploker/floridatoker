@@ -64,17 +64,17 @@
 				//Local user connects to the session
 				session.on("sessionConnected", function(event){
 
-					var username = event.target.connection.data.toString();
+					//var username = event.target.connection.data.toString();
 
-					var un = username.substr(0, username.indexOf('@'));
+					//var un = username.substr(0, username.indexOf('@'));
 
 					console.log(event);
 					
-					console.log("sessionConnected by local user, watchers: "+watchers+" & streamers: "+ streamers);
-					console.log("sessionConnected_triggered_in_demo");
+					//console.log("sessionConnected by local user, watchers: "+watchers+" & streamers: "+ streamers);
+					//console.log("sessionConnected_triggered_in_demo");
 
-					$('#text_area ul').append('<li><span class="infomsg">** you have joined the room <%= @roomName %> as: '+un+' **</span></li>');
-		      		$('#text_area').scrollTop(  $('#text_area')[0].scrollHeight );
+					//$('#text_area ul').append('<li><span class="infomsg">** you have joined the room <%= @roomName %> as: '+un+' **</span></li>');
+		      		//$('#text_area').scrollTop(  $('#text_area')[0].scrollHeight );
 				});	
 				
 			

@@ -13,7 +13,9 @@ div.login_wrapper
 	background-color: #ececec
 	background-image: linear-gradient(#ececec, #f9fcfa)
 	//background-image: linear-gradient(#e0f2e6, #d2e5d8)
-	+span-columns(6)
+	min-width: 350px
+	margin-top: 50px
+	+span-columns(8)
 	padding: 20px
 
 div.input.email.required, 
@@ -123,11 +125,11 @@ a
 
 	.devise_main_wrapper
 		+media($tablet)
-			+span-columns(5)
+			+span-columns(8)
 
 	#whyregister
 		+media($tablet)
-			+span-columns(3)
+			+span-columns(8)
 
 
 
@@ -136,11 +138,11 @@ a
 
 	.devise_main_wrapper
 		+media($mobile)
-			+span-columns(4)
+			+span-columns(12)
 
 	#whyregister
 		+media($mobile)
-			+span-columns(4)
+			+span-columns(12)
 	
 
 .hint

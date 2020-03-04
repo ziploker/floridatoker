@@ -58,7 +58,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
   
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'puma', '~> 2.11.3'  
+gem 'puma', '~> 3.12.4'  
 gem 'social-share-button'
 gem 'metamagic'
 gem 'fog-aws'
